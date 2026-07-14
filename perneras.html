@@ -1,0 +1,138 @@
+<!-- ===========================
+     FILE: perneras.html
+     =========================== -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Pernera Digital DCS — Perneras</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="nav-left"><div class="brand">Pernera Digital DCS</div></div>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="calendario.html">Calendario</a>
+      <a href="perneras.html">Perneras</a>
+      <a href="comms.html">Comms</a>
+    </div>
+  </nav>
+
+  <main style="padding-top:86px">
+    <section class="panel">
+      <h2>Perneras Digitales</h2>
+      <p style="color:var(--sub)">Selecciona un avión para ver su hoja de pernera: cold start básico y procedimientos esenciales, pensados para consulta rápida.</p>
+
+      <div class="perneras-layout" style="margin-top:12px">
+        <div class="perneras-list">
+          <h3>Aviones</h3>
+          <ul>
+            <li><button data-plane="f14">F‑14 Tomcat</button></li>
+            <li><button data-plane="f16">F‑16 Viper</button></li>
+            <li><button data-plane="f18">F‑18 Hornet</button></li>
+            <li><button data-plane="a10">A‑10C II</button></li>
+            <li><button data-plane="mig21">MiG‑21bis</button></li>
+            <li><button data-plane="p51">P‑51D Mustang</button></li>
+          </ul>
+        </div>
+
+        <div class="pernera-content">
+          <!-- F-14 -->
+          <div id="pernera-f14" class="pernera-panel active">
+            <h3>F‑14 Tomcat — Cold Start básico</h3>
+            <ul>
+              <li>Baterías ON</li>
+              <li>Inverters ON</li>
+              <li>APU START</li>
+              <li>Engine 1 START → stable RPM</li>
+              <li>Engine 2 START → stable RPM</li>
+              <li>Generators ON</li>
+              <li>HYD PRESS check</li>
+              <li>INS ALIGN (posición aproximada)</li>
+              <li>Radios y TACAN configurados</li>
+              <li>Lights / anti‑collision check</li>
+              <li>Armamento: selección básica (A/A o A/G)</li>
+            </ul>
+          </div>
+
+          <!-- F-16 -->
+          <div id="pernera-f16" class="pernera-panel">
+            <h3>F‑16 Viper — Cold Start básico</h3>
+            <ul>
+              <li>MAIN PWR — BATT</li>
+              <li>FLCS PWR — ON</li>
+              <li>JFS START</li>
+              <li>Engine start → idle stable</li>
+              <li>GEN — ON</li>
+              <li>AVIONICS — ON</li>
+              <li>INS / GPS ALIGN (básico)</li>
+              <li>Radios / IFF / TACAN configurados</li>
+              <li>SMS: arma y estaciones básicas</li>
+            </ul>
+          </div>
+
+          <!-- F-18 -->
+          <div id="pernera-f18" class="pernera-panel">
+            <h3>F‑18C Hornet — Cold Start básico</h3>
+            <ul>
+              <li>BATT — ON</li>
+              <li>APU — START</li>
+              <li>Engine crank L / R</li>
+              <li>Generators — ON</li>
+              <li>INS — ALIGN (NAV básico)</li>
+              <li>Radios / IFF / TACAN configurados</li>
+              <li>MFDs: páginas básicas y armamento</li>
+            </ul>
+          </div>
+
+          <!-- A-10 -->
+          <div id="pernera-a10" class="pernera-panel">
+            <h3>A‑10C II — Cold Start básico</h3>
+            <ul>
+              <li>Baterías / Generators — ON</li>
+              <li>APU — START</li>
+              <li>Engine 1 / 2 — START</li>
+              <li>CDU / EGI — ALIGN</li>
+              <li>Radios / TAD configurados</li>
+              <li>DSMS: armas y estaciones</li>
+            </ul>
+          </div>
+
+          <!-- MiG-21 -->
+          <div id="pernera-mig21" class="pernera-panel">
+            <h3>MiG‑21bis — Cold Start básico</h3>
+            <ul>
+              <li>Baterías — ON</li>
+              <li>Inverters — ON</li>
+              <li>Fuel pumps — ON</li>
+              <li>Engine START</li>
+              <li>Sistemas eléctricos y armas — ON</li>
+              <li>Radios / RSBN / PRMG configurados</li>
+            </ul>
+          </div>
+
+          <!-- P-51 -->
+          <div id="pernera-p51" class="pernera-panel">
+            <h3>P‑51D Mustang — Cold Start básico</h3>
+            <ul>
+              <li>Fuel selector — ON</li>
+              <li>Magnetos / Ignition — ON</li>
+              <li>Primer / Mixture — set</li>
+              <li>Propeller — set</li>
+              <li>Engine start → check oil pressure</li>
+              <li>Radios básicas y transponder</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="site-footer">Pernera Digital DCS — Perneras · Consulta rápida</div>
+
+  <script src="main.js"></script>
+</body>
+</html>

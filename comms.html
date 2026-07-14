@@ -1,0 +1,252 @@
+<!-- ===========================
+     FILE: comms.html
+     (nueva página: Comms separada)
+     =========================== -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Pernera Digital DCS — Comms</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Pequeños ajustes locales (opcional) */
+    main{padding-top:86px}
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="nav-left"><div class="brand">Pernera Digital DCS</div></div>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="calendario.html">Calendario</a>
+      <a href="perneras.html">Perneras</a>
+      <a href="comms.html">Comms</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="panel" style="margin-top:18px">
+      <h2>Comms — Frases y respuestas</h2>
+      <p style="color:var(--sub)">Frases estándar para operaciones: START‑UP, TAXI, TAKE‑OFF, DEPARTURE, PUSH TACTICAL, NAV, FENCE‑IN, AWACS/GCI, COMMIT, COMBAT, EGRESS, TANKER, FENCE‑OUT y LANDING.</p>
+
+      <div class="comms-nav" style="margin-top:12px">
+        <a href="#startup">START‑UP</a>
+        <a href="#taxi">TAXI</a>
+        <a href="#takeoff">TAKE‑OFF</a>
+        <a href="#departure">DEPARTURE</a>
+        <a href="#push">PUSH</a>
+        <a href="#nav">NAVEGACIÓN</a>
+        <a href="#fencein">FENCE‑IN</a>
+        <a href="#awacs">AWACS</a>
+        <a href="#commit">COMMIT</a>
+        <a href="#combat">COMBAT</a>
+        <a href="#egress">EGRESS</a>
+        <a href="#tanker">TANKER</a>
+        <a href="#fenceout">FENCE‑OUT</a>
+        <a href="#landing">ATERRIZAJE</a>
+      </div>
+
+      <!-- START-UP -->
+      <h3 id="startup">START‑UP</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th><th>ATC responde</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Solicitar arranque</td><td>“Ground, Colt 1‑1, request start‑up.”</td><td>“Colt 1‑1, start‑up approved.”</td></tr>
+            <tr><td>Tras arrancar</td><td>“Colt 1‑1, systems check complete, ready for taxi.”</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- TAXI -->
+      <h3 id="taxi">TAXI</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th><th>ATC responde</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Solicitar taxi</td><td>“Ground, Colt 1‑1, request taxi to active runway.”</td><td>“Colt 1‑1, taxi to runway 27 via Alpha. Hold short runway 27.”</td></tr>
+            <tr><td>Llegada a cabecera</td><td>“Colt 1‑1 holding short runway 27, ready for departure.”</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- TAKEOFF -->
+      <h3 id="takeoff">TAKE‑OFF</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th><th>Tower responde</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Pedir alinearse</td><td>“Tower, Colt 1‑1, request line‑up.”</td><td>“Colt 1‑1, line up and wait runway 27.”</td></tr>
+            <tr><td>Pedir despegue</td><td>“Tower, Colt 1‑1, request takeoff.”</td><td>“Colt 1‑1, cleared for takeoff runway 27.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- DEPARTURE -->
+      <h3 id="departure">DEPARTURE</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th><th>Respuesta</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Cambio de frecuencia</td><td>“Switching Departure, Colt 1‑1.”</td><td>“Colt 1‑1, contact Departure on 261.0.”</td></tr>
+            <tr><td>Primer contacto</td><td>“Departure, Colt 1‑1, passing 3,000 feet.”</td><td>“Colt 1‑1, radar contact, proceed on course.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PUSH -->
+      <h3 id="push">PUSH TACTICAL</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th><th>Wingmen</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Cambio a táctica</td><td>“Colt, push tactical.”</td><td>“2.” / “3.” / “4.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- NAV -->
+      <h3 id="nav">NAVEGACIÓN</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th><th>Respuesta</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Avanzar ruta</td><td>“Pushing waypoint 2.”</td><td></td></tr>
+            <tr><td>Estabilizar altitud</td><td>“Leveling at 15,000.”</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FENCE-IN -->
+      <h3 id="fencein">FENCE‑IN</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Preparación táctica</td><td>“Colt 1‑1, fence‑in complete.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- AWACS -->
+      <h3 id="awacs">AWACS / GCI</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th><th>AWACS responde</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Solicitar situación</td><td>“Overlord, Colt 1‑1, request picture.”</td><td>“Colt 1‑1, picture clean.”</td></tr>
+            <tr><td>Solicitar bogey dope</td><td>“Overlord, Colt 1‑1, request bogey dope.”</td><td>“Single group, bullseye 270 for 35.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- COMMIT -->
+      <h3 id="commit">COMMIT</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th><th>Wingmen</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Entrar en combate</td><td>“Colt, commit west.”</td><td>“2.” / “3.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- COMBAT -->
+      <h3 id="combat">COMBATE A/A</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Frase</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Visual</td><td>“Tally.”</td></tr>
+            <tr><td>Sin visual</td><td>“No joy.”</td></tr>
+            <tr><td>Atacando</td><td>“Engaged offensive.”</td></tr>
+            <tr><td>Defensivo</td><td>“Engaged defensive.”</td></tr>
+            <tr><td>Misiles</td><td>“Fox 1 / Fox 2 / Fox 3.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- EGRESS -->
+      <h3 id="egress">EGRESS</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Salida</td><td>“Off target.”</td></tr>
+            <tr><td>Rumbo seguro</td><td>“Egressing heading 090.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- TANKER -->
+      <h3 id="tanker">TANKER</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th><th>Tanker responde</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Solicitar unión</td><td>“Texaco, Colt 1‑1, request rejoin.”</td><td>“Proceed to pre‑contact.”</td></tr>
+            <tr><td>Pre‑contact</td><td>“Ready pre‑contact.”</td><td>“Cleared contact.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FENCE-OUT -->
+      <h3 id="fenceout">FENCE‑OUT</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Salida táctica</td><td>“Colt 1‑1, fence‑out complete.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- LANDING -->
+      <h3 id="landing">ATERRIZAJE</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr><th>Situación</th><th>Vuelo dice</th><th>Tower responde</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Llegada</td><td>“Tower, Colt 1‑1, inbound for landing.”</td><td>“Report initial runway 27.”</td></tr>
+            <tr><td>Circuito</td><td>“Turning final.”</td><td>“Cleared to land runway 27.”</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+  </main>
+
+  <div class="site-footer">Pernera Digital DCS — Comms · Frases rápidas</div>
+
+  <script src="main.js"></script>
+</body>
+</html>
