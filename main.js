@@ -29,6 +29,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Checklist interactivo: marcar/desmarcar pasos
+  document.querySelectorAll('.check-item').forEach(function (btn) {
+    var key = btn.getAttribute('data-key');
+    if (!key) return;
+
+    var saved = localStorage.getItem('dcs-checklist-' + key);
+    if (saved === 'done') {
+      btn.classList.add('is-done');
+    }
+
+    btn.addEventListener('click', function () {
+      btn.classList.toggle('is-done');
+      var done = btn.classList.contains('is-done');
+      localStorage.setItem('dcs-checklist-' + key, done ? 'done' : 'pending');
+    });
+  });
+
   // Perneras: cambiar panel
   var list = document.querySelector('.perneras-list');
   var buttons = list ? list.querySelectorAll('button[data-plane]') : [];

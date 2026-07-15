@@ -177,6 +177,26 @@ body{
 .pernera-panel h3{color:var(--accent);margin:0 0 8px 0}
 .pernera-panel ul{margin:0;padding-left:16px}
 .pernera-panel li{margin-bottom:6px;color:var(--text)}
+.checklist{list-style:none;padding:0;margin:0}
+.checklist li{margin-bottom:8px}
+.check-item{
+  width:100%;
+  text-align:left;
+  padding:10px 12px;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.03);
+  color:var(--text);
+  cursor:pointer;
+  transition:all .15s ease;
+}
+.check-item:hover{border-color:var(--accent)}
+.check-item.is-done{
+  background:rgba(179,57,57,0.16);
+  border-color:var(--accent);
+  color:#fff;
+  text-decoration:line-through;
+}
 
 /* COMMS (si se copia a styles.css) */
 .comms-section { margin-top:18px; }
