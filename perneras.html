@@ -38,121 +38,354 @@
 
           <h3>Aviones</h3>
           <ul>
-            <li><button data-plane="f14">F‑14 Tomcat</button></li>
-            <li><button data-plane="f16">F‑16 Viper</button></li>
-            <li><button data-plane="f18">F‑18 Hornet</button></li>
-            <li><button data-plane="a10">A‑10C II</button></li>
-            <li><button data-plane="mig21">MiG‑21bis</button></li>
-            <li><button data-plane="p51">P‑51D Mustang</button></li>
+            <li><button data-plane="tf51">TF-51D / P-51D Mustang</button></li>
+            <li><button data-plane="p47">P-47D Thunderbolt</button></li>
+            <li><button data-plane="f4u1d">F4U-1D Corsair</button></li>
+            <li><button data-plane="bf109">BF-109 K4 Kurfürst</button></li>
+            <li><button data-plane="fw190a8">FW-190 A8 Anton</button></li>
+            <li><button data-plane="fw190d9">FW-190 D9 Dora</button></li>
+            <li><button data-plane="spitfire">Spitfire Mk IX</button></li>
+            <li><button data-plane="mosquito">Mosquito FB Mk VI</button></li>
+            <li><button data-plane="i16">I-16 Ishak</button></li>
+            <li><button data-plane="la7">Lavochkin LA-7</button></li>
           </ul>
         </div>
 
         <div class="pernera-content">
-          <!-- F-14 -->
-          <div id="pernera-f14" class="pernera-panel active">
-            <h3>F‑14 Tomcat — Cold Start básico</h3>
+          <div id="pernera-tf51" class="pernera-panel active">
+            <h3>TF-51D / P-51D Mustang — Checklist y engine management</h3>
             <div class="checklist-toolbar">
-              <button class="toggle-all-checklist" type="button" data-panel="f14">Marcar/desmarcar todo</button>
+              <button class="toggle-all-checklist" type="button" data-panel="tf51">Marcar/desmarcar todo</button>
             </div>
             <ul class="checklist">
-              <li><button class="check-item" type="button" data-key="f14-1">Baterías ON</button></li>
-              <li><button class="check-item" type="button" data-key="f14-2">Inverters ON</button></li>
-              <li><button class="check-item" type="button" data-key="f14-3">APU START</button></li>
-              <li><button class="check-item" type="button" data-key="f14-4">Engine 1 START → stable RPM</button></li>
-              <li><button class="check-item" type="button" data-key="f14-5">Engine 2 START → stable RPM</button></li>
-              <li><button class="check-item" type="button" data-key="f14-6">Generators ON</button></li>
-              <li><button class="check-item" type="button" data-key="f14-7">HYD PRESS check</button></li>
-              <li><button class="check-item" type="button" data-key="f14-8">INS ALIGN (posición aproximada)</button></li>
-              <li><button class="check-item" type="button" data-key="f14-9">Radios y TACAN configurados</button></li>
-              <li><button class="check-item" type="button" data-key="f14-10">Lights / anti‑collision check</button></li>
-              <li><button class="check-item" type="button" data-key="f14-11">Armamento: selección básica (A/A o A/G)</button></li>
+              <li><button class="check-item" type="button" data-key="tf51-1">Subir flaps, carburador a RAM y RPM al máximo, poner el freno de parking</button></li>
+              <li><button class="check-item" type="button" data-key="tf51-2">Encender batería y generador, bomba de combustible y abrir flujo de combustible</button></li>
+              <li><button class="check-item" type="button" data-key="tf51-3">Magnetos a BOTH, cebar motor 2-5 segundos, presionar el arrancador y cuando haya ignición, mezcla a run</button></li>
+              <li><button class="check-item" type="button" data-key="tf51-4">Calentar motor a 1200 RPM hasta que el refrigerante supere los 60 °C</button></li>
+              <li><button class="check-item" type="button" data-key="tf51-5">Trim del rudder a 5°, trim del elevador NH 2° sin carga y NH 4° con carga</button></li>
+              <li><button class="check-item" type="button" data-key="tf51-6">Cerrar cúpula y desbloquear altímetro, radio en REM y abrir oxígeno</button></li>
+              <li><button class="check-item" type="button" data-key="tf51-7">Flaps arriba sin carga, flaps a 20° con carga, bloquear la rueda trasera después del taxi</button></li>
             </ul>
+            <div class="engine-management">
+              <h4>Engine management</h4>
+              <div class="engine-table-wrapper">
+                <table class="engine-table">
+                  <thead>
+                    <tr><th>Perfil</th><th>RPM</th><th>Presión / potencia</th><th>Notas</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Máximo WEP</th><td>3000</td><td>67 in/Hg</td><td>5 minutos</td></tr>
+                    <tr><th scope="row">Take off</th><td>3000</td><td>61 in/Hg</td><td>5 minutos</td></tr>
+                    <tr><th scope="row">Combat power</th><td>3000</td><td>61 in/Hg</td><td>15 minutos</td></tr>
+                    <tr><th scope="row">Máximo continuo</th><td>2700</td><td>46 in/Hg</td><td>Régimen continuo</td></tr>
+                    <tr><th scope="row">Economy cruise</th><td>2400</td><td>36 in/Hg</td><td>Consumo eficiente</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
 
-          <!-- F-16 -->
-          <div id="pernera-f16" class="pernera-panel">
-            <h3>F‑16 Viper — Cold Start básico</h3>
+          <div id="pernera-p47" class="pernera-panel">
+            <h3>P-47D Thunderbolt — Checklist y engine management</h3>
             <div class="checklist-toolbar">
-              <button class="toggle-all-checklist" type="button" data-panel="f16">Marcar/desmarcar todo</button>
+              <button class="toggle-all-checklist" type="button" data-panel="p47">Marcar/desmarcar todo</button>
             </div>
             <ul class="checklist">
-              <li><button class="check-item" type="button" data-key="f16-1">MAIN PWR — BATT</button></li>
-              <li><button class="check-item" type="button" data-key="f16-2">FLCS PWR — ON</button></li>
-              <li><button class="check-item" type="button" data-key="f16-3">JFS START</button></li>
-              <li><button class="check-item" type="button" data-key="f16-4">Engine start → idle stable</button></li>
-              <li><button class="check-item" type="button" data-key="f16-5">GEN — ON</button></li>
-              <li><button class="check-item" type="button" data-key="f16-6">AVIONICS — ON</button></li>
-              <li><button class="check-item" type="button" data-key="f16-7">INS / GPS ALIGN (básico)</button></li>
-              <li><button class="check-item" type="button" data-key="f16-8">Radios / IFF / TACAN configurados</button></li>
-              <li><button class="check-item" type="button" data-key="f16-9">SMS: arma y estaciones básicas</button></li>
+              <li><button class="check-item" type="button" data-key="p47-1">Abrir aire frío del carburador, reóstato de bomba de combustible en START/ALTITUDE y selector de tanque en MAIN</button></li>
+              <li><button class="check-item" type="button" data-key="p47-2">Poner freno de parking, encender generador, subir switch del selector de revoluciones</button></li>
+              <li><button class="check-item" type="button" data-key="p47-3">Encender batería, intercooler y oilcooler en NEUTRAL, RPM al máximo, abrir el acelerador 1" y cebar el motor 2-6 veces</button></li>
+              <li><button class="check-item" type="button" data-key="p47-4">Magnetos en BOTH, arrancador en ENERGIZE por 15 segundos, luego a ENGAGE y cuando haya ignición, mezcla en AUTO RICH</button></li>
+              <li><button class="check-item" type="button" data-key="p47-5">Calentar motor a 900 RPM hasta que la temperatura de las cabezas esté a 100 °C, luego subir a 1200 RPM</button></li>
+              <li><button class="check-item" type="button" data-key="p47-6">Abrir flaps de enfriamiento del motor, desbloquear horizonte artificial y encender radio</button></li>
+              <li><button class="check-item" type="button" data-key="p47-7">Trim de alerón en N, trim de rudder a T.O, trim del elevador a N sin carga y 0,75" NH con carga</button></li>
+              <li><button class="check-item" type="button" data-key="p47-8">Flaps arriba sin carga, flaps a 20° con carga, bloquear la rueda trasera después del taxi</button></li>
             </ul>
+            <div class="engine-management">
+              <h4>Engine management</h4>
+              <div class="engine-table-wrapper">
+                <table class="engine-table">
+                  <thead>
+                    <tr><th>Perfil</th><th>RPM</th><th>Presión / potencia</th><th>Notas</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Máximo WEP</th><td>2800</td><td>64 in/Hg</td><td>15 minutos con MW</td></tr>
+                    <tr><th scope="row">Take off</th><td>2800</td><td>52 in/Hg</td><td>5 minutos</td></tr>
+                    <tr><th scope="row">Combat</th><td>2800</td><td>52 in/Hg</td><td>15 minutos</td></tr>
+                    <tr><th scope="row">Máximo continuo</th><td>2550</td><td>42 in/Hg</td><td>Régimen continuo</td></tr>
+                    <tr><th scope="row">Economy cruise</th><td>2250</td><td>32 in/Hg</td><td>Auto lean</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="engine-note">A partir de 10.000 pies, abrir la palanca del supercargador sin superar 22.000 RPM del supercargador.</p>
+            </div>
           </div>
 
-          <!-- F-18 -->
-          <div id="pernera-f18" class="pernera-panel">
-            <h3>F‑18C Hornet — Cold Start básico</h3>
+          <div id="pernera-f4u1d" class="pernera-panel">
+            <h3>F4U-1D Corsair — Checklist y engine management</h3>
             <div class="checklist-toolbar">
-              <button class="toggle-all-checklist" type="button" data-panel="f18">Marcar/desmarcar todo</button>
+              <button class="toggle-all-checklist" type="button" data-panel="f4u1d">Marcar/desmarcar todo</button>
             </div>
             <ul class="checklist">
-              <li><button class="check-item" type="button" data-key="f18-1">BATT — ON</button></li>
-              <li><button class="check-item" type="button" data-key="f18-2">APU — START</button></li>
-              <li><button class="check-item" type="button" data-key="f18-3">Engine crank L / R</button></li>
-              <li><button class="check-item" type="button" data-key="f18-4">Generators — ON</button></li>
-              <li><button class="check-item" type="button" data-key="f18-5">INS — ALIGN (NAV básico)</button></li>
-              <li><button class="check-item" type="button" data-key="f18-6">Radios / IFF / TACAN configurados</button></li>
-              <li><button class="check-item" type="button" data-key="f18-7">MFDs: páginas básicas y armamento</button></li>
+              <li><button class="check-item" type="button" data-key="f4u1d-1">Encender batería, desbloquear horizonte artificial, selector de combustible en RESERVE</button></li>
+              <li><button class="check-item" type="button" data-key="f4u1d-2">RPM al máximo y abrir acelerador 1", encender bomba de combustible, cebar motor 7-10 segundos</button></li>
+              <li><button class="check-item" type="button" data-key="f4u1d-3">Magnetos en BOTH, mantener los frenos y descubrir el arrancador. Pulsar hasta que haya ignición y mezcla a AUTO RICH</button></li>
+              <li><button class="check-item" type="button" data-key="f4u1d-4">Calentar el motor a 900 RPM hasta que la presión de aceite comience a bajar, luego subir a 1200 RPM</button></li>
+              <li><button class="check-item" type="button" data-key="f4u1d-5">Abrir los flaps del motor y aceite a 1/3, bajar las alas y la palanca de bloqueo</button></li>
+              <li><button class="check-item" type="button" data-key="f4u1d-6">Trim de alerón y rudder 6° a la derecha, trim del elevador NH 1°</button></li>
+              <li><button class="check-item" type="button" data-key="f4u1d-7">Flaps a 0° sin carga desde pista, flaps a 20° con carga en pista y 50° desde portaaviones</button></li>
+              <li><button class="check-item" type="button" data-key="f4u1d-8">Bloquear la rueda trasera después del taxi y mover la mezcla a AUTO LEAN tras despegar</button></li>
             </ul>
+            <div class="engine-management">
+              <h4>Engine management</h4>
+              <div class="engine-table-wrapper">
+                <table class="engine-table">
+                  <thead>
+                    <tr><th>Perfil</th><th>RPM</th><th>Presión / potencia</th><th>Notas</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Máximo WEP</th><td>2700</td><td>58 in/Hg</td><td>5 minutos, auto lean, inyección de agua</td></tr>
+                    <tr><th scope="row">Take off</th><td>2700</td><td>54 in/Hg</td><td>5 minutos, auto rich</td></tr>
+                    <tr><th scope="row">Combat power</th><td>2700</td><td>52 in/Hg</td><td>30 minutos, auto lean</td></tr>
+                    <tr><th scope="row">Máximo continuo</th><td>2550</td><td>49 in/Hg</td><td>Auto lean</td></tr>
+                    <tr><th scope="row">Economy cruise</th><td>2200</td><td>36 in/Hg</td><td>Auto lean</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="engine-note">A partir de 5.000 pies, supercargador a LOW; a partir de 20.000 pies, a HIGH.</p>
+            </div>
           </div>
 
-          <!-- A-10 -->
-          <div id="pernera-a10" class="pernera-panel">
-            <h3>A‑10C II — Cold Start básico</h3>
+          <div id="pernera-bf109" class="pernera-panel">
+            <h3>BF-109 K4 Kurfürst — Checklist y engine management</h3>
             <div class="checklist-toolbar">
-              <button class="toggle-all-checklist" type="button" data-panel="a10">Marcar/desmarcar todo</button>
+              <button class="toggle-all-checklist" type="button" data-panel="bf109">Marcar/desmarcar todo</button>
             </div>
             <ul class="checklist">
-              <li><button class="check-item" type="button" data-key="a10-1">Baterías / Generators — ON</button></li>
-              <li><button class="check-item" type="button" data-key="a10-2">APU — START</button></li>
-              <li><button class="check-item" type="button" data-key="a10-3">Engine 1 / 2 — START</button></li>
-              <li><button class="check-item" type="button" data-key="a10-4">CDU / EGI — ALIGN</button></li>
-              <li><button class="check-item" type="button" data-key="a10-5">Radios / TAD configurados</button></li>
-              <li><button class="check-item" type="button" data-key="a10-6">DSMS: armas y estaciones</button></li>
+              <li><button class="check-item" type="button" data-key="bf109-1">Encender batería y generador, radiadores en AUF, solicitar wheel chucks</button></li>
+              <li><button class="check-item" type="button" data-key="bf109-2">Bombas de combustible P1+P2 y encender bombas, magnetos a M1+M2 y encender ignición</button></li>
+              <li><button class="check-item" type="button" data-key="bf109-3">Abrir guarda del embrague y solicitar arrancador, cebar motor 2-6 veces, accionar el embrague hasta que arranque</button></li>
+              <li><button class="check-item" type="button" data-key="bf109-4">Calentar motor a 2000 RPM hasta que el refrigerante supere los 50 °C</button></li>
+              <li><button class="check-item" type="button" data-key="bf109-5">Revoluciones a las 12:00 en el reloj, encender calentador del Pitot y quitar wheel chucks</button></li>
+              <li><button class="check-item" type="button" data-key="bf109-6">Cerrar cúpula, abrir oxígeno, radio ON e IFF a NORM, trim a +1° sin carga y +2° con carga</button></li>
+              <li><button class="check-item" type="button" data-key="bf109-7">Radiadores a AUTOMATIK y governor a automático cuando levante el vuelo</button></li>
             </ul>
+            <div class="engine-management">
+              <h4>Engine management</h4>
+              <div class="engine-table-wrapper">
+                <table class="engine-table">
+                  <thead>
+                    <tr><th>Perfil</th><th>RPM</th><th>Presión / potencia</th><th>Notas</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Máximo WEP</th><td>2800</td><td>1.75 ATA</td><td>10 minutos con MW-50</td></tr>
+                    <tr><th scope="row">Take off</th><td>2600</td><td>1.35 ATA</td><td>5 minutos</td></tr>
+                    <tr><th scope="row">Combat power</th><td>2600</td><td>1.35 ATA</td><td>30 minutos</td></tr>
+                    <tr><th scope="row">Máximo continuo</th><td>2400</td><td>1.25 ATA</td><td>Régimen continuo</td></tr>
+                    <tr><th scope="row">Economy cruise</th><td>2000</td><td>1.05 ATA</td><td>Consumo eficiente</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
 
-          <!-- MiG-21 -->
-          <div id="pernera-mig21" class="pernera-panel">
-            <h3>MiG‑21bis — Cold Start básico</h3>
+          <div id="pernera-fw190a8" class="pernera-panel">
+            <h3>FW-190 A8 Anton — Checklist y engine management</h3>
             <div class="checklist-toolbar">
-              <button class="toggle-all-checklist" type="button" data-panel="mig21">Marcar/desmarcar todo</button>
+              <button class="toggle-all-checklist" type="button" data-panel="fw190a8">Marcar/desmarcar todo</button>
             </div>
             <ul class="checklist">
-              <li><button class="check-item" type="button" data-key="mig21-1">Baterías — ON</button></li>
-              <li><button class="check-item" type="button" data-key="mig21-2">Inverters — ON</button></li>
-              <li><button class="check-item" type="button" data-key="mig21-3">Fuel pumps — ON</button></li>
-              <li><button class="check-item" type="button" data-key="mig21-4">Engine START</button></li>
-              <li><button class="check-item" type="button" data-key="mig21-5">Sistemas eléctricos y armas — ON</button></li>
-              <li><button class="check-item" type="button" data-key="mig21-6">Radios / RSBN / PRMG configurados</button></li>
+              <li><button class="check-item" type="button" data-key="fw190a8-1">Abrir paneles de botones y presionar todos menos IFF destruct, luces de navegación solo si son necesarias, solicitar wheel chucks</button></li>
+              <li><button class="check-item" type="button" data-key="fw190a8-2">Abrir palanca de paso de combustible y encender E13, E14 y E96. Con tanque externo, encender E16</button></li>
+              <li><button class="check-item" type="button" data-key="fw190a8-3">Cebar motor entre 1-15 veces hasta alcanzar presión de combustible adecuada, con combustible amarillo</button></li>
+              <li><button class="check-item" type="button" data-key="fw190a8-4">Magnetos a M1+M2, acelerador a START-IDLE, RPM en manual y a las 12:00, cerrar flaps de enfriamiento del motor</button></li>
+              <li><button class="check-item" type="button" data-key="fw190a8-5">Descubrir el arrancador y presionar 25 segundos, luego tirar del arrancador para accionar el embrague hasta que arranque</button></li>
+              <li><button class="check-item" type="button" data-key="fw190a8-6">Calentar motor a 600 RPM hasta que la aguja de presión de aceite comience a moverse, subir a 1200 RPM hasta que el aceite esté por encima de 25 °C</button></li>
+              <li><button class="check-item" type="button" data-key="fw190a8-7">Subir a 1500 RPM hasta que el aceite supere 50 °C, abrir flaps de enfriamiento si es necesario</button></li>
+              <li><button class="check-item" type="button" data-key="fw190a8-8">Flaps a posición de despegue, cerrar cúpula y abrir oxígeno. Quitar wheel chucks y governor a automático al despegar</button></li>
             </ul>
+            <div class="engine-management">
+              <h4>Engine management</h4>
+              <div class="engine-table-wrapper">
+                <table class="engine-table">
+                  <thead>
+                    <tr><th>Perfil</th><th>RPM</th><th>Presión / potencia</th><th>Notas</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Take off y WEP</th><td>2700</td><td>1.4 ATA</td><td>3 minutos</td></tr>
+                    <tr><th scope="row">Combat power</th><td>2400</td><td>1.3 ATA</td><td>30 minutos</td></tr>
+                    <tr><th scope="row">Máximo continuo</th><td>2300</td><td>1.2 ATA</td><td>Régimen continuo</td></tr>
+                    <tr><th scope="row">Economy cruise</th><td>2200</td><td>1.1 ATA</td><td>Consumo eficiente</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
 
-          <!-- P-51 -->
-          <div id="pernera-p51" class="pernera-panel">
-            <h3>P‑51D Mustang — Cold Start básico</h3>
+          <div id="pernera-fw190d9" class="pernera-panel">
+            <h3>FW-190 D9 Dora — Checklist y engine management</h3>
             <div class="checklist-toolbar">
-              <button class="toggle-all-checklist" type="button" data-panel="p51">Marcar/desmarcar todo</button>
+              <button class="toggle-all-checklist" type="button" data-panel="fw190d9">Marcar/desmarcar todo</button>
             </div>
             <ul class="checklist">
-              <li><button class="check-item" type="button" data-key="p51-1">Fuel selector — ON</button></li>
-              <li><button class="check-item" type="button" data-key="p51-2">Magnetos / Ignition — ON</button></li>
-              <li><button class="check-item" type="button" data-key="p51-3">Primer / Mixture — set</button></li>
-              <li><button class="check-item" type="button" data-key="p51-4">Propeller — set</button></li>
-              <li><button class="check-item" type="button" data-key="p51-5">Engine start → check oil pressure</button></li>
-              <li><button class="check-item" type="button" data-key="p51-6">Radios básicas y transponder</button></li>
+              <li><button class="check-item" type="button" data-key="fw190d9-1">Abrir panel de botones y presionar todos, solicitar wheel chucks</button></li>
+              <li><button class="check-item" type="button" data-key="fw190d9-2">Abrir palanca de paso de combustible y encender E13, E14, E96. Con tanque externo, encender E85</button></li>
+              <li><button class="check-item" type="button" data-key="fw190d9-3">Magnetos a M1+M2, acelerador a START-IDLE, cerrar flaps de enfriamiento del motor</button></li>
+              <li><button class="check-item" type="button" data-key="fw190d9-4">Descubrir el arrancador y presionar 25 segundos, luego tirar del arrancador para accionar el embrague hasta que arranque</button></li>
+              <li><button class="check-item" type="button" data-key="fw190d9-5">Calentar motor a 2000 RPM hasta que el aceite supere 120 °C y el refrigerante 80 °C</button></li>
+              <li><button class="check-item" type="button" data-key="fw190d9-6">Flaps a posición de despegue, cerrar cúpula y abrir oxígeno. Quitar wheel chucks y subir tren</button></li>
+              <li><button class="check-item" type="button" data-key="fw190d9-7">Bloquear la rueda trasera después del taxi, mantener stick atrás hasta 160 km/h</button></li>
             </ul>
+            <div class="engine-management">
+              <h4>Engine management</h4>
+              <div class="engine-table-wrapper">
+                <table class="engine-table">
+                  <thead>
+                    <tr><th>Perfil</th><th>RPM</th><th>Presión / potencia</th><th>Notas</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">WEP y combat power</th><td>3250</td><td>—</td><td>30 minutos</td></tr>
+                    <tr><th scope="row">Take off</th><td>3250</td><td>—</td><td>3 minutos</td></tr>
+                    <tr><th scope="row">Máximo continuo</th><td>3000</td><td>—</td><td>Régimen continuo</td></tr>
+                    <tr><th scope="row">Economy cruise</th><td>2100-2700</td><td>—</td><td>Rango de crucero</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
 
+          <div id="pernera-spitfire" class="pernera-panel">
+            <h3>Spitfire Mk IX — Checklist y engine management</h3>
+            <div class="checklist-toolbar">
+              <button class="toggle-all-checklist" type="button" data-panel="spitfire">Marcar/desmarcar todo</button>
+            </div>
+            <ul class="checklist">
+              <li><button class="check-item" type="button" data-key="spitfire-1">Abrir paso de combustible del tanque principal, RPM al máximo, abrir acelerador 1" y poner el filtro del carburador</button></li>
+              <li><button class="check-item" type="button" data-key="spitfire-2">Magnetos M1 y M2, cebar motor 2-6 veces y encender la bomba de combustible</button></li>
+              <li><button class="check-item" type="button" data-key="spitfire-3">Descubrir starter y booster coil y presionar a la vez, mezcla a RUN cuando haya ignición</button></li>
+              <li><button class="check-item" type="button" data-key="spitfire-4">Calentar motor a 1200 RPM hasta que el refrigerante supere los 60 °C</button></li>
+              <li><button class="check-item" type="button" data-key="spitfire-5">Encender calentador del Pitot, cerrar cúpula, abrir oxígeno y encender radio</button></li>
+              <li><button class="check-item" type="button" data-key="spitfire-6">Trim del rudder a la derecha hasta que la O de PORT esté en la vertical, trim del elevador a 0° sin carga y -1° con carga</button></li>
+              <li><button class="check-item" type="button" data-key="spitfire-7">Quitar el filtro del carburador cuando levante el vuelo</button></li>
+            </ul>
+            <div class="engine-management">
+              <h4>Engine management</h4>
+              <div class="engine-table-wrapper">
+                <table class="engine-table">
+                  <thead>
+                    <tr><th>Perfil</th><th>RPM</th><th>Presión / potencia</th><th>Notas</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Máximo WEP</th><td>3000</td><td>+18 lb</td><td>5 minutos</td></tr>
+                    <tr><th scope="row">Take off</th><td>3000</td><td>+8 lb</td><td>5 minutos</td></tr>
+                    <tr><th scope="row">Combat power</th><td>2850</td><td>+12 lb</td><td>1 hora</td></tr>
+                    <tr><th scope="row">Máximo continuo</th><td>2650</td><td>+7 lb</td><td>Régimen continuo</td></tr>
+                    <tr><th scope="row">Economy cruise</th><td>2500</td><td>+4 lb</td><td>Consumo eficiente</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div id="pernera-mosquito" class="pernera-panel">
+            <h3>Mosquito FB Mk VI — Checklist y engine management</h3>
+            <div class="checklist-toolbar">
+              <button class="toggle-all-checklist" type="button" data-panel="mosquito">Marcar/desmarcar todo</button>
+            </div>
+            <ul class="checklist">
+              <li><button class="check-item" type="button" data-key="mosquito-1">Cerrar puerta, poner freno de parking y encender batería</button></li>
+              <li><button class="check-item" type="button" data-key="mosquito-2">Seleccionar tanques exteriores y abrir válvulas de paso, abrir válvula de presión y cerrar transferencia de combustible</button></li>
+              <li><button class="check-item" type="button" data-key="mosquito-3">Abrir aceleradores 0.5", RPM al máximo, mezcla a RICH</button></li>
+              <li><button class="check-item" type="button" data-key="mosquito-4">Abrir ventana y solicitar cebado de motores, encender magnetos 1 y 2 de ambos motores</button></li>
+              <li><button class="check-item" type="button" data-key="mosquito-5">Descubrir y presionar starters para que los rotores den 3 vueltas, luego booster coils hasta haya ignición</button></li>
+              <li><button class="check-item" type="button" data-key="mosquito-6">Calentar motores a 1200 RPM hasta que el aceite supere 20 °C y el refrigerante 40 °C</button></li>
+              <li><button class="check-item" type="button" data-key="mosquito-7">Cerrar ventana, abrir oxígeno, radio a REM, flaps a 15°, encender calentador del Pitot</button></li>
+              <li><button class="check-item" type="button" data-key="mosquito-8">Trim del elevador y rudder según tabla de carga, bloquear la rueda trasera tras el taxi</button></li>
+            </ul>
+            <div class="engine-management">
+              <h4>Engine management</h4>
+              <div class="engine-table-wrapper">
+                <table class="engine-table">
+                  <thead>
+                    <tr><th>Perfil</th><th>RPM</th><th>Presión / potencia</th><th>Notas</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Máximo WEP</th><td>3000</td><td>+18 lb</td><td>5 minutos</td></tr>
+                    <tr><th scope="row">Take off</th><td>3000</td><td>+18 lb</td><td>5 minutos</td></tr>
+                    <tr><th scope="row">Combat power</th><td>2850</td><td>+9 lb</td><td>1 hora</td></tr>
+                    <tr><th scope="row">Máximo continuo</th><td>2650</td><td>+7 lb</td><td>Régimen continuo</td></tr>
+                    <tr><th scope="row">Economy cruise</th><td>2300</td><td>+2 lb</td><td>Lean</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div id="pernera-i16" class="pernera-panel">
+            <h3>I-16 Ishak — Checklist y engine management</h3>
+            <div class="checklist-toolbar">
+              <button class="toggle-all-checklist" type="button" data-panel="i16">Marcar/desmarcar todo</button>
+            </div>
+            <ul class="checklist">
+              <li><button class="check-item" type="button" data-key="i16-1">Solicitar energía eléctrica de tierra y wheel chucks, cerrar puertas del cockpit</button></li>
+              <li><button class="check-item" type="button" data-key="i16-2">Abrir flaps del motor, mezcla a FULL RICH, RPM al máximo y abrir acelerador 1"</button></li>
+              <li><button class="check-item" type="button" data-key="i16-3">Encender batería, generador y radio</button></li>
+              <li><button class="check-item" type="button" data-key="i16-4">Abrir válvula de combustible, cebar motor 5 veces, bombear combustible al carburador 3 segundos y luego al motor 3 segundos</button></li>
+              <li><button class="check-item" type="button" data-key="i16-5">Magnetos a 1+2, tirar del arrancador inercial 8 segundos y luego presionar para accionar el embrague</button></li>
+              <li><button class="check-item" type="button" data-key="i16-6">Calentar motor a 1200 RPM hasta que el aceite supere 50 °C, abrir flaps de enfriamiento si es necesario</button></li>
+              <li><button class="check-item" type="button" data-key="i16-7">Desconectar energía eléctrica de tierra, quitar wheel chucks y encender el calentador del Pitot</button></li>
+              <li><button class="check-item" type="button" data-key="i16-8">Bloquear la rueda trasera después del taxi y frenar ruedas al despegar antes de subir el tren</button></li>
+            </ul>
+            <div class="engine-management">
+              <h4>Engine management</h4>
+              <div class="engine-table-wrapper">
+                <table class="engine-table">
+                  <thead>
+                    <tr><th>Perfil</th><th>RPM</th><th>Presión / potencia</th><th>Notas</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Máximo WEP</th><td>2300</td><td>910 mmHg</td><td>5 minutos</td></tr>
+                    <tr><th scope="row">Take off</th><td>2300</td><td>700 mmHg</td><td>4 minutos</td></tr>
+                    <tr><th scope="row">Máximo continuo</th><td>2200</td><td>6400 mmHg</td><td>Régimen continuo</td></tr>
+                    <tr><th scope="row">Economy cruise</th><td>1800</td><td>500 mmHg</td><td>Consumo eficiente</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="engine-note">A partir de 3.000 metros, supercargador a segunda marcha.</p>
+            </div>
+          </div>
+
+          <div id="pernera-la7" class="pernera-panel">
+            <h3>Lavochkin LA-7 — Checklist y engine management</h3>
+            <div class="checklist-toolbar">
+              <button class="toggle-all-checklist" type="button" data-panel="la7">Marcar/desmarcar todo</button>
+            </div>
+            <ul class="checklist">
+              <li><button class="check-item" type="button" data-key="la7-1">Solicitar conexión del suministro de aire de tierra y wheel chucks, abrir la válvula de paso de combustible y cerrar los flaps de enfriamiento de aceite y motor</button></li>
+              <li><button class="check-item" type="button" data-key="la7-2">Solicitar aplicación del suministro de aire y abrir la válvula de paso del aire del avión</button></li>
+              <li><button class="check-item" type="button" data-key="la7-3">Cebar el motor hasta alcanzar 1 kg/cm², abrir la válvula de combustible y llenarla con el tirador</button></li>
+              <li><button class="check-item" type="button" data-key="la7-4">RPM al máximo y abrir el acelerador 1 cm, encender batería y abrir el paso del aire a la bomba de encendido</button></li>
+              <li><button class="check-item" type="button" data-key="la7-5">Después de 2 vueltas del rotor, encender los magnetos y presionar los botones de arranque</button></li>
+              <li><button class="check-item" type="button" data-key="la7-6">Bombear con la bomba manual para mantener la presión de combustible hasta que el motor funcione estable</button></li>
+              <li><button class="check-item" type="button" data-key="la7-7">Calentar motor a 1000 RPM hasta que la temperatura de aceite empiece a subir, luego a 1200 RPM hasta que el aceite supere 50 °C y las cabezas de cilindros 140 °C</button></li>
+              <li><button class="check-item" type="button" data-key="la7-8">Abrir flaps de enfriamiento de aceite y motor lo necesario y quitar el aire de tierra y wheel chucks</button></li>
+            </ul>
+            <div class="engine-management">
+              <h4>Engine management</h4>
+              <div class="engine-table-wrapper">
+                <table class="engine-table">
+                  <thead>
+                    <tr><th>Perfil</th><th>RPM</th><th>Presión / potencia</th><th>Notas</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Combat power</th><td>2300</td><td>870 mmHg</td><td>1 hora</td></tr>
+                    <tr><th scope="row">Máximo continuo</th><td>2000</td><td>—</td><td>Régimen continuo</td></tr>
+                    <tr><th scope="row">Economy cruise</th><td>1600</td><td>—</td><td>Consumo eficiente</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="engine-note">A partir de 4.500 metros, supercargador a segunda marcha; no exceder 1000 mmHg en esta configuración.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

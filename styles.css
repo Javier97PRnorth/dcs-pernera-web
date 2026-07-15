@@ -260,6 +260,16 @@ body{
 .table th, .table td { padding:10px 12px; border:1px solid rgba(255,255,255,0.04); vertical-align:top; text-align:left; }
 .table thead th { background:linear-gradient(180deg,#2A2D33,#232528); color:var(--sub); border-bottom:2px solid var(--accent); font-weight:600; }
 
+.engine-management{margin-top:16px;padding-top:12px;border-top:1px solid rgba(179,57,57,0.25)}
+.engine-management h4{margin:0 0 8px 0;font-size:0.95rem;color:var(--accent)}
+.engine-table-wrapper{overflow-x:auto;border-radius:6px}
+.engine-table{width:100%;border-collapse:collapse;min-width:520px;font-size:0.9rem}
+.engine-table th,.engine-table td{padding:8px 10px;border:1px solid rgba(255,255,255,0.05);text-align:left;vertical-align:top}
+.engine-table thead th{background:rgba(179,57,57,0.16);color:var(--text)}
+.engine-table tbody th{background:rgba(255,255,255,0.03);color:var(--sub);font-weight:600}
+.engine-table td{color:var(--text)}
+.engine-note{margin:8px 0 0 0;color:var(--sub);font-size:0.9rem}
+
 /* FOOTER small */
 .site-footer{max-width:var(--maxw);margin:18px auto 40px;color:var(--sub);font-size:0.85rem;padding:0 18px}
 

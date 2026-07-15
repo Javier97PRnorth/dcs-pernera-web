@@ -50,58 +50,90 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var chuckGuides = {
-    f14: {
-      summary: 'Enfócate en el arranque limpio, la correcta configuración de radios y el check de sistemas antes de salir.',
+    tf51: {
+      summary: 'Prioriza el arranque limpio, la estabilidad del motor y la preparación de vuelo antes de mover el avión.',
       items: [
-        'Asegura que las baterías y los inversores estén estables antes de iniciar el APU.',
-        'Revisa el estado hidráulico y de generadores antes del taxi.',
-        'Haz un brief rápido de armamento y de salida antes de la primera toma.'
+        'Verifica que el carburador, la bomba de combustible y las RPM estén en la posición correcta.',
+        'Asegura el calentamiento del motor antes de salir del parking.',
+        'Revisa trim, oxígeno y radio antes del taxi.'
       ]
     },
-    f16: {
-      summary: 'Prioriza la estabilidad del motor, la alineación básica y el setup de armas.',
+    p47: {
+      summary: 'Este avión necesita una preparación muy ordenada de combustible, presión y enfriamiento antes del despegue.',
       items: [
-        'Confirma que el JFS y la energía eléctrica estén en orden antes de empezar.',
-        'Mantén la ruta de taxi y las radios simples cuando salgas.',
-        'No te olvides del check básico de navegación y de IFF.'
+        'Comprueba el estado del carburador, el selector de tanques y los flaps de enfriamiento.',
+        'Haz un calentamiento estable antes de subir RPM.',
+        'No olvides el setup de trim y de radios antes de la salida.'
       ]
     },
-    f18: {
-      summary: 'El arranque debe ser ordenado y el setup de MFDs claro para no perder tiempo.',
+    f4u1d: {
+      summary: 'La clave está en el cebado correcto, la presión de aceite y el setup de mezcla antes de arrancar.',
       items: [
-        'Verifica APU, generadores y navegación antes de entrar en movimiento.',
-        'Ten visibles las páginas de armamento y de radios al salir.',
-        'Haz el brief de salida en una frase corta y clara.'
+        'Revisa la posición del selector de combustible y del arrancador.',
+        'Confirma el calentamiento y la presión de aceite antes de salir.',
+        'Prepara el uso de flaps y de supercargador para el primer tramo.'
       ]
     },
-    a10: {
-      summary: 'Este avión necesita una lectura rápida de sistemas y de armamento antes de la salida.',
+    bf109: {
+      summary: 'Este avión exige un arranque preciso y un calentamiento claro para evitar problemas en la salida.',
       items: [
-        'Comprueba que el APU y los generadores estén estables.',
-        'Asegura el alineado de CDU/EGI antes de la toma.',
-        'Mantén el setup de TAD y radios simple y consistente.'
+        'Verifica bombas de combustible, magnetos e ignición antes de arrancar.',
+        'Asegura el calentamiento del motor y la estabilidad del refrigerante.',
+        'Prepara radiadores, oxígeno y radio para el taxi y el despegue.'
       ]
     },
-    mig21: {
-      summary: 'La clave está en la preparación eléctrica y en no dejar nada suelto antes de arrancar.',
+    fw190a8: {
+      summary: 'El calentamiento del motor y el control de presión de combustible son lo más importante aquí.',
       items: [
-        'Revisa bombas de combustible, inversores y sistemas eléctricos.',
-        'Confirma el setup de radios y navegación antes del taxi.',
-        'Haz un brief muy breve: salida, altitud y contingencia.'
+        'Comprueba la presión de combustible antes de dar el arranque.',
+        'Mantén el calentamiento progresivo hasta que el aceite y el motor estén estables.',
+        'Prepara flaps, cúpula y oxígeno antes de la salida.'
       ]
     },
-    p51: {
-      summary: 'La guía breve aquí es: preparar el motor y el avión antes de cualquier movimiento.',
+    fw190d9: {
+      summary: 'Necesita un arranque limpio y un calentamiento firme para dejar el motor en buen estado.',
       items: [
-        'Comprueba mezcla, propeller y sistema de ignición antes de arrancar.',
-        'Revisa la presión de aceite y la estabilidad del motor.',
-        'No olvides el transponder y la radio básica antes de despegar.'
+        'Revisa la presión de combustible y el estado de los flaps de enfriamiento.',
+        'Asegura el calentamiento del aceite y del refrigerante antes de la salida.',
+        'No olvides el setup de cúpula, oxígeno y tren antes del taxi.'
+      ]
+    },
+    spitfire: {
+      summary: 'La guía breve aquí es: preparar carburador, mezcla y calentamiento antes de cualquier movimiento.',
+      items: [
+        'Comprueba la posición del filtro del carburador y del selector de combustible.',
+        'Asegura el calentamiento del motor antes de salir.',
+        'Revisa radio, oxígeno y trim antes de la toma.'
+      ]
+    },
+    mosquito: {
+      summary: 'Para este avión, la clave es la preparación de combustible, radiadores y motores antes del movimiento.',
+      items: [
+        'Revisa válvulas de combustible, presión y transferencia de combustible.',
+        'Confirma el cebado de motores y el calentamiento antes de salir.',
+        'Prepara trim, oxígeno y radio para el taxi.'
+      ]
+    },
+    i16: {
+      summary: 'La preparación eléctrica y el cebado del motor son esenciales en esta aeronave.',
+      items: [
+        'Comprueba el suministro eléctrico de tierra y los wheel chucks.',
+        'Asegura el cebado correcto del motor antes del arranque.',
+        'No olvides el calentamiento y el setup de frenado antes del despegue.'
+      ]
+    },
+    la7: {
+      summary: 'Aquí la prioridad es el suministro de aire, la presión de combustible y el calentamiento del motor.',
+      items: [
+        'Revisa el suministro de aire de tierra y la válvula de paso de combustible.',
+        'Asegura la presión de combustible antes de arrancar.',
+        'Controla el calentamiento de aceite y cabezas de cilindros antes de salir.'
       ]
     }
   };
 
   function renderChuckGuide(key) {
-    var guide = chuckGuides[key] || chuckGuides.f14;
+    var guide = chuckGuides[key] || chuckGuides.tf51;
     var summary = document.getElementById('chuck-guide-summary');
     var list = document.getElementById('chuck-guide-list');
     if (summary) summary.textContent = guide.summary;
