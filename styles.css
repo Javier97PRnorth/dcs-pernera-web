@@ -238,12 +238,17 @@ body{
   color:var(--sub);
   font-size:0.92rem;
 }
-.guide-card ul{
-  margin:0;
-  padding-left:18px;
+.guide-link{
+  display:inline-block;
+  margin-top:4px;
+  padding:10px 12px;
+  border-radius:6px;
+  background:rgba(179,57,57,0.12);
   color:var(--text);
+  text-decoration:none;
+  border:1px solid rgba(179,57,57,0.28);
 }
-.guide-card li{margin-bottom:6px}
+.guide-link:hover{background:rgba(179,57,57,0.22);border-color:var(--accent)}
 
 /* COMMS (si se copia a styles.css) */
 .comms-section { margin-top:18px; }
