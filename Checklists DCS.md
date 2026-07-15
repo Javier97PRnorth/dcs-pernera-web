@@ -381,3 +381,66 @@
 - Stab augmentation ON
 - Remove wheel chocks
 - Close canopy
+
+🛩️ MiG‑29 Start‑Up Checklist (Clean & Copilot‑Friendly)
+Ground Power & Initial Setup
+
+Ground electric power ON
+
+Battery ground supply ON
+
+Electric power switches (6 switches) ON
+
+Radio, ACFT, GIRO STBY, NAVIGATION, ACS, WEAPON, RECORD, IFF: ON
+
+AFCS: OFF
+
+Wait 40 seconds
+
+Navigation & Systems Initialization
+
+Press Magnetic Heading Slave (key J)
+
+Press Compass Zero (key 9) for ~10 seconds
+
+Run Ekran self‑test
+
+Oxygen OPEN
+
+Close canopy
+
+Check canopy pin flush (canopy fully locked)
+
+Navigation switch → OPER
+
+Arm ejection seat
+
+Engine Start
+
+Engine start‑up switch → BOTH
+
+Left & right throttles → IDLE
+
+Press engine start button
+
+Wait until both engines stabilize at 58–72% idle RPM
+
+Post‑Start Actions
+
+Disconnect ground power
+
+AFCS ON
+
+Do not touch the stick while joystick damper performs self‑test
+
+Wait until AFCS green light is steady
+
+Set joystick to neutral position
+
+Final Checks Before Taxi
+
+Pitot heat ON
+
+RWR ON
+
+Taxi lights ON
