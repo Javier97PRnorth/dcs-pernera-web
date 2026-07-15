@@ -2,6 +2,33 @@
    FILE: main.js
    =========================== */
 document.addEventListener('DOMContentLoaded', function () {
+  var menuToggle = document.querySelector('.menu-toggle');
+  var navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    function closeMenu() {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    menuToggle.addEventListener('click', function () {
+      var isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth < 760) closeMenu();
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (window.innerWidth < 760 && !navLinks.contains(e.target) && e.target !== menuToggle) {
+        closeMenu();
+      }
+    });
+  }
+
   // Perneras: cambiar panel
   var list = document.querySelector('.perneras-list');
   var buttons = list ? list.querySelectorAll('button[data-plane]') : [];

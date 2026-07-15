@@ -12,9 +12,12 @@
 <body>
   <nav class="top-nav">
     <div class="nav-left">
-      <div class="brand">Pernera Digital DCS</div>
+      <a class="brand" href="index.html">Pernera Digital DCS</a>
     </div>
-    <div class="nav-links">
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="site-menu">
       <a href="index.html">Inicio</a>
       <a href="calendario.html">Calendario</a>
       <a href="perneras.html">Perneras</a>
@@ -34,24 +37,7 @@
     </div>
   </header>
 
-  <main>
-    <section class="panel">
-      <h2>Resumen rápido</h2>
-      <p><strong>Calendario:</strong> 6 semanas con épocas (WWII, Cold War, Late Cold War, Modern, Mixtos, Solo A/A). Cada semana incluye el <em>Entreno común</em> en polígono de tiro y dos días con actividades y servidores recomendados.</p>
-      <p><strong>Perneras:</strong> Hojas rápidas por avión con cold start básico, rodaje, comunicaciones y procedimientos esenciales. Pensadas para consulta rápida en vuelo o briefing.</p>
-      <p style="margin-top:12px;color:var(--sub)">Implementación: puedes usar estos archivos como sitio estático (GitHub Pages / Netlify / Vercel) o integrarlos en WordPress/Bootstrap adaptando las plantillas y añadiendo bloques.</p>
-    </section>
-
-    <section class="panel">
-      <h2>Despliegue rápido</h2>
-      <ul style="color:var(--sub);margin:0;padding-left:18px">
-        <li>GitHub Pages / Netlify / Vercel: subir repo y activar deploy.</li>
-        <li>WordPress: crear páginas estáticas y enlazar CSS/JS desde el tema o plugin.</li>
-      </ul>
-    </section>
-  </main>
-
-  <div class="site-footer">Pernera Digital DCS — Tema F‑14 suave</div>
+  <main></main>
 
   <script src="main.js"></script>
 </body>

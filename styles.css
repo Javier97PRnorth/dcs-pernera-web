@@ -47,6 +47,24 @@ body{
   letter-spacing:0.6px;
   color:var(--text);
   font-size:0.95rem;
+  text-decoration:none;
+}
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:4px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:transparent;
+  padding:7px;
+  border-radius:4px;
+  cursor:pointer;
+}
+.menu-toggle span{
+  display:block;
+  width:20px;
+  height:2px;
+  background:var(--text);
+  border-radius:2px;
 }
 .nav-links{display:flex;gap:12px;align-items:center}
 .nav-links a{
@@ -177,7 +195,24 @@ body{
   .hero{padding-top:90px}
   .kneeboard-table{min-width:700px}
   .top-nav{padding:8px 12px}
-  .nav-links{display:none}
+  .menu-toggle{display:inline-flex}
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:56px;
+    left:12px;
+    right:12px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:8px;
+    padding:10px;
+    border-radius:6px;
+    background:var(--panel);
+    border:1px solid rgba(255,255,255,0.05);
+    box-shadow:0 8px 20px rgba(0,0,0,0.35);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:10px 12px}
   .perneras-layout{flex-direction:column}
   .table{min-width:520px}
 }
