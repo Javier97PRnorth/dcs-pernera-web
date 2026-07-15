@@ -152,11 +152,13 @@ body{
 .kneeboard-table td small{color:var(--sub);display:block;margin-top:6px}
 
 /* PERNERAS LAYOUT */
-.perneras-layout{display:flex;gap:18px;flex-wrap:wrap}
-.perneras-list{flex:1 1 220px;min-width:200px}
+.perneras-layout{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start}
+.perneras-list,.pernera-content{min-width:0}
+.perneras-list{flex:1 1 220px;max-width:100%}
 .perneras-list h3{margin:0 0 8px 0;color:var(--sub)}
 .perneras-list ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
 .perneras-list button{
+  width:100%;
   text-align:left;
   padding:10px;
   border-radius:6px;
@@ -164,6 +166,9 @@ body{
   border:1px solid rgba(255,255,255,0.03);
   color:var(--text);
   cursor:pointer;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:break-word;
 }
 .perneras-list button:hover{border-color:var(--accent)}
 .perneras-list button.active-btn{
@@ -171,10 +176,10 @@ body{
   box-shadow:0 2px 8px rgba(179,57,57,0.12);
   background: linear-gradient(180deg, rgba(179,57,57,0.04), transparent);
 }
-.pernera-content{flex:3 1 560px;background:linear-gradient(180deg,var(--panel-2),#111);padding:12px;border-radius:6px;border:1px solid rgba(255,255,255,0.02)}
-.pernera-panel{display:none}
+.pernera-content{flex:3 1 560px;max-width:100%;background:linear-gradient(180deg,var(--panel-2),#111);padding:12px;border-radius:6px;border:1px solid rgba(255,255,255,0.02);overflow-wrap:anywhere}
+.pernera-panel{display:none;overflow-wrap:anywhere}
 .pernera-panel.active{display:block}
-.pernera-panel h3{color:var(--accent);margin:0 0 8px 0}
+.pernera-panel h3{color:var(--accent);margin:0 0 8px 0;overflow-wrap:anywhere}
 .pernera-panel ul{margin:0;padding:0}
 .pernera-panel li{margin-bottom:6px;color:var(--text)}
 .checklist-toolbar{
@@ -213,6 +218,8 @@ body{
   margin:0;
   white-space:normal;
   line-height:1.4;
+  overflow-wrap:anywhere;
+  word-break:break-word;
 }
 .check-item:hover{border-color:var(--accent)}
 .check-item.is-done{
@@ -264,7 +271,7 @@ body{
 .engine-management h4{margin:0 0 8px 0;font-size:0.95rem;color:var(--accent)}
 .engine-table-wrapper{overflow-x:auto;border-radius:6px}
 .engine-table{width:100%;border-collapse:collapse;min-width:520px;font-size:0.9rem}
-.engine-table th,.engine-table td{padding:8px 10px;border:1px solid rgba(255,255,255,0.05);text-align:left;vertical-align:top}
+.engine-table th,.engine-table td{padding:8px 10px;border:1px solid rgba(255,255,255,0.05);text-align:left;vertical-align:top;white-space:normal;word-break:break-word}
 .engine-table thead th{background:rgba(179,57,57,0.16);color:var(--text)}
 .engine-table tbody th{background:rgba(255,255,255,0.03);color:var(--sub);font-weight:600}
 .engine-table td{color:var(--text)}
