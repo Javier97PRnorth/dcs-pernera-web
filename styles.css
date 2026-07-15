@@ -271,7 +271,9 @@ body{
 .engine-management h4{margin:0 0 8px 0;font-size:0.95rem;color:var(--accent)}
 .engine-table-wrapper{overflow-x:auto;border-radius:6px}
 .engine-table{width:100%;border-collapse:collapse;min-width:520px;font-size:0.9rem}
-.engine-table th,.engine-table td{padding:8px 10px;border:1px solid rgba(255,255,255,0.05);text-align:left;vertical-align:top;white-space:normal;word-break:break-word}
+.engine-table th,.engine-table td{padding:8px 10px;border:1px solid rgba(255,255,255,0.05);text-align:left;vertical-align:top;white-space:normal;word-break:normal}
+.engine-table th:nth-child(2),.engine-table td:nth-child(2),.engine-table th:nth-child(3),.engine-table td:nth-child(3){white-space:nowrap}
+.engine-table th:nth-child(4),.engine-table td:nth-child(4){white-space:normal}
 .engine-table thead th{background:rgba(179,57,57,0.16);color:var(--text)}
 .engine-table tbody th{background:rgba(255,255,255,0.03);color:var(--sub);font-weight:600}
 .engine-table td{color:var(--text)}
