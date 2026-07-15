@@ -282,6 +282,34 @@ body{
 /* FOOTER small */
 .site-footer{max-width:var(--maxw);margin:18px auto 40px;color:var(--sub);font-size:0.85rem;padding:0 18px}
 
+/* BREVITIES SEARCH */
+.search-wrapper{margin-bottom:12px}
+.search-input{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:6px;
+  background:var(--panel-2);
+  color:var(--text);
+  font-size:0.95rem;
+  font-family:var(--ff);
+}
+.search-input:focus{
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 0 2px rgba(179,57,57,0.1);
+}
+.search-input::placeholder{color:var(--muted)}
+
+/* BREVITIES TABLE */
+.kneeboard-table tbody td:first-child{
+  font-weight:600;
+  color:var(--accent);
+  background:linear-gradient(180deg,rgba(179,57,57,0.06),transparent);
+  white-space:nowrap;
+  width:25%;
+}
+
 /* RESPONSIVE */
 @media (max-width:1000px){
   .kneeboard-table{min-width:900px}

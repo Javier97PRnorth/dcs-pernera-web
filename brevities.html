@@ -31,6 +31,10 @@
       <h2>Brevities — Glosario de Términos</h2>
       <p style="color:var(--sub)">Términos y frases estándar utilizados en comunicaciones aéreas de combate para mantener claridad y eficiencia.</p>
 
+      <div class="search-wrapper" style="margin-top:18px">
+        <input type="text" id="brevities-search" class="search-input" placeholder="Buscar término..." aria-label="Buscar término de brevity">
+      </div>
+
       <div class="table-wrapper" style="margin-top:24px">
         <table class="kneeboard-table" aria-label="Glosario de términos de aviación">
           <thead>
@@ -327,5 +331,30 @@
   </main>
 
   <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('brevities-search');
+      const table = document.querySelector('.kneeboard-table');
+      const tbody = table.querySelector('tbody');
+      const rows = tbody.querySelectorAll('tr');
+
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+
+        rows.forEach(row => {
+          const termCell = row.querySelector('td:first-child');
+          const descriptionCell = row.querySelector('td:last-child');
+          const term = termCell.textContent.toLowerCase();
+          const description = descriptionCell.textContent.toLowerCase();
+
+          if (term.includes(searchTerm) || description.includes(searchTerm)) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
