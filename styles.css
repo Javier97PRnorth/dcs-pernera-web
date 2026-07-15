@@ -175,7 +175,7 @@ body{
 .pernera-panel{display:none}
 .pernera-panel.active{display:block}
 .pernera-panel h3{color:var(--accent);margin:0 0 8px 0}
-.pernera-panel ul{margin:0;padding-left:16px}
+.pernera-panel ul{margin:0;padding-left:0}
 .pernera-panel li{margin-bottom:6px;color:var(--text)}
 .checklist{list-style:none;padding:0;margin:0}
 .checklist li{margin-bottom:8px}
@@ -189,6 +189,7 @@ body{
   color:var(--text);
   cursor:pointer;
   transition:all .15s ease;
+  margin:0;
 }
 .check-item:hover{border-color:var(--accent)}
 .check-item.is-done{
