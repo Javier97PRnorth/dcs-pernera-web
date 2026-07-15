@@ -282,31 +282,6 @@ body{
 /* FOOTER small */
 .site-footer{max-width:var(--maxw);margin:18px auto 40px;color:var(--sub);font-size:0.85rem;padding:0 18px}
 
-/* BREVITIES */
-.brevities-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-  gap:12px;
-}
-.brevity-item{
-  padding:12px;
-  border:1px solid rgba(255,255,255,0.04);
-  border-radius:6px;
-  background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);
-}
-.brevity-item h4{
-  margin:0 0 6px 0;
-  color:var(--accent);
-  font-size:0.95rem;
-  font-weight:600;
-}
-.brevity-item p{
-  margin:0;
-  color:var(--sub);
-  font-size:0.9rem;
-  line-height:1.4;
-}
-
 /* RESPONSIVE */
 @media (max-width:1000px){
   .kneeboard-table{min-width:900px}
