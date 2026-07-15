@@ -175,12 +175,25 @@ body{
 .pernera-panel{display:none}
 .pernera-panel.active{display:block}
 .pernera-panel h3{color:var(--accent);margin:0 0 8px 0}
-.pernera-panel ul{margin:0;padding-left:0}
+.pernera-panel ul{margin:0;padding:0}
 .pernera-panel li{margin-bottom:6px;color:var(--text)}
+.checklist-toolbar{display:flex;justify-content:flex-end;margin:0 0 8px 0}
+.toggle-all-checklist{
+  border:1px solid rgba(255,255,255,0.08);
+  background:transparent;
+  color:var(--sub);
+  padding:6px 10px;
+  border-radius:4px;
+  cursor:pointer;
+  font-size:0.85rem;
+}
+.toggle-all-checklist:hover{border-color:var(--accent);color:var(--text)}
 .checklist{list-style:none;padding:0;margin:0}
-.checklist li{margin-bottom:8px}
+.checklist li{margin-bottom:8px;padding:0}
 .check-item{
+  display:block;
   width:100%;
+  box-sizing:border-box;
   text-align:left;
   padding:10px 12px;
   border-radius:6px;
@@ -190,6 +203,8 @@ body{
   cursor:pointer;
   transition:all .15s ease;
   margin:0;
+  white-space:normal;
+  line-height:1.4;
 }
 .check-item:hover{border-color:var(--accent)}
 .check-item.is-done{

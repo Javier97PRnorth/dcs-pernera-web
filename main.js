@@ -29,20 +29,64 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function setChecklistState(btn, done) {
+    btn.classList.toggle('is-done', done);
+    btn.setAttribute('aria-pressed', done ? 'true' : 'false');
+    var key = btn.getAttribute('data-key');
+    if (!key) return;
+    try {
+      localStorage.setItem('dcs-checklist-' + key, done ? 'done' : 'pending');
+    } catch (e) {}
+  }
+
+  function refreshToggleAllButton(panel) {
+    var button = panel.querySelector('.toggle-all-checklist');
+    if (!button) return;
+    var items = panel.querySelectorAll('.check-item');
+    var allDone = items.length > 0 && Array.from(items).every(function (item) {
+      return item.classList.contains('is-done');
+    });
+    button.textContent = allDone ? 'Desmarcar todo' : 'Marcar todo';
+  }
+
   // Checklist interactivo: marcar/desmarcar pasos
   document.querySelectorAll('.check-item').forEach(function (btn) {
     var key = btn.getAttribute('data-key');
     if (!key) return;
 
-    var saved = localStorage.getItem('dcs-checklist-' + key);
-    if (saved === 'done') {
-      btn.classList.add('is-done');
+    try {
+      var saved = localStorage.getItem('dcs-checklist-' + key);
+      if (saved === 'done') {
+        setChecklistState(btn, true);
+      } else {
+        setChecklistState(btn, false);
+      }
+    } catch (e) {
+      setChecklistState(btn, false);
     }
 
     btn.addEventListener('click', function () {
-      btn.classList.toggle('is-done');
-      var done = btn.classList.contains('is-done');
-      localStorage.setItem('dcs-checklist-' + key, done ? 'done' : 'pending');
+      var done = !btn.classList.contains('is-done');
+      setChecklistState(btn, done);
+      var panel = btn.closest('.pernera-panel');
+      if (panel) refreshToggleAllButton(panel);
+    });
+  });
+
+  document.querySelectorAll('.toggle-all-checklist').forEach(function (button) {
+    var panel = button.closest('.pernera-panel');
+    if (!panel) return;
+    refreshToggleAllButton(panel);
+
+    button.addEventListener('click', function () {
+      var items = panel.querySelectorAll('.check-item');
+      var shouldMarkAll = Array.from(items).some(function (item) {
+        return !item.classList.contains('is-done');
+      });
+      items.forEach(function (item) {
+        setChecklistState(item, shouldMarkAll);
+      });
+      refreshToggleAllButton(panel);
     });
   });
 
