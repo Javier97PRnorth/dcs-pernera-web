@@ -343,11 +343,9 @@
 
         rows.forEach(row => {
           const termCell = row.querySelector('td:first-child');
-          const descriptionCell = row.querySelector('td:last-child');
           const term = termCell.textContent.toLowerCase();
-          const description = descriptionCell.textContent.toLowerCase();
 
-          if (term.includes(searchTerm) || description.includes(searchTerm)) {
+          if (term.includes(searchTerm)) {
             row.style.display = '';
           } else {
             row.style.display = 'none';

@@ -289,7 +289,7 @@ body{
   padding:10px 12px;
   border:1px solid rgba(255,255,255,0.08);
   border-radius:6px;
-  background:var(--panel-2);
+  background:#1A1C20;
   color:var(--text);
   font-size:0.95rem;
   font-family:var(--ff);
@@ -304,10 +304,10 @@ body{
 /* BREVITIES TABLE */
 .kneeboard-table tbody td:first-child{
   font-weight:600;
-  color:var(--accent);
-  background:linear-gradient(180deg,rgba(179,57,57,0.06),transparent);
+  color:#E8A0A0;
+  background:linear-gradient(180deg,rgba(179,57,57,0.12),rgba(179,57,57,0.04));
   white-space:nowrap;
-  width:25%;
+  width:25();
 }
 
 /* RESPONSIVE */
