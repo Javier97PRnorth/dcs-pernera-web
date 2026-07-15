@@ -49,6 +49,72 @@ document.addEventListener('DOMContentLoaded', function () {
     button.textContent = allDone ? 'Desmarcar todo' : 'Marcar todo';
   }
 
+  var chuckGuides = {
+    f14: {
+      summary: 'Enfócate en el arranque limpio, la correcta configuración de radios y el check de sistemas antes de salir.',
+      items: [
+        'Asegura que las baterías y los inversores estén estables antes de iniciar el APU.',
+        'Revisa el estado hidráulico y de generadores antes del taxi.',
+        'Haz un brief rápido de armamento y de salida antes de la primera toma.'
+      ]
+    },
+    f16: {
+      summary: 'Prioriza la estabilidad del motor, la alineación básica y el setup de armas.',
+      items: [
+        'Confirma que el JFS y la energía eléctrica estén en orden antes de empezar.',
+        'Mantén la ruta de taxi y las radios simples cuando salgas.',
+        'No te olvides del check básico de navegación y de IFF.'
+      ]
+    },
+    f18: {
+      summary: 'El arranque debe ser ordenado y el setup de MFDs claro para no perder tiempo.',
+      items: [
+        'Verifica APU, generadores y navegación antes de entrar en movimiento.',
+        'Ten visibles las páginas de armamento y de radios al salir.',
+        'Haz el brief de salida en una frase corta y clara.'
+      ]
+    },
+    a10: {
+      summary: 'Este avión necesita una lectura rápida de sistemas y de armamento antes de la salida.',
+      items: [
+        'Comprueba que el APU y los generadores estén estables.',
+        'Asegura el alineado de CDU/EGI antes de la toma.',
+        'Mantén el setup de TAD y radios simple y consistente.'
+      ]
+    },
+    mig21: {
+      summary: 'La clave está en la preparación eléctrica y en no dejar nada suelto antes de arrancar.',
+      items: [
+        'Revisa bombas de combustible, inversores y sistemas eléctricos.',
+        'Confirma el setup de radios y navegación antes del taxi.',
+        'Haz un brief muy breve: salida, altitud y contingencia.'
+      ]
+    },
+    p51: {
+      summary: 'La guía breve aquí es: preparar el motor y el avión antes de cualquier movimiento.',
+      items: [
+        'Comprueba mezcla, propeller y sistema de ignición antes de arrancar.',
+        'Revisa la presión de aceite y la estabilidad del motor.',
+        'No olvides el transponder y la radio básica antes de despegar.'
+      ]
+    }
+  };
+
+  function renderChuckGuide(key) {
+    var guide = chuckGuides[key] || chuckGuides.f14;
+    var summary = document.getElementById('chuck-guide-summary');
+    var list = document.getElementById('chuck-guide-list');
+    if (summary) summary.textContent = guide.summary;
+    if (list) {
+      list.innerHTML = '';
+      guide.items.forEach(function (item) {
+        var li = document.createElement('li');
+        li.textContent = item;
+        list.appendChild(li);
+      });
+    }
+  }
+
   // Checklist interactivo: marcar/desmarcar pasos
   document.querySelectorAll('.check-item').forEach(function (btn) {
     var key = btn.getAttribute('data-key');
@@ -114,6 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (window.innerWidth < 760) {
         setTimeout(function () { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 80);
       }
+      renderChuckGuide(id);
     }
 
     buttons.forEach(function (btn) {
@@ -139,6 +206,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!anyActive) {
       var firstId = buttons[0].getAttribute('data-plane');
       activatePlane(firstId);
+    } else {
+      var activeButton = Array.from(buttons).find(function (b) {
+        return b.classList.contains('active-btn');
+      });
+      if (activeButton) {
+        renderChuckGuide(activeButton.getAttribute('data-plane'));
+      }
     }
   }
 

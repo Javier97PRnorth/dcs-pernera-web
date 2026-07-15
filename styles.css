@@ -221,6 +221,29 @@ body{
   color:#fff;
   text-decoration:line-through;
 }
+.guide-card{
+  margin-top:12px;
+  padding:12px;
+  border:1px solid rgba(179,57,57,0.28);
+  border-radius:6px;
+  background:linear-gradient(180deg, rgba(179,57,57,0.08), rgba(255,255,255,0.02));
+}
+.guide-card h4{
+  margin:0 0 8px 0;
+  color:var(--accent);
+  font-size:0.95rem;
+}
+.guide-card p{
+  margin:0 0 8px 0;
+  color:var(--sub);
+  font-size:0.92rem;
+}
+.guide-card ul{
+  margin:0;
+  padding-left:18px;
+  color:var(--text);
+}
+.guide-card li{margin-bottom:6px}
 
 /* COMMS (si se copia a styles.css) */
 .comms-section { margin-top:18px; }
