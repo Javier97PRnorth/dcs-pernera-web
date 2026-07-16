@@ -200,6 +200,87 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  function formatConverted(value) {
+    if (!Number.isFinite(value)) return '';
+    var rounded = Math.round(value * 1000) / 1000;
+    return String(rounded);
+  }
+
+  function convertTemperature(value, unit) {
+    if (unit === 'c') return { c: value, f: (value * 9 / 5) + 32 };
+    return { c: (value - 32) * 5 / 9, f: value };
+  }
+
+  function convertPressure(value, unit) {
+    var inhg;
+    if (unit === 'inhg') inhg = value;
+    else if (unit === 'mmhg') inhg = value / 25.4;
+    else inhg = value / 33.8638866667;
+    return {
+      inhg: inhg,
+      mmhg: inhg * 25.4,
+      hpa: inhg * 33.8638866667
+    };
+  }
+
+  function convertSpeed(value, unit) {
+    var mph;
+    if (unit === 'mph') mph = value;
+    else if (unit === 'kmh') mph = value / 1.609344;
+    else mph = value / 0.868976242;
+    return {
+      mph: mph,
+      kmh: mph * 1.609344,
+      kts: mph * 0.868976242
+    };
+  }
+
+  function convertAltitude(value, unit) {
+    if (unit === 'ft') return { ft: value, m: value * 0.3048 };
+    return { ft: value / 0.3048, m: value };
+  }
+
+  function convertFuel(value, unit) {
+    if (unit === 'gal') return { gal: value, l: value * 3.785411784 };
+    return { gal: value / 3.785411784, l: value };
+  }
+
+  document.querySelectorAll('.converter-item').forEach(function (item) {
+    var type = item.getAttribute('data-converter');
+    var inputs = item.querySelectorAll('input[data-unit]');
+    if (!type || !inputs.length) return;
+
+    inputs.forEach(function (input) {
+      input.addEventListener('input', function () {
+        var unit = input.getAttribute('data-unit');
+        var raw = input.value.trim();
+
+        if (raw === '') {
+          inputs.forEach(function (other) { if (other !== input) other.value = ''; });
+          return;
+        }
+
+        var value = Number(raw);
+        if (!Number.isFinite(value)) return;
+
+        var converted;
+        if (type === 'temperature') converted = convertTemperature(value, unit);
+        else if (type === 'pressure') converted = convertPressure(value, unit);
+        else if (type === 'speed') converted = convertSpeed(value, unit);
+        else if (type === 'altitude') converted = convertAltitude(value, unit);
+        else if (type === 'fuel') converted = convertFuel(value, unit);
+        else return;
+
+        inputs.forEach(function (other) {
+          var otherUnit = other.getAttribute('data-unit');
+          if (!converted.hasOwnProperty(otherUnit)) return;
+          if (other === input) return;
+          other.value = formatConverted(converted[otherUnit]);
+        });
+      });
+    });
+  });
+
   // Perneras: cambiar panel
   var list = document.querySelector('.perneras-list');
   var buttons = list ? list.querySelectorAll('button[data-plane]') : [];
