@@ -302,12 +302,12 @@ body{
 .search-input::placeholder{color:var(--muted)}
 
 /* BREVITIES TABLE */
-.kneeboard-table tbody td:first-child{
+.brevities-table tbody td:first-child{
   font-weight:600;
   color:#E8A0A0;
   background:linear-gradient(180deg,rgba(179,57,57,0.12),rgba(179,57,57,0.04));
   white-space:nowrap;
-  width:25();
+  width:25%;
 }
 
 /* RESPONSIVE */
