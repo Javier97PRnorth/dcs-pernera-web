@@ -314,9 +314,9 @@ body{
 
 .video-accordion{
   margin-top:16px;
-  border:1px solid rgba(255,255,255,0.05);
+  border:1px solid rgba(179,57,57,0.32);
   border-radius:6px;
-  background:rgba(255,255,255,0.01);
+  background:linear-gradient(180deg, rgba(179,57,57,0.08), rgba(255,255,255,0.01));
   overflow:hidden;
 }
 .video-accordion-toggle{
@@ -324,14 +324,17 @@ body{
   text-align:left;
   padding:10px 12px;
   border:0;
-  border-bottom:1px solid rgba(255,255,255,0.05);
-  background:rgba(255,255,255,0.02);
+  border-bottom:1px solid rgba(179,57,57,0.28);
+  background:rgba(179,57,57,0.12);
   color:var(--text);
   cursor:pointer;
   font-size:0.92rem;
 }
-.video-accordion-toggle:hover{background:rgba(179,57,57,0.08)}
-.video-accordion-toggle[aria-expanded="true"]{border-bottom-color:rgba(179,57,57,0.25)}
+.video-accordion-toggle:hover{background:rgba(179,57,57,0.2)}
+.video-accordion-toggle[aria-expanded="true"]{
+  background:rgba(179,57,57,0.24);
+  border-bottom-color:rgba(179,57,57,0.4);
+}
 .video-accordion-content{padding:12px}
 .video-grid{
   display:grid;
