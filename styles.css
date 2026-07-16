@@ -279,6 +279,34 @@ body{
 .engine-table td{color:var(--text)}
 .engine-note{margin:8px 0 0 0;color:var(--sub);font-size:0.9rem}
 
+.technical-notes{
+  margin-top:16px;
+  padding:12px;
+  border:1px solid rgba(255,255,255,0.05);
+  border-left:3px solid rgba(179,57,57,0.45);
+  border-radius:6px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+.technical-notes h4{
+  margin:0 0 8px 0;
+  font-size:0.9rem;
+  font-weight:600;
+  color:var(--sub);
+  letter-spacing:0.2px;
+}
+.technical-notes ul{
+  margin:0;
+  padding-left:18px;
+  list-style:disc;
+}
+.technical-notes li{
+  margin:0 0 6px 0;
+  color:var(--text);
+  font-size:0.9rem;
+  line-height:1.45;
+}
+.technical-notes li:last-child{margin-bottom:0}
+
 /* FOOTER small */
 .site-footer{max-width:var(--maxw);margin:18px auto 40px;color:var(--sub);font-size:0.85rem;padding:0 18px}
 
