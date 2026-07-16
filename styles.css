@@ -278,7 +278,11 @@ body{
 .engine-table tbody th{background:rgba(255,255,255,0.03);color:var(--sub);font-weight:600}
 .engine-table td{color:var(--text)}
 .engine-note{margin:8px 0 0 0;color:var(--sub);font-size:0.9rem}
-.global-converter-block{flex:1 1 100%;width:100%}
+.global-converter-block{
+  flex:1 1 260px;
+  max-width:340px;
+  align-self:flex-start;
+}
 
 .technical-notes{
   margin-top:16px;
@@ -473,4 +477,9 @@ body{
   .engine-table{min-width:100%}
   .engine-table th:nth-child(2),.engine-table td:nth-child(2),.engine-table th:nth-child(3),.engine-table td:nth-child(3){white-space:normal}
   .video-accordion-toggle{display:block;width:100%}
+  .global-converter-block{
+    max-width:none;
+    width:100%;
+    flex:1 1 100%;
+  }
 }
