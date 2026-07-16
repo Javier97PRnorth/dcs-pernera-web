@@ -379,6 +379,16 @@ body{
   white-space:nowrap;
   width:25%;
 }
+.brevities-table tbody td{
+  color:#F2F2F2;
+}
+.brevities-table tbody td:last-child{
+  color:#EAEAEA;
+  background:rgba(255,255,255,0.02);
+}
+.brevities-table tbody tr:nth-child(even) td:last-child{
+  background:rgba(255,255,255,0.035);
+}
 
 /* RESPONSIVE */
 @media (max-width:1000px){

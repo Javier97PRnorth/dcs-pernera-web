@@ -322,7 +322,9 @@
     document.addEventListener('DOMContentLoaded', function() {
       const searchInput = document.getElementById('brevities-search');
       const table = document.querySelector('.kneeboard-table');
+      if (!searchInput || !table) return;
       const tbody = table.querySelector('tbody');
+      if (!tbody) return;
       const rows = tbody.querySelectorAll('tr');
 
       searchInput.addEventListener('input', function() {
@@ -340,7 +342,6 @@
         });
       });
     });
-  <script src="main.js"></script>
-  <script>
+  </script>
 </body>
 </html>
