@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var mgrsItem = document.createElement('div');
         mgrsItem.className = 'location-meta-item';
-        mgrsItem.innerHTML = '<span class="location-meta-label">MGRS:</span> <span class="location-meta-value">' + (loc.mgrs || 'N/A') + '</span>';
+        mgrsItem.innerHTML = '<span class="location-meta-label">MGRS:</span> <span class="location-meta-value">' + (loc.mgrs_formatted || loc.mgrs || 'N/A') + '</span>';
         metaDiv.appendChild(mgrsItem);
 
         var latItem = document.createElement('div');
