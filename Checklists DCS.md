@@ -391,8 +391,7 @@
 - Radio, ACFT, GIRO STBY, NAVIGATION, ACS, WEAPON, RECORD, IFF: ON
 - AFCS: OFF
 - Wait 40 seconds
-- Press Magnetic Heading Slave (key J)
-- Press Compass Zero (key 9) for ~10 seconds
+- Press Magnetic Heading Slave (key J) and compass Zero (key 9) for ~10 seconds
 - Run Ekran self‑test
 - Oxygen OPEN
 - Close canopy
