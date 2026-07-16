@@ -1,31 +1,43 @@
 # DCS Locations Data Generator
 
-Herramienta para procesar archivos `towns.lua` de DCS World y generar JSON estructurado con coordenadas MGRS formateadas.
+Tool for processing DCS World `towns.lua` files and generating structured JSON with formatted MGRS coordinates for the location finder feature.
 
-## Instalación
+## Quick Start
+
+```bash
+npm install
+node index.js --write
+```
+
+This generates `/data/dcs_locations.json` with all locations from all detected maps in `/data/maps/`.
+
+## Installation
 
 ```bash
 cd tools
 npm install
 ```
 
-## Uso
+## Usage
 
-### Generar JSON
+### Generate JSON
 ```bash
 node index.js --write
 ```
 
-Esto generará `/data/dcs_locations.json` con todas las ubicaciones de todos los mapas detectados en `/data/maps/`.
+Outputs to: `/data/dcs_locations.json`
 
-### Ver salida en consola (sin escribir archivo)
+### Preview Output (without writing file)
 ```bash
 node index.js
 ```
 
-## Estructura de entrada
+Prints JSON to console for inspection.
 
-La herramienta busca archivos `towns.lua` en:
+## Input Structure
+
+The tool scans for `towns.lua` files in the data directory:
+
 ```
 data/
   maps/
@@ -38,9 +50,9 @@ data/
     ...
 ```
 
-## Estructura de salida
+## Output Structure
 
-El JSON generado contiene:
+Generated JSON contains location data for all maps:
 
 ```json
 {
@@ -66,21 +78,34 @@ El JSON generado contiene:
 }
 ```
 
-## Módulos
+## Modules
 
-- **index.js** - Punto de entrada principal
-- **lib/readMapDirectories.js** - Lee directorios de mapas
-- **lib/parseTownsLua.js** - Parsea archivos Lua
-- **lib/convertToMgrs.js** - Convierte lat/lon a MGRS
-- **lib/formatMgrs.js** - Formatea MGRS para legibilidad
-- **lib/buildLocations.js** - Construye estructura JSON final
+- **index.js** - Main entry point, CLI handler
+- **lib/readMapDirectories.js** - Scans map directories
+- **lib/parseTownsLua.js** - Parses Lua table format
+- **lib/convertToMgrs.js** - Lat/lon → MGRS conversion
+- **lib/formatMgrs.js** - Formats MGRS for readability
+- **lib/buildLocations.js** - Builds final JSON structure
 
-## Dependencias
+## Dependencies
 
-- **mgrs** (^2.1.0) - Conversión de coordenadas a MGRS
+- **[mgrs](https://www.npmjs.com/package/mgrs)** (^2.1.0) - Coordinate conversion to MGRS
 
-## Notas
+## Technical Details
 
-- Las coordenadas MGRS se generan con precisión de 5 dígitos (1 metro)
-- El formato MGRS incluye espacios para mejor legibilidad: `38 TLN 48073 10304`
-- La herramienta detecta automáticamente todos los mapas en `/data/maps/`
+- **MGRS Precision:** 5 digits (1-meter accuracy)
+- **MGRS Format:** `38 TLN 48073 10304` (zone, band, 100km square, easting, northing)
+- **Auto-detection:** Finds all maps in `/data/maps/` automatically
+- **Relative paths:** Uses `__dirname` for portability
+
+## When to Regenerate
+
+Run the tool when:
+- Adding new map data to `data/maps/`
+- DCS updates change location coordinates
+- Location names are modified in source files
+
+## Output Size
+
+Expect ~1.2MB JSON file for all 6 maps with ~4,500 locations.
+
