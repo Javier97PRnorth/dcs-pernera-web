@@ -10,21 +10,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="top-nav">
-    <div class="nav-left">
-      <a class="brand" href="index.html">Pernera Digital DCS</a>
-    </div>
-    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="site-menu">
-      <a href="index.html">Inicio</a>
-      <a href="calendario.html">Calendario</a>
-      <a href="perneras.html">Perneras</a>
-      <a href="comms.html">Comms</a>
-      <a href="brevities.html">Brevities</a>
-    </div>
-  </nav>
+  <div id="site-nav-root"></div>
 
   <main style="padding-top:86px">
     <section class="panel">
@@ -353,6 +339,8 @@
         });
       });
     });
-  </script>
+  <script src="shared-nav.js"></script>
+  <script src="main.js"></script>
+  <script>
 </body>
 </html>
