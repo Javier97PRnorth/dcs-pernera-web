@@ -372,54 +372,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var locationsData = null;
     var allLocations = [];
 
-    /**
-     * Format MGRS coordinate string for readability
-     * @param {string} mgrsString - Compact MGRS string (e.g., "30UYV0553218867")
-     * @param {number} precision - Optional precision level (default: full)
-     * @returns {string} Formatted MGRS (e.g., "30 UYV 05532 18867")
-     */
-    function formatMGRS(mgrsString, precision) {
-      if (!mgrsString || typeof mgrsString !== 'string') return mgrsString || '';
-      
-      var clean = mgrsString.trim().replace(/\s+/g, '');
-      
-      // MGRS structure: ZZ B XX EEEEE NNNNN
-      // ZZ = zone (2 digits)
-      // B = band (1 letter)
-      // XX = 100km square (2 letters)
-      // EEEEE NNNNN = easting/northing (variable length, split evenly)
-      
-      if (clean.length < 5) return mgrsString; // Too short to be valid
-      
-      // Extract zone (first 2 characters, should be digits)
-      var zone = clean.substring(0, 2);
-      
-      // Extract band (1 letter after zone)
-      var band = clean.substring(2, 3);
-      
-      // Extract 100km square (2 letters)
-      var square = clean.substring(3, 5);
-      
-      // Remaining digits are easting/northing
-      var coords = clean.substring(5);
-      
-      // Coordinates must have even length (half easting, half northing)
-      if (coords.length % 2 !== 0) return mgrsString; // Invalid format
-      
-      var halfLen = coords.length / 2;
-      var easting = coords.substring(0, halfLen);
-      var northing = coords.substring(halfLen);
-      
-      // Apply precision reduction if specified
-      if (precision && precision < halfLen) {
-        easting = easting.substring(0, precision);
-        northing = northing.substring(0, precision);
-      }
-      
-      // Format: "ZZ BXX EEEEE NNNNN"
-      return zone + ' ' + band + square + ' ' + easting + ' ' + northing;
-    }
-
     // Load JSON data
     fetch('data/dcs_locations.json')
       .then(function (response) {
@@ -531,8 +483,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var mgrsItem = document.createElement('div');
         mgrsItem.className = 'location-meta-item';
-        var formattedMGRS = loc.mgrs ? formatMGRS(loc.mgrs) : 'N/A';
-        mgrsItem.innerHTML = '<span class="location-meta-label">MGRS:</span> <span class="location-meta-value">' + formattedMGRS + '</span>';
+        mgrsItem.innerHTML = '<span class="location-meta-label">MGRS:</span> <span class="location-meta-value">' + (loc.mgrs || 'N/A') + '</span>';
         metaDiv.appendChild(mgrsItem);
 
         var latItem = document.createElement('div');
