@@ -188,6 +188,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  document.querySelectorAll('.video-accordion').forEach(function (accordion) {
+    var toggle = accordion.querySelector('.video-accordion-toggle');
+    var content = accordion.querySelector('.video-accordion-content');
+    if (!toggle || !content) return;
+
+    toggle.addEventListener('click', function () {
+      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      content.hidden = isOpen;
+    });
+  });
+
   // Perneras: cambiar panel
   var list = document.querySelector('.perneras-list');
   var buttons = list ? list.querySelectorAll('button[data-plane]') : [];
