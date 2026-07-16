@@ -402,6 +402,101 @@ body{
   box-shadow:0 0 0 2px rgba(179,57,57,0.1);
 }
 
+/* LOCATION FINDER */
+.location-finder-controls{
+  margin-bottom:16px;
+}
+.location-finder-selectors{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:10px;
+}
+.location-finder-selectors label{
+  display:grid;
+  gap:6px;
+  font-size:0.86rem;
+  color:var(--sub);
+  font-weight:500;
+}
+.location-finder-selectors select,
+.location-finder-selectors input{
+  width:100%;
+  padding:8px 10px;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:#1A1C20;
+  color:var(--text);
+  font-size:0.9rem;
+  font-family:var(--ff);
+}
+.location-finder-selectors select:focus,
+.location-finder-selectors input:focus{
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 0 2px rgba(179,57,57,0.1);
+}
+.location-finder-selectors input::placeholder{
+  color:var(--muted);
+}
+
+.location-results-container{
+  margin-top:12px;
+}
+.location-results-info{
+  font-size:0.84rem;
+  color:var(--sub);
+  margin-bottom:8px;
+  padding:6px 0;
+}
+.location-results{
+  list-style:none;
+  margin:0;
+  padding:0;
+  max-height:400px;
+  overflow-y:auto;
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:6px;
+  background:rgba(255,255,255,0.01);
+}
+.location-results:empty{
+  display:none;
+}
+.location-results li{
+  padding:10px 12px;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  transition:background 0.15s ease;
+}
+.location-results li:last-child{
+  border-bottom:0;
+}
+.location-results li:hover{
+  background:rgba(179,57,57,0.08);
+}
+.location-name{
+  font-weight:600;
+  color:var(--text);
+  font-size:0.92rem;
+  margin-bottom:4px;
+}
+.location-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  font-size:0.8rem;
+  color:var(--sub);
+}
+.location-meta-item{
+  display:flex;
+  gap:4px;
+}
+.location-meta-label{
+  color:var(--muted);
+}
+.location-meta-value{
+  color:var(--sub);
+  font-family:'Courier New', monospace;
+}
+
 /* FOOTER small */
 .site-footer{max-width:var(--maxw);margin:18px auto 40px;color:var(--sub);font-size:0.85rem;padding:0 18px}
 

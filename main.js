@@ -354,4 +354,166 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // ============================================
+  // LOCATION FINDER
+  // ============================================
+  (function initLocationFinder() {
+    var mapSelector = document.getElementById('map-selector');
+    var nameSearch = document.getElementById('location-name-search');
+    var mgrsSearch = document.getElementById('location-mgrs-search');
+    var resultsContainer = document.getElementById('location-results');
+    var resultsInfo = document.getElementById('location-results-info');
+
+    if (!mapSelector || !nameSearch || !mgrsSearch || !resultsContainer || !resultsInfo) {
+      return;
+    }
+
+    var locationsData = null;
+    var allLocations = [];
+
+    // Load JSON data
+    fetch('data/dcs_locations.json')
+      .then(function (response) {
+        if (!response.ok) throw new Error('Failed to load locations data');
+        return response.json();
+      })
+      .then(function (data) {
+        locationsData = data;
+        populateMapSelector();
+        buildLocationsList();
+        renderResults();
+      })
+      .catch(function (error) {
+        console.error('Error loading locations:', error);
+        resultsInfo.textContent = 'Error al cargar los datos de ubicaciones.';
+      });
+
+    function populateMapSelector() {
+      if (!locationsData || !locationsData.maps) return;
+
+      var maps = Object.keys(locationsData.maps).sort();
+      maps.forEach(function (mapName) {
+        var option = document.createElement('option');
+        option.value = mapName;
+        option.textContent = mapName;
+        mapSelector.appendChild(option);
+      });
+    }
+
+    function buildLocationsList() {
+      if (!locationsData || !locationsData.maps) return;
+
+      allLocations = [];
+      Object.keys(locationsData.maps).forEach(function (mapName) {
+        var mapData = locationsData.maps[mapName];
+        if (!mapData.locations) return;
+
+        Object.keys(mapData.locations).forEach(function (locKey) {
+          allLocations.push(mapData.locations[locKey]);
+        });
+      });
+    }
+
+    function filterLocations() {
+      var selectedMap = mapSelector.value.trim();
+      var nameQuery = nameSearch.value.trim().toLowerCase();
+      var mgrsQuery = mgrsSearch.value.trim().toUpperCase();
+
+      var filtered = allLocations.filter(function (loc) {
+        // Filter by map
+        if (selectedMap && loc.map !== selectedMap) return false;
+
+        // Filter by name
+        if (nameQuery) {
+          var name = (loc.name || '').toLowerCase();
+          var displayName = (loc.display_name || '').toLowerCase();
+          if (!name.includes(nameQuery) && !displayName.includes(nameQuery)) {
+            return false;
+          }
+        }
+
+        // Filter by MGRS
+        if (mgrsQuery) {
+          var mgrs = (loc.mgrs || '').toUpperCase();
+          if (!mgrs.includes(mgrsQuery)) return false;
+        }
+
+        return true;
+      });
+
+      return filtered;
+    }
+
+    function renderResults() {
+      var filtered = filterLocations();
+      resultsContainer.innerHTML = '';
+
+      if (!locationsData) {
+        resultsInfo.textContent = 'Cargando datos...';
+        return;
+      }
+
+      if (filtered.length === 0) {
+        resultsInfo.textContent = 'No se encontraron resultados.';
+        return;
+      }
+
+      resultsInfo.textContent = 'Mostrando ' + filtered.length + ' ubicación' + (filtered.length !== 1 ? 'es' : '') + ' de ' + allLocations.length + ' totales.';
+
+      // Limit results to prevent performance issues
+      var displayLimit = 100;
+      var toDisplay = filtered.slice(0, displayLimit);
+
+      toDisplay.forEach(function (loc) {
+        var li = document.createElement('li');
+
+        var nameDiv = document.createElement('div');
+        nameDiv.className = 'location-name';
+        nameDiv.textContent = loc.display_name || loc.name;
+        li.appendChild(nameDiv);
+
+        var metaDiv = document.createElement('div');
+        metaDiv.className = 'location-meta';
+
+        var mapItem = document.createElement('div');
+        mapItem.className = 'location-meta-item';
+        mapItem.innerHTML = '<span class="location-meta-label">Mapa:</span> <span class="location-meta-value">' + (loc.map || 'N/A') + '</span>';
+        metaDiv.appendChild(mapItem);
+
+        var mgrsItem = document.createElement('div');
+        mgrsItem.className = 'location-meta-item';
+        mgrsItem.innerHTML = '<span class="location-meta-label">MGRS:</span> <span class="location-meta-value">' + (loc.mgrs || 'N/A') + '</span>';
+        metaDiv.appendChild(mgrsItem);
+
+        var latItem = document.createElement('div');
+        latItem.className = 'location-meta-item';
+        latItem.innerHTML = '<span class="location-meta-label">Lat:</span> <span class="location-meta-value">' + (loc.latitude != null ? loc.latitude.toFixed(6) : 'N/A') + '</span>';
+        metaDiv.appendChild(latItem);
+
+        var lonItem = document.createElement('div');
+        lonItem.className = 'location-meta-item';
+        lonItem.innerHTML = '<span class="location-meta-label">Lon:</span> <span class="location-meta-value">' + (loc.longitude != null ? loc.longitude.toFixed(6) : 'N/A') + '</span>';
+        metaDiv.appendChild(lonItem);
+
+        li.appendChild(metaDiv);
+        resultsContainer.appendChild(li);
+      });
+
+      if (filtered.length > displayLimit) {
+        var infoLi = document.createElement('li');
+        infoLi.style.textAlign = 'center';
+        infoLi.style.color = 'var(--muted)';
+        infoLi.style.fontStyle = 'italic';
+        infoLi.style.padding = '12px';
+        infoLi.textContent = 'Mostrando primeros ' + displayLimit + ' resultados. Refina tu búsqueda para ver más.';
+        resultsContainer.appendChild(infoLi);
+      }
+    }
+
+    // Event listeners
+    mapSelector.addEventListener('change', renderResults);
+    nameSearch.addEventListener('input', renderResults);
+    mgrsSearch.addEventListener('input', renderResults);
+  })();
 });

@@ -844,6 +844,40 @@
             </div>
           </div>
         </div>
+
+        <div class="engine-management global-converter-block">
+          <div class="video-accordion location-finder-accordion">
+            <button class="video-accordion-toggle" type="button" aria-expanded="false">
+              Localizador de aeródromos y ciudades
+            </button>
+
+            <div class="video-accordion-content" hidden>
+              <div class="location-finder-controls">
+                <div class="location-finder-selectors">
+                  <label>
+                    Mapa
+                    <select id="map-selector">
+                      <option value="">Todos los mapas</option>
+                    </select>
+                  </label>
+                  <label>
+                    Buscar por nombre
+                    <input type="text" id="location-name-search" placeholder="Ciudad o aeródromo...">
+                  </label>
+                  <label>
+                    Buscar por MGRS
+                    <input type="text" id="location-mgrs-search" placeholder="Ej: 38TLN480733...">
+                  </label>
+                </div>
+              </div>
+
+              <div class="location-results-container">
+                <div id="location-results-info" class="location-results-info"></div>
+                <ul id="location-results" class="location-results"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
