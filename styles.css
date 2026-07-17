@@ -490,7 +490,7 @@ body{
   gap:4px;
 }
 .location-meta-label{
-  color:var(--muted);
+  color:var(--accent);
 }
 .location-meta-value{
   color:var(--sub);
