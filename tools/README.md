@@ -68,6 +68,8 @@ Generated JSON contains location data for all maps:
           "display_name": "KUTAISI",
           "latitude": 42.267086,
           "longitude": 42.696849,
+          "lat_dms": "42°16'01.51\"N",
+          "lon_dms": "42°41'48.66\"E",
           "mgrs": "38TLM1005381999",
           "mgrs_formatted": "38 TLM 10053 81999",
           "map": "Caucasus"
@@ -84,6 +86,7 @@ Generated JSON contains location data for all maps:
 - **lib/readMapDirectories.js** - Scans map directories
 - **lib/parseTownsLua.js** - Parses Lua table format
 - **lib/convertToMgrs.js** - Lat/lon → MGRS conversion
+- **lib/convertToDms.js** - Lat/lon → DMS (Degrees/Minutes/Seconds) conversion
 - **lib/formatMgrs.js** - Formats MGRS for readability
 - **lib/buildLocations.js** - Builds final JSON structure
 
@@ -95,8 +98,18 @@ Generated JSON contains location data for all maps:
 
 - **MGRS Precision:** 5 digits (1-meter accuracy)
 - **MGRS Format:** `38 TLN 48073 10304` (zone, band, 100km square, easting, northing)
+- **DMS Format:** `42°16'01.51"N` (degrees, minutes, seconds with direction)
+- **DMS Precision:** 2 decimal places for seconds
 - **Auto-detection:** Finds all maps in `/data/maps/` automatically
 - **Relative paths:** Uses `__dirname` for portability
+
+### Coordinate Formats
+
+Each location includes three coordinate representations:
+
+1. **Decimal Degrees** - `latitude: 42.267086, longitude: 42.696849`
+2. **DMS (Degrees/Minutes/Seconds)** - `lat_dms: "42°16'01.51"N", lon_dms: "42°41'48.66"E"`
+3. **MGRS (Military Grid)** - `mgrs: "38TLM1005381999"` and `mgrs_formatted: "38 TLM 10053 81999"`
 
 ## When to Regenerate
 
@@ -107,5 +120,5 @@ Run the tool when:
 
 ## Output Size
 
-Expect ~1.2MB JSON file for all 6 maps with ~4,500 locations.
+Expect ~1.5MB JSON file for all 6 maps with ~4,500 locations including decimal, DMS, and MGRS coordinates.
 
