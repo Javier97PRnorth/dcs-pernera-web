@@ -496,6 +496,16 @@ document.addEventListener('DOMContentLoaded', function () {
         lonItem.innerHTML = '<span class="location-meta-label">Lon:</span> <span class="location-meta-value">' + (loc.longitude != null ? loc.longitude.toFixed(6) : 'N/A') + '</span>';
         metaDiv.appendChild(lonItem);
 
+        var latDmsItem = document.createElement('div');
+        latDmsItem.className = 'location-meta-item';
+        latDmsItem.innerHTML = '<span class="location-meta-label">Lat DMS:</span> <span class="location-meta-value">' + (loc.lat_dms || 'N/A') + '</span>';
+        metaDiv.appendChild(latDmsItem);
+
+        var lonDmsItem = document.createElement('div');
+        lonDmsItem.className = 'location-meta-item';
+        lonDmsItem.innerHTML = '<span class="location-meta-label">Lon DMS:</span> <span class="location-meta-value">' + (loc.lon_dms || 'N/A') + '</span>';
+        metaDiv.appendChild(lonDmsItem);
+
         li.appendChild(metaDiv);
         resultsContainer.appendChild(li);
       });

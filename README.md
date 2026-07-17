@@ -49,7 +49,9 @@ Convert between common aviation units:
 - Search 4,451+ locations across 6 DCS maps
 - Filter by map, name, or MGRS coordinates
 - Display formatted MGRS coordinates for easy reading
-- Lat/Lon coordinates with 6-decimal precision
+- Lat/Lon coordinates in decimal degrees (6-decimal precision)
+- Lat/Lon coordinates in DMS format (Degrees/Minutes/Seconds)
+- Multiple coordinate formats for maximum compatibility
 
 **Supported Maps:**
 - Caucasus
@@ -145,7 +147,8 @@ This will:
 1. Read all `towns.lua` files from `data/maps/`
 2. Parse location names and coordinates
 3. Convert lat/lon to MGRS format
-4. Generate formatted `data/dcs_locations.json`
+4. Convert lat/lon to DMS format (Degrees/Minutes/Seconds)
+5. Generate formatted `data/dcs_locations.json`
 
 See [tools/README.md](tools/README.md) for detailed documentation.
 
@@ -163,12 +166,23 @@ See [tools/README.md](tools/README.md) for detailed documentation.
 - Search across multiple fields (name, display name, MGRS)
 - Performance optimized (limits to 100 results)
 
-### MGRS Formatting
-Location coordinates are formatted for readability:
+### Coordinate Formats
+
+Location coordinates are provided in multiple formats for maximum compatibility:
+
+#### MGRS (Military Grid Reference System)
 - **Raw:** `38TLN4807310304`
 - **Formatted:** `38 TLN 48073 10304`
+- Format: `<Zone> <Band><100km Square> <Easting> <Northing>`
 
-Format: `<Zone> <Band><100km Square> <Easting> <Northing>`
+#### DMS (Degrees/Minutes/Seconds)
+- **Example:** `42°16'01.51"N` and `42°41'48.66"E`
+- Format: `DD°MM'SS.SS"D` (degrees, minutes, seconds, direction)
+- Precision: 2 decimal places for seconds
+
+#### Decimal Degrees
+- **Example:** `42.267086`, `42.696849`
+- Precision: 6 decimal places (~0.1 meter accuracy)
 
 ## Browser Support
 
