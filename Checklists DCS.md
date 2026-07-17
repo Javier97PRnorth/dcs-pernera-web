@@ -439,4 +439,3 @@
 - Pitot heat ON
 - RWR ON
 - Taxi lights ON
-
