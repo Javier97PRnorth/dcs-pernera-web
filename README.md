@@ -46,11 +46,14 @@ Convert between common aviation units:
 - **Fuel:** gallons ↔ liters
 
 #### Location Finder
-- Search 4,451+ locations across 6 DCS maps
+- Search 4,702+ locations across 6 DCS maps
+- **Cities:** Town and city names from DCS map files
+- **Airfields:** Complete airbase directory with parking positions
 - Filter by map, name, or MGRS coordinates
 - Display formatted MGRS coordinates for easy reading
 - Lat/Lon coordinates in decimal degrees (6-decimal precision)
 - Lat/Lon coordinates in DMS format (Degrees/Minutes/Seconds)
+- Altitude data for airfields
 - Multiple coordinate formats for maximum compatibility
 
 **Supported Maps:**
@@ -71,23 +74,27 @@ dcs-pernera-web/
 ├── main.js                 # Frontend logic
 ├── shared-nav.js           # Navigation component
 ├── data/
-│   ├── dcs_locations.json  # Generated locations database (1.2MB)
-│   └── maps/               # Source Lua files from DCS
+│   ├── dcs_locations.json       # Generated locations database (1.8MB)
+│   └── maps/
+│       ├── Airfields/
+│       │   └── TheatersAirbases.json    # Source from Briefing Room project
 │       ├── Caucasus/
 │       ├── MarianaIslands/
 │       ├── MarianasWWII/
 │       ├── Nevada/
 │       ├── Normandy/
 │       └── Syria/
-└── tools/                  # Data generation utilities
+└── tools/                               # Data generation utilities
     ├── README.md
     ├── index.js
     ├── package.json
     └── lib/
         ├── buildLocations.js
         ├── convertToMgrs.js
+        ├── convertToDms.js
         ├── formatMgrs.js
         ├── parseTownsLua.js
+        ├── processAirbases.js          # NEW: Process airfield data
         └── readMapDirectories.js
 ```
 
@@ -133,6 +140,35 @@ npx http-server -p 8000
 
 Then navigate to `http://localhost:8000`
 
+### Data Sources
+
+#### Cities
+- Extracted from DCS World game files (`towns.lua` from each map)
+- Located in `data/maps/<MapName>/towns.lua`
+- Automatically detected and processed by the tool
+
+#### Airfields
+- Source: [Briefing Room for DCS](https://github.com/DCS-BR-Tools/briefing-room-for-dcs)
+- File: `TheatersAirbases.json` - Complete airbase directory for all DCS theatres
+- Location: `data/maps/Airfields/TheatersAirbases.json`
+- Contains 799 airbases with parking positions and coordinates
+- Only airbases for maps in the current project are included (Caucasus, MarianaIslands, MarianasWWII, Nevada, Normandy, Syria)
+
+### Updating Airfield Data
+
+To update with newer Briefing Room data:
+
+1. Download the latest `TheatersAirbases.json` from [Briefing Room GitHub](https://github.com/DCS-BR-Tools/briefing-room-for-dcs/blob/main/DatabaseJSON/TheatersAirbases.json)
+2. Replace `data/maps/Airfields/TheatersAirbases.json`
+3. Regenerate: `cd tools && node index.js --write`
+
+The script automatically:
+- Filters airbases by supported maps
+- Extracts first parking position as representative location
+- Converts coordinates to MGRS and DMS formats
+- Merges with cities into unified database
+- Adds `type: "airfield"` field to distinguish from cities
+
 ### Regenerate Location Data
 
 If you need to update the locations database from new DCS map data:
@@ -144,11 +180,14 @@ node index.js --write
 ```
 
 This will:
-1. Read all `towns.lua` files from `data/maps/`
-2. Parse location names and coordinates
-3. Convert lat/lon to MGRS format
-4. Convert lat/lon to DMS format (Degrees/Minutes/Seconds)
-5. Generate formatted `data/dcs_locations.json`
+1. Read all `towns.lua` files from `data/maps/<Map>/`
+2. Parse city names and coordinates
+3. Read `data/maps/Airfields/TheatersAirbases.json`
+4. Parse airfield names, coordinates, and altitude
+5. Convert all coordinates to MGRS format
+6. Convert all coordinates to DMS format (Degrees/Minutes/Seconds)
+7. Add `type` field: `"city"` or `"airfield"`
+8. Generate formatted `data/dcs_locations.json`
 
 See [tools/README.md](tools/README.md) for detailed documentation.
 
@@ -216,6 +255,7 @@ This is a community tool for DCS World players. DCS World is a trademark of Eagl
 
 - **Chuck's Guides** - Comprehensive aircraft documentation
 - **Eagle Dynamics** - DCS World and map data
+- **Briefing Room for DCS** - Complete airbase database
 - **DCS Community** - Feedback and procedure validation
 
 ---

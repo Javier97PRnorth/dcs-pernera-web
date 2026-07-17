@@ -4,11 +4,13 @@ const { readMapDirectories } = require('./lib/readMapDirectories');
 const { parseTownsLua } = require('./lib/parseTownsLua');
 const { convertLatLonToMgrs } = require('./lib/convertToMgrs');
 const { buildLocationsObject } = require('./lib/buildLocations');
+const { parseAirbases } = require('./lib/processAirbases');
 
 // Use relative paths from the tools directory
 const TOOLS_DIR = __dirname;
 const PROJECT_ROOT = path.dirname(TOOLS_DIR);
 const MAPS_DIR = path.join(PROJECT_ROOT, 'data', 'maps');
+const AIRFIELDS_FILE = path.join(PROJECT_ROOT, 'data', 'maps', 'Airfields', 'TheatersAirbases.json');
 const OUTPUT_FILE = path.join(PROJECT_ROOT, 'data', 'dcs_locations.json');
 
 function generateLocationsObject() {
@@ -24,7 +26,20 @@ function generateLocationsObject() {
     towns.push(...parsedTowns);
   }
 
-  return buildLocationsObject(towns);
+  // Parse airfields from Briefing Room data
+  let airfields = [];
+  if (fs.existsSync(AIRFIELDS_FILE)) {
+    try {
+      airfields = parseAirbases(AIRFIELDS_FILE);
+      console.log(`Processed ${airfields.length} airfields`);
+    } catch (error) {
+      console.warn(`Warning: Could not process airfields: ${error.message}`);
+    }
+  } else {
+    console.warn(`Warning: Airfields file not found at ${AIRFIELDS_FILE}`);
+  }
+
+  return buildLocationsObject(towns, airfields);
 }
 
 const locations = generateLocationsObject();
