@@ -360,12 +360,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // ============================================
   (function initLocationFinder() {
     var mapSelector = document.getElementById('map-selector');
+    var typeSelector = document.getElementById('type-selector');
     var nameSearch = document.getElementById('location-name-search');
     var mgrsSearch = document.getElementById('location-mgrs-search');
     var resultsContainer = document.getElementById('location-results');
     var resultsInfo = document.getElementById('location-results-info');
 
-    if (!mapSelector || !nameSearch || !mgrsSearch || !resultsContainer || !resultsInfo) {
+    if (!mapSelector || !typeSelector || !nameSearch || !mgrsSearch || !resultsContainer || !resultsInfo) {
       return;
     }
 
@@ -417,12 +418,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function filterLocations() {
       var selectedMap = mapSelector.value.trim();
+      var selectedType = typeSelector.value.trim();
       var nameQuery = nameSearch.value.trim().toLowerCase();
       var mgrsQuery = mgrsSearch.value.trim().toUpperCase();
 
       var filtered = allLocations.filter(function (loc) {
         // Filter by map
         if (selectedMap && loc.map !== selectedMap) return false;
+
+        // Filter by type
+        if (selectedType && loc.type !== selectedType) return false;
 
         // Filter by name
         if (nameQuery) {
@@ -476,6 +481,12 @@ document.addEventListener('DOMContentLoaded', function () {
         var metaDiv = document.createElement('div');
         metaDiv.className = 'location-meta';
 
+        var typeItem = document.createElement('div');
+        typeItem.className = 'location-meta-item';
+        var typeLabel = loc.type === 'airfield' ? '🛫 Aeródromo' : '🏙️ Ciudad';
+        typeItem.innerHTML = '<span class="location-meta-label">Tipo:</span> <span class="location-meta-value">' + typeLabel + '</span>';
+        metaDiv.appendChild(typeItem);
+
         var mapItem = document.createElement('div');
         mapItem.className = 'location-meta-item';
         mapItem.innerHTML = '<span class="location-meta-label">Mapa:</span> <span class="location-meta-value">' + (loc.map || 'N/A') + '</span>';
@@ -506,6 +517,13 @@ document.addEventListener('DOMContentLoaded', function () {
         lonDmsItem.innerHTML = '<span class="location-meta-label">Lon DMS:</span> <span class="location-meta-value">' + (loc.lon_dms || 'N/A') + '</span>';
         metaDiv.appendChild(lonDmsItem);
 
+        if (loc.altitude != null) {
+          var altItem = document.createElement('div');
+          altItem.className = 'location-meta-item';
+          altItem.innerHTML = '<span class="location-meta-label">Altitud:</span> <span class="location-meta-value">' + loc.altitude.toFixed(2) + ' m</span>';
+          metaDiv.appendChild(altItem);
+        }
+
         li.appendChild(metaDiv);
         resultsContainer.appendChild(li);
       });
@@ -523,6 +541,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listeners
     mapSelector.addEventListener('change', renderResults);
+    typeSelector.addEventListener('change', renderResults);
     nameSearch.addEventListener('input', renderResults);
     mgrsSearch.addEventListener('input', renderResults);
   })();
