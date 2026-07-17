@@ -4,7 +4,7 @@ const path = require('path');
 /**
  * Map Briefing Room theatre names to DCS map names
  * @param {string} theatre - Theatre name from TheatersAirbases.json
- * @returns {string|null} Mapped DCS map name or null if not in current project
+ * @returns {string} DCS map name (uses theatre name when not in original project)
  */
 function mapTheatreToMap(theatre) {
   const theatreToMapMapping = {
@@ -14,18 +14,18 @@ function mapTheatreToMap(theatre) {
     'Nevada': 'Nevada',
     'Normandy': 'Normandy',
     'Syria': 'Syria',
-    // Other theatres not yet included in dcs-pernera-web
-    'Afghanistan': null,
-    'Falklands': null,
-    'GermanyCW': null,
-    'Iraq': null,
-    'Kola': null,
-    'PersianGulf': null,
-    'SinaiMap': null,
-    'TheChannel': null
+    // Additional theatres - map to theatre name directly
+    'Afghanistan': 'Afghanistan',
+    'Falklands': 'Falklands',
+    'GermanyCW': 'GermanyCW',
+    'Iraq': 'Iraq',
+    'Kola': 'Kola',
+    'PersianGulf': 'PersianGulf',
+    'SinaiMap': 'SinaiMap',
+    'TheChannel': 'TheChannel'
   };
   
-  return theatreToMapMapping[theatre] || null;
+  return theatreToMapMapping[theatre] || theatre;
 }
 
 /**

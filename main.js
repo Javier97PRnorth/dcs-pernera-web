@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var typeItem = document.createElement('div');
         typeItem.className = 'location-meta-item';
-        var typeLabel = loc.type === 'airfield' ? '🛫 Aeródromo' : '🏙️ Ciudad';
+        var typeLabel = loc.type === 'airfield' ? 'Aeródromo' : 'Ciudad';
         typeItem.innerHTML = '<span class="location-meta-label">Tipo:</span> <span class="location-meta-value">' + typeLabel + '</span>';
         metaDiv.appendChild(typeItem);
 
