@@ -185,14 +185,14 @@ body{
 .checklist-toolbar{
   margin:0 0 10px 0;
   padding:8px 0 10px 0;
-  border-top:1px solid rgba(255,255,255,0.08);
-  border-bottom:1px solid rgba(255,255,255,0.08);
+  border-top:1px solid rgba(179,57,57,0.3);
+  border-bottom:1px solid rgba(179,57,57,0.3);
 }
 .toggle-all-checklist{
   display:block;
   width:100%;
-  border:1px solid rgba(255,255,255,0.12);
-  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(179,57,57,0.4);
+  background:rgba(179,57,57,0.08);
   color:var(--text);
   padding:10px 12px;
   border-radius:6px;
@@ -200,7 +200,7 @@ body{
   font-size:0.9rem;
   text-align:left;
 }
-.toggle-all-checklist:hover{border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.08)}
+.toggle-all-checklist:hover{border-color:var(--accent);background:rgba(179,57,57,0.16)}
 .checklist{list-style:none;padding:0;margin:0}
 .checklist li{margin-bottom:8px;padding:0}
 .check-item{
@@ -221,10 +221,10 @@ body{
   overflow-wrap:anywhere;
   word-break:break-word;
 }
-.check-item:hover{border-color:rgba(255,255,255,0.2)}
+.check-item:hover{border-color:var(--accent)}
 .check-item.is-done{
-  background:rgba(255,255,255,0.12);
-  border-color:rgba(255,255,255,0.2);
+  background:rgba(179,57,57,0.16);
+  border-color:var(--accent);
   color:#fff;
   text-decoration:line-through;
 }
@@ -320,9 +320,9 @@ body{
 
 .video-accordion{
   margin-top:16px;
-  border:1px solid rgba(255,255,255,0.1);
+  border:1px solid rgba(179,57,57,0.32);
   border-radius:6px;
-  background:rgba(255,255,255,0.02);
+  background:linear-gradient(180deg, rgba(179,57,57,0.08), rgba(255,255,255,0.01));
   overflow:hidden;
 }
 .video-accordion-toggle{
@@ -330,16 +330,16 @@ body{
   text-align:left;
   padding:10px 12px;
   border:0;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-  background:rgba(255,255,255,0.02);
+  border-bottom:1px solid rgba(179,57,57,0.28);
+  background:rgba(179,57,57,0.12);
   color:var(--text);
   cursor:pointer;
   font-size:0.92rem;
 }
-.video-accordion-toggle:hover{background:rgba(255,255,255,0.04)}
+.video-accordion-toggle:hover{background:rgba(179,57,57,0.2)}
 .video-accordion-toggle[aria-expanded="true"]{
-  background:rgba(255,255,255,0.06);
-  border-bottom-color:rgba(255,255,255,0.12);
+  background:rgba(179,57,57,0.24);
+  border-bottom-color:rgba(179,57,57,0.4);
 }
 .video-accordion-content{padding:12px}
 .video-grid{
@@ -536,50 +536,6 @@ body{
 }
 .brevities-table tbody tr:nth-child(even) td:last-child{
   background:rgba(255,255,255,0.035);
-}
-
-/* PROCEDURES ACCORDION */
-.procedures-content{
-  padding:12px 0;
-}
-.procedures-list{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:6px;
-}
-.procedures-list li{
-  padding:8px 12px;
-  background:rgba(255,255,255,0.02);
-  border-left:2px solid var(--accent);
-  border-radius:3px;
-  font-size:0.9rem;
-  color:var(--text);
-  line-height:1.4;
-}
-.procedures-list li:hover{
-  background:rgba(255,255,255,0.04);
-}
-.procedures-list-nested{
-  list-style:none;
-  padding:0;
-  margin:6px 0 0 12px;
-  display:grid;
-  gap:4px;
-}
-.procedures-list-nested li{
-  padding:6px 10px;
-  background:rgba(255,255,255,0.01);
-  border-left:1px solid rgba(255,255,255,0.1);
-  border-radius:2px;
-  font-size:0.85rem;
-  color:var(--sub);
-  line-height:1.3;
-}
-.procedures-list-nested li:hover{
-  background:rgba(255,255,255,0.02);
-  color:var(--text);
 }
 
 /* RESPONSIVE */
