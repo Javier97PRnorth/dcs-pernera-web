@@ -172,19 +172,27 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   document.querySelectorAll('.toggle-all-checklist').forEach(function (button) {
-    var panel = button.closest('.pernera-panel');
-    if (!panel) return;
-    refreshToggleAllButton(panel);
+    var checklistContainer = button.closest('.checklist-toolbar').nextElementSibling;
+    if (!checklistContainer || !checklistContainer.classList.contains('checklist')) return;
+    
+    var items = checklistContainer.querySelectorAll('.check-item');
+    var refreshUI = function() {
+      var allDone = items.length > 0 && Array.from(items).every(function (item) {
+        return item.classList.contains('is-done');
+      });
+      button.textContent = allDone ? 'Desmarcar todo' : 'Marcar todo';
+    };
+    
+    refreshUI();
 
     button.addEventListener('click', function () {
-      var items = panel.querySelectorAll('.check-item');
       var shouldMarkAll = Array.from(items).some(function (item) {
         return !item.classList.contains('is-done');
       });
       items.forEach(function (item) {
         setChecklistState(item, shouldMarkAll);
       });
-      refreshToggleAllButton(panel);
+      refreshUI();
     });
   });
 
