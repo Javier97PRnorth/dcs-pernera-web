@@ -505,7 +505,7 @@ body{
 .search-input{
   width:100%;
   padding:10px 12px;
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid rgba(179, 57, 57, 0.35);
   border-radius:6px;
   background:#1A1C20;
   color:var(--text);
@@ -517,7 +517,7 @@ body{
   border-color:var(--accent);
   box-shadow:0 0 0 2px rgba(179,57,57,0.1);
 }
-.search-input::placeholder{color:var(--muted)}
+.search-input::placeholder{color:rgba(255, 255, 255, 0.472);font-style:italic;font-size:0.9rem}
 
 /* BREVITIES TABLE */
 .brevities-table tbody td:first-child{
