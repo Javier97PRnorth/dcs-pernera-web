@@ -435,6 +435,61 @@
 - Master Reset
 - Flaps as needed
 
+### Takeoff (Essential)
+
+#### Shore Takeoff
+- Anti-Skid Spoiler Brake OFF
+- Hook Bypass FIELD
+- Nose Strut RETRACTED
+- HUD Mode TO
+- Parking Brake IN
+- Taxi speed below 10 knots (18.5 km/h)
+- NWS steering ±70 degrees (toggle Nosewheel Steering button)
+- Wing Sweep Emergency Handle set to 20 degrees
+- Master Reset pressed
+- Exercise wings full range
+- Wing Sweep AUTO (wings set to 20 degrees)
+- Anti-Skid Spoiler Brake BOTH
+- Flaps UP
+- Takeoff Elevator Trim 0 degrees
+- Disengage NWS
+- Throttle MIL power (90 percent RPM N2)
+- Afterburner takeoff prohibited
+- Rotate at 130–140 knots (241–259 km/h)
+- Landing Gear UP before 250 knots (463 km/h)
+- Afterburner allowed once airborne
+
+#### Carrier Takeoff
+- INS alignment in CVA mode then INS NAV
+- Anti-Skid Spoiler Brake OFF
+- Hook Bypass CARRIER
+- Nose Strut RETRACTED
+- HUD Mode TO
+- Parking Brake IN
+- Taxi with wings in OVERSWEEP
+- NWS steering ±70 degrees
+- Emergency Wing Sweep Handle to 20 degrees
+- Master Reset pressed
+- Exercise wings full range
+- Wing Sweep AUTO (wings set to 20 degrees)
+- Flaps DOWN
+- Launch Bar: Nose Strut KNEEL
+- NWS disconnects automatically
+- Hook into catapult shuttle (use U if no Supercarrier)
+- Power idle once locked
+- Takeoff Elevator Trim 2–3 degrees nose up
+- Speed Brakes IN
+- Engine Run-Up: MIL power (90 percent RPM N2)
+- Afterburner takeoff prohibited
+- Control wipeout (full stick and rudder movements)
+- Day launch salute: LSHIFT+U
+- Night launch: flash navigation lights
+- Catapult shot about two seconds
+- Landing Gear UP before 250 knots (463 km/h)
+- Flaps UP before 225 knots (417 km/h)
+- Clearing turn: 20 degrees left, heading BRC, 500 feet (152 m), 300 knots (556 km/h)
+- After 7 nautical miles (13 km) cleared to climb above 500 feet (152 m)
+
 ## F-4E Phantom II - Checklist Cold Start quick
 
 ### Checklist
