@@ -494,3 +494,11 @@
 - Pitot heat ON
 - RWR ON
 - Taxi lights ON
+
+### Takeoff (Essential)
+- Brakes set, run up engines to 80-90% RPM
+- Release brakes and advance to full throttle (no afterburners)
+- Rotate smoothly at 110 knots (204 km/h)
+- Aircraft normally lifts at 8° to 10° pitch
+- Raise landing gear before 300 knots (556 km/h)
+- Retract flaps before 300 knots (556 km/h)
