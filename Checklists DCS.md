@@ -443,7 +443,7 @@
 - Nose Strut RETRACTED
 - HUD Mode TO
 - Parking Brake IN
-- Taxi speed below 10 knots (18.5 km/h)
+- Taxi speed below 10 knots
 - NWS steering ±70 degrees (toggle Nosewheel Steering button)
 - Wing Sweep Emergency Handle set to 20 degrees
 - Master Reset pressed
@@ -455,8 +455,8 @@
 - Disengage NWS
 - Throttle MIL power (90 percent RPM N2)
 - Afterburner takeoff prohibited
-- Rotate at 130–140 knots (241–259 km/h)
-- Landing Gear UP before 250 knots (463 km/h)
+- Rotate at 130–140 knots
+- Landing Gear UP before 250 knots
 - Afterburner allowed once airborne
 
 #### Carrier Takeoff
@@ -485,10 +485,10 @@
 - Day launch salute: LSHIFT+U
 - Night launch: flash navigation lights
 - Catapult shot about two seconds
-- Landing Gear UP before 250 knots (463 km/h)
-- Flaps UP before 225 knots (417 km/h)
-- Clearing turn: 20 degrees left, heading BRC, 500 feet (152 m), 300 knots (556 km/h)
-- After 7 nautical miles (13 km) cleared to climb above 500 feet (152 m)
+- Landing Gear UP before 250 knots
+- Flaps UP before 225 knots
+- Clearing turn: 20 degrees left, heading BRC, 500 feet, 300 knots
+- After 7 nautical miles cleared to climb above 500 feet
 
 ## F-4E Phantom II - Checklist Cold Start quick
 
