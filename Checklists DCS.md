@@ -557,3 +557,77 @@
 - Aircraft normally lifts at 8° to 10° pitch
 - Raise landing gear before 300 knots (556 km/h)
 - Retract flaps before 300 knots (556 km/h)
+
+## F-86F Sabre - Checklist Cold Start
+
+### Checklist
+- Request ground electrical power
+- Set the hydraulic system to ALTERNATE
+- Engine master switch ON
+- Set battery to STARTER for 3 seconds
+- Set battery to ON
+- Wait for 3% RPM
+- Move throttle to OUTBOARD
+- Wait for 9% RPM
+- Move throttle to IDLE
+- Wait for 30% RPM
+- Set flight master switch to RESET
+- Set flight master switch to NORMAL
+- Set hydraulic system to NORMAL
+- Retract speedbrakes
+- Set radio ON
+- Set IFF to NORMAL
+- Disconnect ground electrical power
+- Set flaps DOWN
+- Set trim NOSE UP until the dashboard light turns on
+- Close canopy
+- Open oxygen
+
+### Takeoff (Essential)
+- Engine to 60% RPM to start moving, then throttle IDLE
+- Use nosewheel steering (S) and rudder pedals for taxi
+- NWS will not engage if nosewheel > 21 degrees
+- Flaps DOWN
+- Airbrakes RETRACTED
+- Trim elevator until TAKE-OFF POS indicator blinks (takeoff trim set)
+- Hold wheel brakes
+- Throttle slowly to MAX POWER (MIL)
+- Release brakes at full power
+- Use rudder only (no NWS) during takeoff roll
+- At 95–100 knots: pull stick fully aft to lift nosewheel
+- Liftoff expected at 110–115 knots
+- Rotate at 120–125 knots
+- Keep airspeed below 125 knots to avoid overspeeding gear/flaps
+- Landing Gear UP below 155 knots
+- Flaps UP below 140 knots (then set lever to NEUTRAL)
+- Best climb: accelerate to 455 knots IAS at sea level
+- Climb so IAS decreases 50 knots per 10,000 ft
+
+#### Best Climb Speeds
+| Altitude | Speed (knots) |
+|----------|---|
+| Sea Level | 455 |
+| 5,000 ft | 430 |
+| 10,000 ft | 400 |
+| 15,000 ft | 385 |
+| 20,000 ft | 350 |
+| 25,000 ft | 325 |
+| 30,000 ft | 300 |
+| 35,000 ft | 285 |
+| 40,000 ft | 255 |
+| 45,000 ft | 230 |
+| 50,000 ft | 205 |
+| 55,000 ft | 180 |
+
+### Landing (Essential)
+- Extend speed brakes and slow to 185 knots IAS
+- Below 185 knots: extend landing gear and flaps
+- Hold IAS around 140 knots
+- Monitor glideslope and touchdown point
+- At 3–5 feet above runway: level off and throttle IDLE
+- Touchdown on main wheels at ~115 knots IAS
+- Keep nosewheel up initially for airbraking
+- After nosewheel touches down: brake as needed
+- Flaps UP
+- Speed brakes RETRACTED
+- Taxi to parking
