@@ -1,5 +1,13 @@
 # DCS Pernera Web
 
+Repository context for the new working chat: Pernera digital 02.
+
+This repository contains a static DCS World web companion called Pernera Digital DCS. It is designed as a digital kneeboard and quick-reference toolkit for aircraft cold starts, checklists, radio brevities, training calendars, communications phrases, and a location finder based on DCS map data and airfield metadata.
+
+The project is intentionally lightweight and framework-free: HTML, CSS, vanilla JavaScript and generated JSON assets are used without a build pipeline. It can be opened locally in a browser or served directly through a static web server such as GitHub Pages.
+
+This update keeps the existing README information while aligning the documentation with the actual project contents, the generated location database, and the repository context of this new chat.
+
 A comprehensive digital kneeboard and reference toolkit for DCS World (Digital Combat Simulator). This web application provides quick-access checklists, procedures, unit converters, and a location finder for various aircraft and maps.
 
 ## Features
@@ -46,7 +54,7 @@ Convert between common aviation units:
 - **Fuel:** gallons ↔ liters
 
 #### Location Finder
-- Search 4,702+ locations across 6 DCS maps
+- Search 5,134 locations across 14 DCS maps
 - **Cities:** Town and city names from DCS map files
 - **Airfields:** Complete airbase directory with parking positions
 - Filter by map, name, or MGRS coordinates
@@ -58,10 +66,19 @@ Convert between common aviation units:
 
 **Supported Maps:**
 - Caucasus
-- Mariana Islands (Current & WWII)
+- MarianaIslands
+- MarianasWWII
 - Nevada
 - Normandy
 - Syria
+- Afghanistan
+- Falklands
+- GermanyCW
+- Iraq
+- Kola
+- PersianGulf
+- SinaiMap
+- TheChannel
 
 ## Project Structure
 
@@ -69,12 +86,14 @@ Convert between common aviation units:
 dcs-pernera-web/
 ├── index.html              # Landing page
 ├── perneras.html           # Aircraft checklists
+├── calendario.html         # Training calendar page
+├── comms.html              # Communications page
 ├── brevities.html          # Radio communications reference
 ├── styles.css              # Global styles
 ├── main.js                 # Frontend logic
 ├── shared-nav.js           # Navigation component
 ├── data/
-│   ├── dcs_locations.json       # Generated locations database (1.8MB)
+│   ├── dcs_locations.json       # Generated locations database
 │   └── maps/
 │       ├── Airfields/
 │       │   └── TheatersAirbases.json    # Source from Briefing Room project
@@ -83,7 +102,8 @@ dcs-pernera-web/
 │       ├── MarianasWWII/
 │       ├── Nevada/
 │       ├── Normandy/
-│       └── Syria/
+│       ├── Syria/
+│       └── Additional DCS maps represented in generated JSON
 └── tools/                               # Data generation utilities
     ├── README.md
     ├── index.js
@@ -94,7 +114,7 @@ dcs-pernera-web/
         ├── convertToDms.js
         ├── formatMgrs.js
         ├── parseTownsLua.js
-        ├── processAirbases.js          # NEW: Process airfield data
+        ├── processAirbases.js
         └── readMapDirectories.js
 ```
 
@@ -152,7 +172,7 @@ Then navigate to `http://localhost:8000`
 - File: `TheatersAirbases.json` - Complete airbase directory for all DCS theatres
 - Location: `data/maps/Airfields/TheatersAirbases.json`
 - Contains 799 airbases with parking positions and coordinates
-- Only airbases for maps in the current project are included (Caucasus, MarianaIslands, MarianasWWII, Nevada, Normandy, Syria)
+- Only airbases for maps in the current project are included (Caucasus, MarianaIslands, MarianasWWII, Nevada, Normandy, Syria, Afghanistan, Falklands, GermanyCW, Iraq, Kola, PersianGulf, SinaiMap, TheChannel)
 
 ### Updating Airfield Data
 
@@ -257,6 +277,7 @@ This is a community tool for DCS World players. DCS World is a trademark of Eagl
 - **Eagle Dynamics** - DCS World and map data
 - **Briefing Room for DCS** - Complete airbase database
 - **DCS Community** - Feedback and procedure validation
+
 
 ---
 
