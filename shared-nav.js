@@ -5,7 +5,7 @@
 
     navRoot.innerHTML = [
       '<nav class="top-nav">',
-      '  <div class="nav-left"><a class="brand" href="index.html">Pernera Digital DCS</a></div>',
+      '  <div class="nav-left"><a class="brand" href="index.html"><img src="assets/logo-jiflighttools.jpeg" alt="JI Flight Tools logo" class="brand-logo"><span>JI - Flight Tools</span></a></div>',
       '  <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu">',
       '    <span></span><span></span><span></span>',
       '  </button>',
