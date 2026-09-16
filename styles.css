@@ -186,6 +186,22 @@ body{
   background:transparent;
 }
 .kneeboard-table td small{color:var(--sub);display:block;margin-top:6px}
+.calendar-table th:nth-child(3),
+.calendar-table td:nth-child(3){
+  width:24%;
+  min-width:220px;
+}
+.aircraft-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.aircraft-list li{
+  padding-left:0;
+}
+.aircraft-list li::before{
+  content:"• ";
+}
 
 /* PERNERAS LAYOUT */
 .perneras-layout{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start}
