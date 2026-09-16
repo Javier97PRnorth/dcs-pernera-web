@@ -29,6 +29,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  var aircraftSearch = document.getElementById('perneras-search');
+  var aircraftEmpty = document.getElementById('perneras-empty');
+  if (aircraftSearch && aircraftEmpty) {
+    var aircraftItems = document.querySelectorAll('.perneras-list li');
+    aircraftSearch.addEventListener('input', function () {
+      var query = aircraftSearch.value.trim().toLowerCase();
+      var matches = 0;
+
+      aircraftItems.forEach(function (item) {
+        var label = item.textContent || '';
+        var match = !query || label.toLowerCase().indexOf(query) !== -1;
+        item.classList.toggle('is-hidden', !match);
+        if (match) matches += 1;
+      });
+
+      aircraftEmpty.hidden = matches !== 0;
+    });
+  }
+
   function setChecklistState(btn, done) {
     btn.classList.toggle('is-done', done);
     btn.setAttribute('aria-pressed', done ? 'true' : 'false');

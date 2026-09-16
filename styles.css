@@ -192,7 +192,17 @@ body{
 .perneras-list,.pernera-content{min-width:0}
 .perneras-list{flex:1 1 220px;max-width:100%}
 .perneras-list h3{margin:16px 0 12px 0;padding-bottom:8px;color:var(--text);font-size:1.25rem;border-bottom:1px solid rgba(179,57,57,0.2)}
+.perneras-empty{
+  margin:0 0 12px 0;
+  padding:10px 12px;
+  border:1px solid rgba(179,57,57,0.28);
+  border-radius:6px;
+  background:rgba(179,57,57,0.06);
+  color:var(--sub);
+  font-size:0.9rem;
+}
 .perneras-list ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.perneras-list li.is-hidden{display:none}
 .perneras-list button{
   width:100%;
   text-align:left;
