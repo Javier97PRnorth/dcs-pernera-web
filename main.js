@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   var splashScreen = document.getElementById('splash-screen');
   if (splashScreen) {
-    var splashDelay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 100 : 1600;
+    var splashDelay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 100 : 2800;
     window.setTimeout(function () {
       splashScreen.remove();
     }, splashDelay);
