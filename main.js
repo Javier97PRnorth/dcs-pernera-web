@@ -2,6 +2,14 @@
    FILE: main.js
    =========================== */
 document.addEventListener('DOMContentLoaded', function () {
+  var splashScreen = document.getElementById('splash-screen');
+  if (splashScreen) {
+    var splashDelay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 100 : 1600;
+    window.setTimeout(function () {
+      splashScreen.remove();
+    }, splashDelay);
+  }
+
   var menuToggle = document.querySelector('.menu-toggle');
   var navLinks = document.querySelector('.nav-links');
 
