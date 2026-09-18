@@ -8,19 +8,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Pequeños ajustes locales (opcional) */
-    main{padding-top:86px}
-  </style>
 </head>
 <body data-page="comms">
   <div id="site-nav-root"></div>
 
-  <main>
-    <section class="panel" style="margin-top:18px">
-      <h2>Comms — Frases y respuestas</h2>
+  <main class="comms-page">
+    <section class="panel comms-panel">
+      <header class="comms-header">
+        <span class="section-kicker">Radio reference</span>
+        <h1>Comms</h1>
+        <p>Clear, concise language for every stage of a sortie, from start-up to landing.</p>
+      </header>
 
-      <div class="comms-nav" style="margin-top:12px">
+      <nav class="comms-nav" aria-label="Comms sections">
         <a href="#startup">START‑UP</a>
         <a href="#taxi">TAXI</a>
         <a href="#takeoff">TAKE‑OFF</a>
@@ -35,7 +35,7 @@
         <a href="#tanker">TANKER</a>
         <a href="#fenceout">FENCE‑OUT</a>
         <a href="#landing">ATERRIZAJE</a>
-      </div>
+      </nav>
 
       <!-- START-UP -->
       <h3 id="startup">START‑UP</h3>
