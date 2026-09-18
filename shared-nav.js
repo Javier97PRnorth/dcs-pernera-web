@@ -1,11 +1,13 @@
 (function () {
+  var config = window.siteConfig || {};
+
   function renderSharedNav() {
     var navRoot = document.getElementById('site-nav-root');
     if (!navRoot) return;
 
     navRoot.innerHTML = [
       '<nav class="top-nav">',
-      '  <div class="nav-left"><a class="brand" href="index.html"><img src="assets/logo-jiflighttools.jpeg" alt="JI Flight Tools logo" class="brand-logo"><span>JI - Flight Tools</span></a></div>',
+      '  <div class="nav-left"><a class="brand" href="index.html"><img src="' + (config.mark || 'assets/jisw-favicon/favicon-32x32.png') + '" alt="J&I SimWorks Systems mark" class="brand-logo"><span>J&I Flight Tools</span></a></div>',
       '  <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu">',
       '    <span></span><span></span><span></span>',
       '  </button>',
@@ -32,4 +34,8 @@
   }
 
   renderSharedNav();
+
+  if (!document.querySelector('.site-footer')) {
+    document.body.insertAdjacentHTML('beforeend', '<footer class="site-footer">powered by J&amp;I SimWorks Systems</footer>');
+  }
 })();

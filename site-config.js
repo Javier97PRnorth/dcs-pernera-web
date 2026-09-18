@@ -1,19 +1,21 @@
 window.siteConfig = window.siteConfig || {
-  brand: 'JI - Flight Tools',
-  logo: 'assets/logo-jiflighttools.jpeg',
+  brand: 'J&I Flight Tools',
+  parentBrand: 'J&I SimWorks Systems',
+  logo: 'assets/jisw-logo.png',
+  mark: 'assets/jisw-favicon/favicon-32x32.png',
   favicons: [
-    { rel: 'icon', type: 'image/png', sizes: '16x16', href: 'assets/favicons/favicon-16x16.png' },
-    { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'assets/favicons/favicon-32x32.png' },
-    { rel: 'icon', type: 'image/png', sizes: '48x48', href: 'assets/favicons/favicon-48x48.png' },
-    { rel: 'icon', type: 'image/png', sizes: '256x256', href: 'assets/favicons/favicon-256x256.png' },
-    { rel: 'apple-touch-icon', sizes: '180x180', href: 'assets/favicons/favicon-180x180.png' }
+    { rel: 'icon', type: 'image/x-icon', href: 'assets/jisw-favicon/favicon.ico' },
+    { rel: 'icon', type: 'image/png', sizes: '16x16', href: 'assets/jisw-favicon/favicon-16x16.png' },
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'assets/jisw-favicon/favicon-32x32.png' },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: 'assets/jisw-favicon/apple-touch-icon.png' },
+    { rel: 'manifest', href: 'assets/jisw-favicon/site.webmanifest' }
   ],
   titles: {
-    inicio: 'JI - Flight Tools — Inicio',
-    calendario: 'JI - Flight Tools — Calendario',
-    perneras: 'JI - Flight Tools — Perneras',
-    comms: 'JI - Flight Tools — Comms',
-    brevities: 'JI - Flight Tools — Brevities'
+    inicio: 'J&I Flight Tools — Home',
+    calendario: 'J&I Flight Tools — Calendar',
+    perneras: 'J&I Flight Tools — Flight Checklists',
+    comms: 'J&I Flight Tools — Comms',
+    brevities: 'J&I Flight Tools — Brevities'
   }
 };
 

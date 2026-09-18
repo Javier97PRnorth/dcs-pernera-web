@@ -49,9 +49,9 @@ body{
   animation:splash-mark 1100ms cubic-bezier(.22,1,.36,1) 150ms both;
 }
 .splash-logo{
-  width:112px;
-  height:112px;
-  object-fit:cover;
+  width:220px;
+  height:120px;
+  object-fit:contain;
   border:1px solid rgba(255,255,255,0.1);
   border-radius:18px;
   box-shadow:0 12px 30px rgba(0,0,0,0.32);
@@ -156,7 +156,7 @@ body{
 .brand-logo{
   width:28px;
   height:28px;
-  object-fit:cover;
+  object-fit:contain;
   border-radius:6px;
   border:1px solid rgba(255,255,255,0.08);
   background:rgba(255,255,255,0.02);
@@ -201,9 +201,9 @@ body{
   margin-bottom:18px;
 }
 .hero-logo{
-  width:120px;
-  height:120px;
-  object-fit:cover;
+  width:260px;
+  height:142px;
+  object-fit:contain;
   border-radius:18px;
   border:1px solid rgba(255,255,255,0.08);
   box-shadow:0 8px 20px rgba(0,0,0,0.28);
@@ -661,7 +661,7 @@ body{
 }
 
 /* FOOTER small */
-.site-footer{max-width:var(--maxw);margin:18px auto 40px;color:var(--sub);font-size:0.85rem;padding:0 18px}
+.site-footer{max-width:var(--maxw);margin:18px auto 40px;color:var(--sub);font-size:0.85rem;padding:14px 18px 0;border-top:1px solid rgba(255,255,255,0.06);text-align:center}
 
 /* BREVITIES SEARCH */
 .search-wrapper{margin-bottom:12px}

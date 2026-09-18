@@ -1,8 +1,8 @@
-# JI - Flight Tools
+# J&I Flight Tools
 
 Repository context for the new working chat: Pernera digital 02.
 
-This repository contains a static DCS World web companion called JI - Flight Tools. It is designed as a digital kneeboard and quick-reference toolkit for aircraft cold starts, checklists, radio brevities, training calendars, communications phrases, and a location finder based on DCS map data and airfield metadata.
+This repository contains a static DCS World web toolkit called J&I Flight Tools. It is designed as a digital kneeboard and quick-reference toolkit for aircraft cold starts, checklists, radio brevities, training calendars, communications phrases, and a location finder based on DCS map data and airfield metadata.
 
 The project is intentionally lightweight and framework-free: HTML, CSS, vanilla JavaScript and generated JSON assets are used without a build pipeline. It can be opened locally in a browser or served directly through a static web server such as GitHub Pages.
 
