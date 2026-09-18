@@ -363,6 +363,61 @@ body.page-exit{
   width:24%;
   min-width:220px;
 }
+.calendar-table{
+  min-width:1180px;
+  border-collapse:separate;
+  border-spacing:0 6px;
+}
+.calendar-table thead th{
+  padding:13px 14px;
+  border:0;
+  border-bottom:2px solid var(--accent);
+  background:linear-gradient(180deg,#2A2D33,#202226);
+  letter-spacing:0.2px;
+}
+.calendar-table tbody td{
+  padding:14px;
+  border-top:1px solid rgba(255,255,255,0.06);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  background:#17191D;
+}
+.calendar-table tbody td:first-child{
+  width:70px;
+  border-left:1px solid rgba(255,255,255,0.06);
+  color:var(--accent);
+  font-family:'Courier New',monospace;
+  font-size:1rem;
+  font-weight:700;
+  text-align:center;
+}
+.calendar-table tbody td:last-child{
+  border-right:1px solid rgba(255,255,255,0.06);
+}
+.calendar-table tbody td:nth-child(2){
+  color:var(--text);
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+.calendar-table tbody tr:not(.week-active):hover td:not(.common-training){
+  background:#1C1F24;
+  border-color:rgba(179,57,57,0.3);
+}
+.calendar-table tbody td.common-training{
+  border-left:1px solid rgba(179,57,57,0.2);
+  background:linear-gradient(180deg,rgba(179,57,57,0.055),rgba(255,255,255,0.012));
+}
+.calendar-table tbody tr.week-active td:not(.common-training){
+  background:rgba(179,57,57,0.1);
+  border-color:rgba(179,57,57,0.35);
+}
+.calendar-table tbody tr.week-active td:first-child{
+  background:rgba(179,57,57,0.25);
+  color:#fff;
+}
+.calendar-table tbody tr.week-active td.common-training{
+  background:linear-gradient(180deg,rgba(179,57,57,0.055),rgba(255,255,255,0.012));
+  border-color:rgba(179,57,57,0.2);
+}
 .aircraft-list{
   margin:0;
   padding:0;
