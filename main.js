@@ -2,9 +2,28 @@
    FILE: main.js
    =========================== */
 document.addEventListener('DOMContentLoaded', function () {
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reducedMotion) {
+    document.querySelectorAll('a[href]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        if (link.target && link.target !== '_self') return;
+
+        var destination = new URL(link.href, window.location.href);
+        if (destination.origin !== window.location.origin || destination.pathname === window.location.pathname) return;
+
+        event.preventDefault();
+        document.body.classList.add('page-exit');
+        window.setTimeout(function () {
+          window.location.href = destination.href;
+        }, 280);
+      });
+    });
+  }
+
   var splashScreen = document.getElementById('splash-screen');
   if (splashScreen) {
-    var splashDelay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 100 : 2800;
+    var splashDelay = reducedMotion ? 100 : 2800;
     window.setTimeout(function () {
       splashScreen.remove();
     }, splashDelay);
