@@ -14,9 +14,9 @@
   <main class="threats-page">
     <section class="panel threats-panel">
       <header class="threats-header">
-        <span class="section-kicker">Threat reference</span>
-        <h1>Threat Database</h1>
-        <p>A practical field reference for identifying surface, naval, radar, missile, and airborne threats in DCS World.</p>
+        <span class="section-kicker">F/A-18C RWR reference</span>
+        <h1>RWR Threat Tables</h1>
+        <p>Radar Warning Receiver codes for identifying SAM systems, radars, aircraft, and naval contacts in DCS World.</p>
       </header>
 
       <div class="threats-layout">
@@ -30,31 +30,21 @@
           <div id="threat-results-count" class="threat-results-count" aria-live="polite"></div>
           <div id="threat-notes" class="threat-notes" hidden></div>
           <div class="threat-table-wrapper">
-            <table class="threat-table threat-global-table" aria-label="Global DCS threat database">
+            <table class="threat-table threat-global-table" aria-label="F/A-18C RWR threat tables">
               <thead>
                 <tr>
-                  <th>Threat / system</th>
-                  <th>Threat type</th>
-                  <th>Designation / platform</th>
-                  <th>RWR</th>
-                  <th>HARM</th>
-                  <th>Range</th>
-                  <th>Altitude</th>
-                  <th>Guidance / role</th>
-                  <th>Equipment</th>
-                  <th>Other source data</th>
+                  <th>Code</th>
+                  <th>System / Aircraft</th>
+                  <th>Type</th>
+                  <th>Range (nm)</th>
+                  <th>Vertical range (ft)</th>
                 </tr>
                 <tr class="threat-filter-row">
-                  <th><input class="threat-column-filter" data-threat-column="0" type="search" placeholder="Name" aria-label="Filter threat name"></th>
-                  <th><select class="threat-column-filter" data-threat-column="1" aria-label="Filter threat type"><option value="">All</option></select></th>
-                  <th><input class="threat-column-filter" data-threat-column="2" type="search" placeholder="Designation" aria-label="Filter designation or platform"></th>
-                  <th><input class="threat-column-filter" data-threat-column="3" type="search" placeholder="RWR" aria-label="Filter RWR code"></th>
-                  <th><input class="threat-column-filter" data-threat-column="4" type="search" placeholder="HARM" aria-label="Filter HARM code"></th>
-                  <th><input class="threat-column-filter" data-threat-column="5" type="search" placeholder="Range" aria-label="Filter range"></th>
-                  <th><input class="threat-column-filter" data-threat-column="6" type="search" placeholder="Altitude" aria-label="Filter altitude"></th>
-                  <th><input class="threat-column-filter" data-threat-column="7" type="search" placeholder="Guidance" aria-label="Filter guidance or role"></th>
-                  <th><input class="threat-column-filter" data-threat-column="8" type="search" placeholder="Equipment" aria-label="Filter equipment"></th>
-                  <th><input class="threat-column-filter" data-threat-column="9" type="search" placeholder="Other" aria-label="Filter other source data"></th>
+                  <th><input class="threat-column-filter" data-threat-column="0" type="search" placeholder="Code" aria-label="Filter RWR code"></th>
+                  <th><input class="threat-column-filter" data-threat-column="1" type="search" placeholder="System" aria-label="Filter system or aircraft"></th>
+                  <th><select class="threat-column-filter" data-threat-column="2" aria-label="Filter threat type"><option value="">All</option></select></th>
+                  <th><input class="threat-column-filter" data-threat-column="3" type="search" placeholder="Range" aria-label="Filter range"></th>
+                  <th><input class="threat-column-filter" data-threat-column="4" type="search" placeholder="Vertical" aria-label="Filter vertical range"></th>
                 </tr>
               </thead>
               <tbody id="threat-rows"></tbody>
@@ -67,7 +57,7 @@
 
   <script src="site-config.js"></script>
   <script src="shared-nav.js"></script>
-  <script src="data/threat-database.js"></script>
+  <script src="data/rwr-threat-database.js"></script>
   <script src="threats.js"></script>
   <script src="main.js"></script>
 </body>
