@@ -26,12 +26,6 @@
               <span>Search threats</span>
               <input id="threat-search" class="search-input" type="search" placeholder="Search by name, designation, range..." autocomplete="off">
             </label>
-            <label class="threat-control">
-              <span>Threat type</span>
-              <select id="threat-type" class="threat-select">
-                <option value="all">All threat types</option>
-              </select>
-            </label>
           </div>
           <div id="threat-results-count" class="threat-results-count" aria-live="polite"></div>
           <div id="threat-notes" class="threat-notes" hidden></div>
@@ -48,6 +42,17 @@
                   <th>Guidance / role</th>
                   <th>Equipment</th>
                   <th>Other source data</th>
+                </tr>
+                <tr class="threat-filter-row">
+                  <th><input class="threat-column-filter" data-threat-column="0" type="search" placeholder="Name" aria-label="Filter threat name"></th>
+                  <th><select class="threat-column-filter" data-threat-column="1" aria-label="Filter threat type"><option value="">All</option></select></th>
+                  <th><input class="threat-column-filter" data-threat-column="2" type="search" placeholder="Designation" aria-label="Filter designation or platform"></th>
+                  <th><input class="threat-column-filter" data-threat-column="3" type="search" placeholder="RWR / HARM" aria-label="Filter RWR or HARM"></th>
+                  <th><input class="threat-column-filter" data-threat-column="4" type="search" placeholder="Range" aria-label="Filter range"></th>
+                  <th><input class="threat-column-filter" data-threat-column="5" type="search" placeholder="Altitude" aria-label="Filter altitude"></th>
+                  <th><input class="threat-column-filter" data-threat-column="6" type="search" placeholder="Guidance" aria-label="Filter guidance or role"></th>
+                  <th><input class="threat-column-filter" data-threat-column="7" type="search" placeholder="Equipment" aria-label="Filter equipment"></th>
+                  <th><input class="threat-column-filter" data-threat-column="8" type="search" placeholder="Other" aria-label="Filter other source data"></th>
                 </tr>
               </thead>
               <tbody id="threat-rows"></tbody>

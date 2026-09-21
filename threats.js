@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   var database = window.threatDatabase;
-  var typeSelect = document.getElementById('threat-type');
   var searchInput = document.getElementById('threat-search');
   var resultsCount = document.getElementById('threat-results-count');
   var notesRoot = document.getElementById('threat-notes');
   var tableBody = document.getElementById('threat-rows');
+  var columnFilters = Array.from(document.querySelectorAll('.threat-column-filter'));
 
-  if (!database || !typeSelect || !searchInput || !resultsCount || !notesRoot || !tableBody) return;
+  if (!database || !searchInput || !resultsCount || !notesRoot || !tableBody || columnFilters.length !== 9) return;
 
   function text(value) {
     return value === undefined || value === null || value === '' ? '—' : String(value);
@@ -17,11 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
     database.records.forEach(function (record) {
       if (types.indexOf(record.type) === -1) types.push(record.type);
     });
+    var typeFilter = columnFilters[1];
     types.sort().forEach(function (type) {
       var option = document.createElement('option');
       option.value = type;
       option.textContent = type;
-      typeSelect.appendChild(option);
+      typeFilter.appendChild(option);
     });
   }
 
@@ -59,23 +60,50 @@ document.addEventListener('DOMContentLoaded', function () {
     return cell;
   }
 
+  function displayFields(record) {
+    var nameFields = record.fields.filter(function (field) {
+      return !/^threat type$/i.test(field.label) && /^(threat|radar|russian designation|nato designation)$/i.test(field.label);
+    }).slice(0, 1);
+    if (!nameFields.length) {
+      nameFields = record.fields.filter(function (field) { return !/^threat type$/i.test(field.label); }).slice(0, 1);
+    }
+    var designationFields = fieldsFor(record, ['nato', 'platform', 'sam systems', 'ground based']);
+    var rwrFields = fieldsFor(record, ['rwr', 'harm code']);
+    var rangeFields = fieldsFor(record, ['range', 'detection range']);
+    var altitudeFields = fieldsFor(record, ['altitude']);
+    var guidanceFields = fieldsFor(record, ['guidance', 'role', 'type', 'speed', 'flexibility']);
+    var equipmentFields = fieldsFor(record, ['ammunition', 'armament', 'ciws', 'missile amount', 'gun ammo']);
+    var used = nameFields.concat(designationFields, rwrFields, rangeFields, altitudeFields, guidanceFields, equipmentFields);
+    var otherFields = record.fields.filter(function (field) { return used.indexOf(field) === -1; });
+    return [
+      nameFields.map(fieldText).join(' '),
+      record.type,
+      designationFields.map(fieldText).join(' '),
+      rwrFields.map(fieldText).join(' '),
+      rangeFields.map(fieldText).join(' '),
+      altitudeFields.map(fieldText).join(' '),
+      guidanceFields.map(fieldText).join(' '),
+      equipmentFields.map(fieldText).join(' '),
+      otherFields.map(fieldText).join(' ')
+    ];
+  }
+
   function render() {
-    var selectedType = typeSelect.value;
     var query = searchInput.value.trim().toLowerCase();
+    var filters = columnFilters.map(function (filter) { return filter.value.trim().toLowerCase(); });
     tableBody.replaceChildren();
     var visibleRows = database.records.filter(function (record) {
-      var searchable = [record.type, record.sourceCategory].concat(record.fields.map(fieldText)).join(' ').toLowerCase();
-      return (selectedType === 'all' || record.type === selectedType) && (!query || searchable.indexOf(query) !== -1);
+      var columns = displayFields(record).map(function (value) { return value.toLowerCase(); });
+      var searchable = columns.join(' ') + ' ' + record.sourceCategory.toLowerCase();
+      return (!query || searchable.indexOf(query) !== -1) && filters.every(function (filter, index) {
+        return !filter || columns[index].indexOf(filter) !== -1;
+      });
     });
 
     visibleRows.forEach(function (record) {
       var tr = document.createElement('tr');
-      var nameFields = record.fields.filter(function (field) {
-        return !/^threat type$/i.test(field.label) && /^(threat|radar|russian designation|nato designation)$/i.test(field.label);
-      }).slice(0, 1);
-      if (!nameFields.length) {
-        nameFields = record.fields.filter(function (field) { return !/^threat type$/i.test(field.label); }).slice(0, 1);
-      }
+      var columns = displayFields(record);
+      var nameFields = record.fields.filter(function (field) { return columns[0].indexOf(field.value) !== -1; }).slice(0, 1);
       var designationFields = fieldsFor(record, ['nato', 'platform', 'sam systems', 'ground based']);
       var rwrFields = fieldsFor(record, ['rwr', 'harm code']);
       var rangeFields = fieldsFor(record, ['range', 'detection range']);
@@ -118,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   renderTypeOptions();
-  typeSelect.addEventListener('change', render);
   searchInput.addEventListener('input', render);
+  columnFilters.forEach(function (filter) { filter.addEventListener('input', render); });
   render();
 });
