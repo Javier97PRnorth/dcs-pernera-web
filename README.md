@@ -82,10 +82,11 @@ Convert between common aviation units:
 
 ## Project Structure
 
-```
 dcs-pernera-web/
 ├── index.html              # Landing page
 ├── perneras.html           # Aircraft checklists
+├── threat-database.html    # Searchable threat reference page
+├── threats.js              # Threat database rendering and filtering
 ├── calendario.html         # Training calendar page
 ├── comms.html              # Communications page
 ├── brevities.html          # Radio communications reference
@@ -94,6 +95,7 @@ dcs-pernera-web/
 ├── shared-nav.js           # Navigation component
 ├── data/
 │   ├── dcs_locations.json       # Generated locations database
+│   ├── threat-database.js       # Extracted threat reference data
 │   └── maps/
 │       ├── Airfields/
 │       │   └── TheatersAirbases.json    # Source from Briefing Room project
