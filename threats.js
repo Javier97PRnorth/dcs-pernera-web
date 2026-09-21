@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var tableBody = document.getElementById('threat-rows');
   var columnFilters = Array.from(document.querySelectorAll('.threat-column-filter'));
 
-  if (!database || !searchInput || !resultsCount || !notesRoot || !tableBody || columnFilters.length !== 9) return;
+  if (!database || !searchInput || !resultsCount || !notesRoot || !tableBody || columnFilters.length !== 10) return;
 
   function text(value) {
     return value === undefined || value === null || value === '' ? '—' : String(value);
@@ -53,6 +53,22 @@ document.addEventListener('DOMContentLoaded', function () {
     return cell;
   }
 
+  function codeCell(fields) {
+    var cell = document.createElement('td');
+    cell.className = 'threat-code-cell';
+    if (!fields.length) {
+      cell.textContent = '—';
+      return cell;
+    }
+    fields.forEach(function (field) {
+      var line = document.createElement('span');
+      line.className = 'threat-field';
+      line.textContent = text(field.value);
+      cell.appendChild(line);
+    });
+    return cell;
+  }
+
   function nameCell(fields) {
     var cell = document.createElement('td');
     cell.className = 'threat-name-cell';
@@ -68,18 +84,20 @@ document.addEventListener('DOMContentLoaded', function () {
       nameFields = record.fields.filter(function (field) { return !/^threat type$/i.test(field.label); }).slice(0, 1);
     }
     var designationFields = fieldsFor(record, ['nato', 'platform', 'sam systems', 'ground based']);
-    var rwrFields = fieldsFor(record, ['rwr', 'harm code']);
+    var rwrFields = fieldsFor(record, ['rwr symbology', 'rwr symbol', 'rwr ident']);
+    var harmFields = fieldsFor(record, ['harm code']);
     var rangeFields = fieldsFor(record, ['range', 'detection range']);
     var altitudeFields = fieldsFor(record, ['altitude']);
     var guidanceFields = fieldsFor(record, ['guidance', 'role', 'type', 'speed', 'flexibility']);
     var equipmentFields = fieldsFor(record, ['ammunition', 'armament', 'ciws', 'missile amount', 'gun ammo']);
-    var used = nameFields.concat(designationFields, rwrFields, rangeFields, altitudeFields, guidanceFields, equipmentFields);
+    var used = nameFields.concat(designationFields, rwrFields, harmFields, rangeFields, altitudeFields, guidanceFields, equipmentFields);
     var otherFields = record.fields.filter(function (field) { return used.indexOf(field) === -1; });
     return [
       nameFields.map(fieldText).join(' '),
       record.type,
       designationFields.map(fieldText).join(' '),
       rwrFields.map(fieldText).join(' '),
+      harmFields.map(fieldText).join(' '),
       rangeFields.map(fieldText).join(' '),
       altitudeFields.map(fieldText).join(' '),
       guidanceFields.map(fieldText).join(' '),
@@ -105,12 +123,13 @@ document.addEventListener('DOMContentLoaded', function () {
       var columns = displayFields(record);
       var nameFields = record.fields.filter(function (field) { return columns[0].indexOf(field.value) !== -1; }).slice(0, 1);
       var designationFields = fieldsFor(record, ['nato', 'platform', 'sam systems', 'ground based']);
-      var rwrFields = fieldsFor(record, ['rwr', 'harm code']);
+      var rwrFields = fieldsFor(record, ['rwr symbology', 'rwr symbol', 'rwr ident']);
+      var harmFields = fieldsFor(record, ['harm code']);
       var rangeFields = fieldsFor(record, ['range', 'detection range']);
       var altitudeFields = fieldsFor(record, ['altitude']);
       var guidanceFields = fieldsFor(record, ['guidance', 'role', 'type', 'speed', 'flexibility']);
       var equipmentFields = fieldsFor(record, ['ammunition', 'armament', 'ciws', 'missile amount', 'gun ammo']);
-      var used = nameFields.concat(designationFields, rwrFields, rangeFields, altitudeFields, guidanceFields, equipmentFields);
+      var used = nameFields.concat(designationFields, rwrFields, harmFields, rangeFields, altitudeFields, guidanceFields, equipmentFields);
       var otherFields = record.fields.filter(function (field) { return used.indexOf(field) === -1; });
 
       tr.appendChild(nameCell(nameFields));
@@ -119,7 +138,8 @@ document.addEventListener('DOMContentLoaded', function () {
       typeCell.className = 'threat-type-cell';
       tr.appendChild(typeCell);
       tr.appendChild(cellWithFields(designationFields));
-      tr.appendChild(cellWithFields(rwrFields));
+      tr.appendChild(codeCell(rwrFields));
+      tr.appendChild(codeCell(harmFields));
       tr.appendChild(cellWithFields(rangeFields));
       tr.appendChild(cellWithFields(altitudeFields));
       tr.appendChild(cellWithFields(guidanceFields));

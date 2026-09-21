@@ -925,7 +925,7 @@ body.page-return{
 .threat-column-filter::placeholder{color:var(--muted)}
 .threat-table td{color:var(--text)}
 .threat-table tbody tr:hover{background:rgba(179,57,57,0.07)}
-.threat-global-table{min-width:1500px}
+.threat-global-table{min-width:1620px}
 .threat-global-table th:first-child,.threat-global-table td:first-child{min-width:190px}
 .threat-global-table th:nth-child(2),.threat-global-table td:nth-child(2){width:150px}
 .threat-global-table th:last-child,.threat-global-table td:last-child{min-width:230px}
