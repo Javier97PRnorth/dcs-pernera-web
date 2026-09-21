@@ -58,7 +58,7 @@ body.page-return{
   display:grid;
   place-items:center;
   background:var(--bg);
-  animation:splash-exit 500ms ease 2300ms forwards;
+  animation:splash-exit 500ms ease 3300ms forwards;
 }
 .splash-content{
   display:flex;
