@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var typeSelect = document.getElementById('threat-type');
   var searchInput = document.getElementById('threat-search');
   var resultsCount = document.getElementById('threat-results-count');
+  var notesRoot = document.getElementById('threat-notes');
   var tableBody = document.getElementById('threat-rows');
 
-  if (!database || !typeSelect || !searchInput || !resultsCount || !tableBody) return;
+  if (!database || !typeSelect || !searchInput || !resultsCount || !notesRoot || !tableBody) return;
 
   function text(value) {
     return value === undefined || value === null || value === '' ? '—' : String(value);
@@ -100,6 +101,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     resultsCount.textContent = visibleRows.length + (visibleRows.length === 1 ? ' entry' : ' entries') + ' shown';
+  }
+
+  if (database.notes && database.notes.length) {
+    var notesTitle = document.createElement('strong');
+    notesTitle.textContent = 'Reference notes';
+    notesRoot.appendChild(notesTitle);
+    var notesList = document.createElement('ul');
+    database.notes.forEach(function (note) {
+      var item = document.createElement('li');
+      item.textContent = note;
+      notesList.appendChild(item);
+    });
+    notesRoot.appendChild(notesList);
+    notesRoot.hidden = false;
   }
 
   renderTypeOptions();

@@ -906,6 +906,10 @@ body.page-return{
 .threat-select{width:100%;padding:10px 12px;border:1px solid rgba(179,57,57,0.35);border-radius:6px;background:#1A1C20;color:var(--text);font:inherit;font-size:0.9rem;text-transform:none;letter-spacing:0}
 .threat-select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(179,57,57,0.1)}
 .threat-results-count{margin:14px 0;color:var(--sub);font-size:0.82rem}
+.threat-notes{margin:12px 0 18px;padding:13px 15px;border:1px solid rgba(179,57,57,0.2);border-radius:6px;background:rgba(179,57,57,0.045);color:var(--sub);font-size:0.8rem;line-height:1.45}
+.threat-notes strong{display:block;margin-bottom:7px;color:var(--accent);font-size:0.72rem;letter-spacing:1px;text-transform:uppercase}
+.threat-notes ul{margin:0;padding-left:18px}
+.threat-notes li{margin:4px 0}
 .threat-category{margin-top:24px}
 .threat-category-heading{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.07)}
 .threat-category-heading h2{margin:0;color:var(--text);font-size:1rem;letter-spacing:0.4px}
