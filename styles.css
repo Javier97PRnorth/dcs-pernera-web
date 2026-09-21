@@ -894,6 +894,9 @@ body.page-return{
 .threats-header{padding:4px 0 24px;border-bottom:1px solid rgba(255,255,255,0.07)}
 .threats-header h1{margin:0;color:var(--text);font-size:2rem;letter-spacing:0.3px}
 .threats-header p{max-width:720px;margin:8px 0 0;color:var(--sub);font-size:0.96rem}
+.rwr-legend{display:flex;flex-wrap:wrap;align-items:center;gap:9px 16px;margin-top:18px;padding:12px 15px;border:1px solid rgba(179,57,57,0.22);border-radius:6px;background:rgba(179,57,57,0.045);color:var(--sub);font-size:0.8rem}
+.rwr-legend strong{color:var(--accent);font-size:0.72rem;letter-spacing:1px;text-transform:uppercase}
+.rwr-legend b{color:var(--text);font-family:'Courier New',monospace}
 .threats-layout{display:block;margin-top:24px}
 .threats-aside{align-self:start;position:sticky;top:76px;padding:16px;border:1px solid rgba(255,255,255,0.06);border-radius:6px;background:rgba(255,255,255,0.018)}
 .threats-aside-label{color:var(--accent);font-size:0.72rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}
@@ -996,6 +999,7 @@ body.page-return{
   .threats-page{padding:76px 12px 22px}
   .threats-panel{padding:20px 14px}
   .threats-header h1{font-size:1.7rem}
+  .rwr-legend{align-items:flex-start;flex-direction:column;gap:6px}
   .threats-layout{margin-top:18px}
   .threats-controls{grid-template-columns:1fr}
 }
