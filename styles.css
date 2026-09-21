@@ -31,6 +31,9 @@ body.page-exit{
   pointer-events:none;
   animation:page-exit 280ms cubic-bezier(.55,.08,.68,.53) forwards;
 }
+body.page-return{
+  animation:page-return 460ms cubic-bezier(.22,1,.36,1) both;
+}
 @keyframes page-enter{
   from{opacity:0;transform:translateX(18px) scale(0.995)}
   to{opacity:1;transform:translateX(0) scale(1)}
@@ -39,8 +42,12 @@ body.page-exit{
   from{opacity:1;transform:translateX(0) scale(1)}
   to{opacity:0;transform:translateX(-18px) scale(0.995)}
 }
+@keyframes page-return{
+  from{opacity:0;transform:translateX(-18px) scale(0.995)}
+  to{opacity:1;transform:translateX(0) scale(1)}
+}
 @media (prefers-reduced-motion:reduce){
-  body,body.page-exit{animation:none}
+  body,body.page-exit,body.page-return{animation:none}
 }
 
 /* SPLASH */

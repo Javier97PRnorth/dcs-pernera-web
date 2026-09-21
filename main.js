@@ -3,6 +3,17 @@
    =========================== */
 document.addEventListener('DOMContentLoaded', function () {
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  window.addEventListener('pageshow', function (event) {
+    document.body.classList.remove('page-exit');
+    if (!reducedMotion && event.persisted) {
+      document.body.classList.remove('page-return');
+      window.requestAnimationFrame(function () {
+        document.body.classList.add('page-return');
+      });
+    }
+  });
+
   if (!reducedMotion) {
     document.querySelectorAll('a[href]').forEach(function (link) {
       link.addEventListener('click', function (event) {
