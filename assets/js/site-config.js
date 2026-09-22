@@ -12,8 +12,8 @@ window.siteConfig = window.siteConfig || {
   ],
   titles: {
     inicio: 'J&I Flight Tools — Home',
-    calendario: 'J&I Flight Tools — Calendar',
-    perneras: 'J&I Flight Tools — Flight Checklists',
+    calendar: 'J&I Flight Tools — Calendar',
+    'flight-checklists': 'J&I Flight Tools — Flight Checklists',
     threats: 'J&I Flight Tools — Threat Database',
     comms: 'J&I Flight Tools — Comms',
     brevities: 'J&I Flight Tools — Brevities'

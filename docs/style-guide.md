@@ -4,7 +4,7 @@
 The site follows a minimalist technical mockup inspired by a digital kneeboard: dark, compact, readable, and operational.
 
 ## Color palette
-The current design uses these CSS variables from styles.css:
+The current design uses these CSS variables from `assets/css/styles.css`:
 
 - background: #0D0D0F
 - panel: #1A1C20
@@ -48,7 +48,7 @@ Each aircraft panel should be visually consistent:
 - technical notes under that
 
 ## Distance and spacing values
-Use the existing spacing conventions from styles.css as the baseline:
+Use the existing spacing conventions from `assets/css/styles.css` as the baseline:
 
 - page padding edges: 18px
 - panel padding: 18px
