@@ -40,6 +40,27 @@ body.page-exit{
 body.page-return{
   animation:page-return 460ms cubic-bezier(.22,1,.36,1) both;
 }
+body[data-page="inicio"]{
+  animation:home-page-enter 460ms ease both;
+}
+body[data-page="inicio"].page-exit{
+  animation:home-page-exit 280ms ease forwards;
+}
+body[data-page="inicio"].page-return{
+  animation:home-page-return 460ms ease both;
+}
+@keyframes home-page-enter{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes home-page-exit{
+  from{opacity:1}
+  to{opacity:0}
+}
+@keyframes home-page-return{
+  from{opacity:0}
+  to{opacity:1}
+}
 @keyframes page-enter{
   from{opacity:0;transform:translateX(18px) scale(0.995)}
   to{opacity:1;transform:translateX(0) scale(1)}
@@ -229,9 +250,11 @@ body.page-return{
   inset:0;
   z-index:0;
   height:100vh;
+  min-height:100dvh;
   overflow:hidden;
   opacity:0.16;
   pointer-events:none;
+  isolation:isolate;
   mask-image:linear-gradient(180deg,rgba(0,0,0,0.9),rgba(0,0,0,0.42) 74%,transparent 100%);
 }
 .home-dynamic-grid-plane{
