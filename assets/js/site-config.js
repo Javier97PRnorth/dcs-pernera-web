@@ -16,7 +16,8 @@ window.siteConfig = window.siteConfig || {
     'flight-checklists': 'J&I Flight Tools — Flight Checklists',
     threats: 'J&I Flight Tools — Threat Database',
     comms: 'J&I Flight Tools — Comms',
-    brevities: 'J&I Flight Tools — Brevities'
+    brevities: 'J&I Flight Tools — Brevities',
+    formations: 'J&I Flight Tools — Formations'
   }
 };
 

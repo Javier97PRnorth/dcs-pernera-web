@@ -16,6 +16,7 @@
       '    <a href="calendar.html">Calendar</a>',
       '    <a href="flight-checklists.html">Flight Checklists</a>',
       '    <a href="threat-database.html">Threats</a>',
+      '    <a href="formations.html">Formations</a>',
       '    <a href="comms.html">Comms</a>',
       '    <a href="brevities.html">Brevities</a>',
       '  </div>',
