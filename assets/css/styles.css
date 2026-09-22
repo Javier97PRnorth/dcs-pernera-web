@@ -227,7 +227,7 @@ body.page-return{
 .hero{
   padding:110px 18px 36px;
   text-align:center;
-  background:radial-gradient(circle at 20% 10%, rgba(58,63,71,0.12), transparent 10%), linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.2));
+  background:var(--bg);
 }
 .hero .container{max-width:var(--maxw);margin:0 auto}
 .hero-logo-wrap{
@@ -269,7 +269,7 @@ body.page-return{
 .btn:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
 
 /* HOME TOOL SHELF */
-.home-main{padding:0 18px 28px}
+.home-main{padding:0 18px 28px;background:var(--bg)}
 .tool-shelf{max-width:var(--maxw);margin:0 auto}
 .tool-shelf-heading{max-width:680px;margin:0 auto 28px;text-align:center}
 .section-kicker{
