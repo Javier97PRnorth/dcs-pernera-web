@@ -103,88 +103,88 @@ document.addEventListener('DOMContentLoaded', function () {
     var allDone = items.length > 0 && Array.from(items).every(function (item) {
       return item.classList.contains('is-done');
     });
-    button.textContent = allDone ? 'Desmarcar todo' : 'Marcar todo';
+    button.textContent = allDone ? 'Unmark all' : 'Mark all';
   }
 
   var chuckGuides = {
     tf51: {
-      summary: 'Prioriza el arranque limpio, la estabilidad del motor y la preparación de vuelo antes de mover el avión.',
+      summary: 'Prioritize a clean start, engine stability, and flight preparation before moving the aircraft.',
       items: [
-        'Verifica que el carburador, la bomba de combustible y las RPM estén en la posición correcta.',
-        'Asegura el calentamiento del motor antes de salir del parking.',
-        'Revisa trim, oxígeno y radio antes del taxi.'
+        'Verify that the carburetor, fuel pump, and RPM are set correctly.',
+        'Warm up the engine before leaving the parking area.',
+        'Check trim, oxygen, and radio before taxi.'
       ]
     },
     p47: {
-      summary: 'Este avión necesita una preparación muy ordenada de combustible, presión y enfriamiento antes del despegue.',
+      summary: 'This aircraft requires an orderly fuel, pressure, and cooling setup before takeoff.',
       items: [
-        'Comprueba el estado del carburador, el selector de tanques y los flaps de enfriamiento.',
-        'Haz un calentamiento estable antes de subir RPM.',
-        'No olvides el setup de trim y de radios antes de la salida.'
+        'Check the carburetor, tank selector, and cooling flaps.',
+        'Complete a stable warm-up before increasing RPM.',
+        'Do not forget the trim and radio setup before departure.'
       ]
     },
     f4u1d: {
-      summary: 'La clave está en el cebado correcto, la presión de aceite y el setup de mezcla antes de arrancar.',
+      summary: 'The key is correct priming, oil pressure, and mixture setup before starting.',
       items: [
-        'Revisa la posición del selector de combustible y del arrancador.',
-        'Confirma el calentamiento y la presión de aceite antes de salir.',
-        'Prepara el uso de flaps y de supercargador para el primer tramo.'
+        'Check the fuel selector and starter position.',
+        'Confirm warm-up and oil pressure before departure.',
+        'Prepare the flaps and supercharger settings for the initial leg.'
       ]
     },
     bf109: {
-      summary: 'Este avión exige un arranque preciso y un calentamiento claro para evitar problemas en la salida.',
+      summary: 'This aircraft requires a precise start and proper warm-up to avoid problems on departure.',
       items: [
-        'Verifica bombas de combustible, magnetos e ignición antes de arrancar.',
-        'Asegura el calentamiento del motor y la estabilidad del refrigerante.',
-        'Prepara radiadores, oxígeno y radio para el taxi y el despegue.'
+        'Verify the fuel pumps, magnetos, and ignition before starting.',
+        'Ensure engine warm-up and coolant stability.',
+        'Prepare the radiators, oxygen, and radio for taxi and takeoff.'
       ]
     },
     fw190a8: {
-      summary: 'El calentamiento del motor y el control de presión de combustible son lo más importante aquí.',
+      summary: 'Engine warm-up and fuel-pressure control are the priorities here.',
       items: [
-        'Comprueba la presión de combustible antes de dar el arranque.',
-        'Mantén el calentamiento progresivo hasta que el aceite y el motor estén estables.',
-        'Prepara flaps, cúpula y oxígeno antes de la salida.'
+        'Check fuel pressure before starting.',
+        'Use a progressive warm-up until the oil and engine are stable.',
+        'Prepare the flaps, canopy, and oxygen before departure.'
       ]
     },
     fw190d9: {
-      summary: 'Necesita un arranque limpio y un calentamiento firme para dejar el motor en buen estado.',
+      summary: 'It needs a clean start and thorough warm-up to leave the engine in good condition.',
       items: [
-        'Revisa la presión de combustible y el estado de los flaps de enfriamiento.',
-        'Asegura el calentamiento del aceite y del refrigerante antes de la salida.',
-        'No olvides el setup de cúpula, oxígeno y tren antes del taxi.'
+        'Check fuel pressure and the cooling-flap position.',
+        'Warm up the oil and coolant before departure.',
+        'Do not forget the canopy, oxygen, and landing-gear setup before taxi.'
       ]
     },
     spitfire: {
-      summary: 'La guía breve aquí es: preparar carburador, mezcla y calentamiento antes de cualquier movimiento.',
+      summary: 'The short guide here is: prepare the carburetor, mixture, and warm-up before moving.',
       items: [
-        'Comprueba la posición del filtro del carburador y del selector de combustible.',
-        'Asegura el calentamiento del motor antes de salir.',
-        'Revisa radio, oxígeno y trim antes de la toma.'
+        'Check the carburetor filter and fuel-selector position.',
+        'Warm up the engine before departure.',
+        'Check the radio, oxygen, and trim before takeoff.'
       ]
     },
     mosquito: {
-      summary: 'Para este avión, la clave es la preparación de combustible, radiadores y motores antes del movimiento.',
+      summary: 'For this aircraft, the key is preparing the fuel system, radiators, and engines before moving.',
       items: [
-        'Revisa válvulas de combustible, presión y transferencia de combustible.',
-        'Confirma el cebado de motores y el calentamiento antes de salir.',
-        'Prepara trim, oxígeno y radio para el taxi.'
+        'Check the fuel valves, pressure, and fuel transfer.',
+        'Confirm engine priming and warm-up before departure.',
+        'Prepare the trim, oxygen, and radio for taxi.'
       ]
     },
     i16: {
-      summary: 'La preparación eléctrica y el cebado del motor son esenciales en esta aeronave.',
+      summary: 'Electrical preparation and engine priming are essential for this aircraft.',
       items: [
-        'Comprueba el suministro eléctrico de tierra y los wheel chucks.',
-        'Asegura el cebado correcto del motor antes del arranque.',
-        'No olvides el calentamiento y el setup de frenado antes del despegue.'
+        'Check the ground electrical supply and wheel chocks.',
+        'Ensure correct engine priming before starting.',
+        'Do not forget the warm-up and brake setup before takeoff.'
       ]
     },
     la7: {
-      summary: 'Aquí la prioridad es el suministro de aire, la presión de combustible y el calentamiento del motor.',
+      summary: 'The priorities here are the air supply, fuel pressure, and engine warm-up.',
       items: [
-        'Revisa el suministro de aire de tierra y la válvula de paso de combustible.',
-        'Asegura la presión de combustible antes de arrancar.',
-        'Controla el calentamiento de aceite y cabezas de cilindros antes de salir.'
+        'Check the ground air supply and fuel shutoff valve.',
+        'Ensure fuel pressure before starting.',
+        'Monitor oil and cylinder-head warm-up before departure.'
       ]
     }
   };
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var allDone = items.length > 0 && Array.from(items).every(function (item) {
         return item.classList.contains('is-done');
       });
-      button.textContent = allDone ? 'Desmarcar todo' : 'Marcar todo';
+      button.textContent = allDone ? 'Unmark all' : 'Mark all';
     };
     
     refreshUI();
@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .catch(function (error) {
         console.error('Error loading locations:', error);
-        resultsInfo.textContent = 'Error al cargar los datos de ubicaciones.';
+        resultsInfo.textContent = 'Error loading location data.';
       });
 
     function populateMapSelector() {
@@ -520,16 +520,16 @@ document.addEventListener('DOMContentLoaded', function () {
       resultsContainer.innerHTML = '';
 
       if (!locationsData) {
-        resultsInfo.textContent = 'Cargando datos...';
+        resultsInfo.textContent = 'Loading data...';
         return;
       }
 
       if (filtered.length === 0) {
-        resultsInfo.textContent = 'No se encontraron resultados.';
+        resultsInfo.textContent = 'No results found.';
         return;
       }
 
-      resultsInfo.textContent = 'Mostrando ' + filtered.length + ' ubicación' + (filtered.length !== 1 ? 'es' : '') + ' de ' + allLocations.length + ' totales.';
+      resultsInfo.textContent = 'Showing ' + filtered.length + ' location' + (filtered.length !== 1 ? 's' : '') + ' of ' + allLocations.length + ' total.';
 
       // Limit results to prevent performance issues
       var displayLimit = 100;
@@ -548,13 +548,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var typeItem = document.createElement('div');
         typeItem.className = 'location-meta-item';
-        var typeLabel = loc.type === 'airfield' ? 'Aeródromo' : 'Ciudad';
-        typeItem.innerHTML = '<span class="location-meta-label">Tipo:</span> <span class="location-meta-value">' + typeLabel + '</span>';
+        var typeLabel = loc.type === 'airfield' ? 'Airfield' : 'City';
+        typeItem.innerHTML = '<span class="location-meta-label">Type:</span> <span class="location-meta-value">' + typeLabel + '</span>';
         metaDiv.appendChild(typeItem);
 
         var mapItem = document.createElement('div');
         mapItem.className = 'location-meta-item';
-        mapItem.innerHTML = '<span class="location-meta-label">Mapa:</span> <span class="location-meta-value">' + (loc.map || 'N/A') + '</span>';
+        mapItem.innerHTML = '<span class="location-meta-label">Map:</span> <span class="location-meta-value">' + (loc.map || 'N/A') + '</span>';
         metaDiv.appendChild(mapItem);
 
         var mgrsItem = document.createElement('div');
@@ -585,7 +585,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (loc.altitude != null) {
           var altItem = document.createElement('div');
           altItem.className = 'location-meta-item';
-          altItem.innerHTML = '<span class="location-meta-label">Altitud:</span> <span class="location-meta-value">' + loc.altitude.toFixed(2) + ' m</span>';
+          altItem.innerHTML = '<span class="location-meta-label">Altitude:</span> <span class="location-meta-value">' + loc.altitude.toFixed(2) + ' m</span>';
           metaDiv.appendChild(altItem);
         }
 
@@ -599,7 +599,7 @@ document.addEventListener('DOMContentLoaded', function () {
         infoLi.style.color = 'var(--muted)';
         infoLi.style.fontStyle = 'italic';
         infoLi.style.padding = '12px';
-        infoLi.textContent = 'Mostrando primeros ' + displayLimit + ' resultados. Refina tu búsqueda para ver más.';
+        infoLi.textContent = 'Showing the first ' + displayLimit + ' results. Refine your search to see more.';
         resultsContainer.appendChild(infoLi);
       }
     }
