@@ -264,9 +264,16 @@ body.page-return{
   transform-origin:center;
   animation:home-flight-triangle-one 24s linear infinite;
 }
+.home-flight-triangle-reverse{
+  clip-path:polygon(0 50%,100% 0,100% 100%);
+  animation-name:home-flight-triangle-reverse-one;
+}
 .home-flight-triangle-one{top:31%;left:-6%;}
 .home-flight-triangle-two{top:56%;left:-9%;width:15px;height:15px;opacity:0.68;animation-name:home-flight-triangle-two;animation-duration:31s;animation-delay:-12s}
 .home-flight-triangle-three{top:72%;left:-8%;width:12px;height:12px;opacity:0.5;animation-name:home-flight-triangle-three;animation-duration:38s;animation-delay:-23s}
+.home-flight-triangle-reverse-one{top:43%;right:-6%;}
+.home-flight-triangle-reverse-two{top:66%;right:-9%;width:15px;height:15px;opacity:0.62;animation-name:home-flight-triangle-reverse-two;animation-duration:29s;animation-delay:-7s}
+.home-flight-triangle-reverse-three{top:82%;right:-8%;width:12px;height:12px;opacity:0.48;animation-name:home-flight-triangle-reverse-three;animation-duration:36s;animation-delay:-19s}
 @keyframes home-flight-triangle-one{
   0%{transform:translate3d(0,0,0) rotate(3deg);opacity:0}
   10%,78%{opacity:1}
@@ -281,6 +288,21 @@ body.page-return{
   0%{transform:translate3d(0,0,0) rotate(5deg);opacity:0}
   14%,82%{opacity:1}
   100%{transform:translate3d(116vw,-7vh,0) rotate(-2deg);opacity:0}
+}
+@keyframes home-flight-triangle-reverse-one{
+  0%{transform:translate3d(0,0,0) rotate(-3deg);opacity:0}
+  10%,78%{opacity:1}
+  100%{transform:translate3d(-118vw,14vh,0) rotate(4deg);opacity:0}
+}
+@keyframes home-flight-triangle-reverse-two{
+  0%{transform:translate3d(0,0,0) rotate(5deg);opacity:0}
+  12%,80%{opacity:1}
+  100%{transform:translate3d(-120vw,-9vh,0) rotate(-2deg);opacity:0}
+}
+@keyframes home-flight-triangle-reverse-three{
+  0%{transform:translate3d(0,0,0) rotate(-5deg);opacity:0}
+  14%,82%{opacity:1}
+  100%{transform:translate3d(-116vw,7vh,0) rotate(2deg);opacity:0}
 }
 @keyframes home-dynamic-grid-drift{
   from{background-position:0 0,0 0,0 0,0 0}
