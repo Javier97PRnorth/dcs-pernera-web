@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (splashScreen) {
     var splashDelay = reducedMotion ? 100 : 3800;
     window.setTimeout(function () {
+      document.documentElement.classList.remove('splash-active');
+      document.body.classList.remove('splash-active');
       splashScreen.remove();
     }, splashDelay);
   }

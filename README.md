@@ -1,12 +1,12 @@
 # J&I Flight Tools
 
-Repository context for the new working chat: Pernera digital 02.
+Repository context for the new working chat: Pernera digital 03.
 
 This repository contains a static DCS World web toolkit called J&I Flight Tools. It is designed as a digital kneeboard and quick-reference toolkit for aircraft cold starts, checklists, radio brevities, training calendars, communications phrases, and a location finder based on DCS map data and airfield metadata.
 
 The project is intentionally lightweight and framework-free: HTML, CSS, vanilla JavaScript and generated JSON assets are used without a build pipeline. It can be opened locally in a browser or served directly through a static web server such as GitHub Pages.
 
-This update keeps the existing README information while aligning the documentation with the actual project contents, the generated location database, and the repository context of this new chat.
+The site is organized as a framework-free static application. Public HTML pages stay at the repository root for stable GitHub Pages URLs; shared frontend resources live under `assets/`, generated data lives under `data/`, authoring references live under `docs/`, and data-generation utilities live under `tools/`.
 
 A comprehensive digital kneeboard and reference toolkit for DCS World (Digital Combat Simulator). This web application provides quick-access checklists, procedures, unit converters, and a location finder for various aircraft and maps.
 
@@ -84,15 +84,19 @@ Convert between common aviation units:
 
 dcs-pernera-web/
 ├── index.html              # Landing page
-├── perneras.html           # Aircraft checklists
+├── flight-checklists.html  # Aircraft checklists
 ├── threat-database.html    # Searchable threat reference page
-├── threats.js              # Threat database rendering and filtering
-├── calendario.html         # Training calendar page
+├── assets/
+│   ├── css/
+│   │   └── styles.css      # Global styles
+│   └── js/
+│       ├── main.js         # Shared frontend logic and tools
+│       ├── shared-nav.js   # Shared navigation component
+│       ├── site-config.js  # Brand, title, and favicon configuration
+│       └── threats.js      # Threat database rendering and filtering
+├── calendar.html           # Training calendar page
 ├── comms.html              # Communications page
 ├── brevities.html          # Radio communications reference
-├── styles.css              # Global styles
-├── main.js                 # Frontend logic
-├── shared-nav.js           # Navigation component
 ├── data/
 │   ├── dcs_locations.json       # Generated locations database
 │   ├── threat-database.js       # Extracted threat reference data
@@ -106,6 +110,7 @@ dcs-pernera-web/
 │       ├── Normandy/
 │       ├── Syria/
 │       └── Additional DCS maps represented in generated JSON
+├── docs/                                # Contracts, guides, and references
 └── tools/                               # Data generation utilities
     ├── README.md
     ├── index.js
@@ -119,6 +124,17 @@ dcs-pernera-web/
         ├── processAirbases.js
         └── readMapDirectories.js
 ```
+
+## File organization
+
+- Root HTML files are public entry points and keep their existing filenames for stable links.
+- `assets/css/` contains shared stylesheets.
+- `assets/js/` contains shared and page-specific frontend scripts.
+- `data/` contains generated datasets and source map data; page code refers to it from the site root.
+- `docs/` contains contracts, style guidance, and reference documents.
+- `tools/` contains scripts and dependencies used to regenerate data; it is not loaded by the browser.
+
+When adding a page, keep the HTML entry point in the root, load shared resources from `assets/`, and document any new data or tooling under the matching directory.
 
 ## Tech Stack
 

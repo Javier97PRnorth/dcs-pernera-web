@@ -43,7 +43,7 @@ npm install
 node index.js --write
 ```
 
-Outputs to: `/data/dcs_locations.json`
+Outputs to: `../data/dcs_locations.json` when run from the `tools/` directory.
 
 ### Preview Output (without writing file)
 ```bash

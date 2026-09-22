@@ -6,7 +6,7 @@ This repository is a static DCS World reference site. The project should stay li
 ## Core rules for aircraft content
 When adding or editing a pernera, follow these rules:
 
-1. Keep the structure consistent with the existing aircraft panels in perneras.html.
+1. Keep the structure consistent with the existing aircraft panels in flight-checklists.html.
 2. Every aircraft should use the same general layout:
    - title
    - main checklist
@@ -17,11 +17,11 @@ When adding or editing a pernera, follow these rules:
 4. Keep the tone concise and kneeboard-like: direct, operational, quick to scan.
 5. If data is not confirmed, label it as an example or pending validation instead of presenting it as fact.
 6. Do not invent precise numbers, engine limits, trim values, or emergency procedures unless clearly marked as example content.
-7. Prefer the existing styling and spacing conventions established in styles.css.
+7. Prefer the existing styling and spacing conventions established in assets/css/styles.css.
 8. Maintain consistent naming: aircraft title, panel ID, and data-plane value must match the HTML structure.
 
 ## Required aircraft panel structure
-Each aircraft panel in perneras.html should normally contain:
+Each aircraft panel in flight-checklists.html should normally contain:
 
 - title: "Aircraft - Checklist"
 - checklist-toolbar
@@ -59,6 +59,15 @@ When adding an aircraft, update the relevant identifiers in the HTML and keep th
 ## Reference docs
 - docs/aircraft-contract.md
 - docs/style-guide.md
+
+## Repository organization
+
+- Keep public HTML entry points in the repository root to preserve stable URLs.
+- Put shared and page-specific browser scripts in `assets/js/`.
+- Put shared styles in `assets/css/`.
+- Put generated datasets and map sources in `data/`.
+- Put reference material in `docs/` and data-generation code in `tools/`.
+- Update every HTML reference when moving a browser resource; do not leave duplicate copies in the root.
 
 ## Editing principle
 When in doubt, preserve the existing project conventions and avoid making the content feel unique per aircraft unless the aircraft truly requires it.
