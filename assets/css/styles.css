@@ -252,7 +252,7 @@ body[data-page="inicio"].page-return{
   height:100vh;
   min-height:100dvh;
   overflow:hidden;
-  opacity:0.16;
+  opacity:0.50;
   pointer-events:none;
   isolation:isolate;
   mask-image:linear-gradient(180deg,rgba(0,0,0,0.9),rgba(0,0,0,0.42) 74%,transparent 100%);
