@@ -30,7 +30,10 @@
           </div>
           <div id="perneras-empty" class="perneras-empty" hidden>No aircraft found.</div>
           <ul>
+            <li><button data-plane="apache">AH-64D Apache <span class="wip-badge" title="Work in progress: pending validation">WIP</span></button></li>
             <li><button data-plane="bf109">BF-109 K4 Kurfürst</button></li>
+            <li><button data-plane="c130">C-130 Hercules <span class="wip-badge" title="Work in progress: pending validation">WIP</span></button></li>
+            <li><button data-plane="eurofighter">Eurofighter Typhoon <span class="wip-badge" title="Work in progress: pending validation">WIP</span></button></li>
             <li><button data-plane="f100d">F-100D Super Sabre</button></li>
             <li><button data-plane="f14">F-14 Tomcat</button></li>
             <li><button data-plane="f4e">F-4E Phantom II</button></li>
@@ -39,9 +42,12 @@
             <li><button data-plane="fa18">F/A-18C Hornet</button></li>
             <li><button data-plane="fw190a8">FW-190 A8 Anton</button></li>
             <li><button data-plane="fw190d9">FW-190 D9 Dora</button></li>
+            <li><button data-plane="g91">Fiat G.91 <span class="wip-badge" title="Work in progress: pending validation">WIP</span></button></li>
             <li><button data-plane="i16">I-16 Ishak</button></li>
             <li><button data-plane="la7">Lavochkin LA-7</button></li>
+            <li><button data-plane="mig19">MiG-19P Farmer <span class="wip-badge" title="Work in progress: pending validation">WIP</span></button></li>
             <li><button data-plane="mig15">MiG-15bis Fagot</button></li>
+            <li><button data-plane="mig21">MiG-21bis Fishbed <span class="wip-badge" title="Work in progress: pending validation">WIP</span></button></li>
             <li><button data-plane="mig29">MiG-29 Fulcrum</button></li>
             <li><button data-plane="mi24p">Mi-24P Hind</button></li>
             <li><button data-plane="mosquito">Mosquito FB Mk VI</button></li>
@@ -1161,6 +1167,189 @@
               </ul>
             </div>
 
+          </div>
+
+          <div id="pernera-apache" class="pernera-panel">
+            <h3>AH-64D Apache - Checklist <span class="wip-badge" title="Work in progress: pending validation">WIP</span></h3>
+            <div class="checklist-toolbar">
+              <button class="toggle-all-checklist" type="button" data-panel="apache">Mark/unmark all</button>
+            </div>
+            <ul class="checklist">
+              <li><button class="check-item" type="button" data-key="apache-1">Set battery and essential electrical power ON</button></li>
+              <li><button class="check-item" type="button" data-key="apache-2">Set APU control to STBY and start APU</button></li>
+              <li><button class="check-item" type="button" data-key="apache-3">Confirm APU and utility hydraulic indications</button></li>
+              <li><button class="check-item" type="button" data-key="apache-4">Start the left and right engines using the approved sequence</button></li>
+              <li><button class="check-item" type="button" data-key="apache-5">Set generators and flight essential buses ON</button></li>
+              <li><button class="check-item" type="button" data-key="apache-6">Configure flight instruments, radios, and navigation</button></li>
+              <li><button class="check-item" type="button" data-key="apache-7">Run flight control and flight augmentation checks</button></li>
+              <li><button class="check-item" type="button" data-key="apache-8">Set rotor and weapon systems safe for taxi</button></li>
+            </ul>
+            <div class="engine-management">
+              <h4>Landing (Essential)</h4>
+              <div class="checklist-toolbar"><button class="toggle-all-checklist" type="button" data-panel="apache-landing">Mark/unmark all</button></div>
+              <ul class="checklist">
+                <li><button class="check-item" type="button" data-key="apache-landing-1">Confirm landing area and approach path clear</button></li>
+                <li><button class="check-item" type="button" data-key="apache-landing-2">Set approach configuration and stabilize the descent</button></li>
+                <li><button class="check-item" type="button" data-key="apache-landing-3">Touch down within the planned landing area and maintain rotor control</button></li>
+              </ul>
+            </div>
+            <div class="engine-management">
+              <h4>Engine Management</h4>
+              <div class="engine-table-wrapper"><table class="engine-table">
+                <thead><tr><th>Profile</th><th>RPM</th><th>Power</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Ground idle</th><td>Example - validate</td><td>Minimum stable power</td><td>Monitor engine instruments</td></tr>
+                  <tr><th scope="row">Takeoff</th><td>Example - validate</td><td>Approved takeoff setting</td><td>Respect aircraft and ambient limits</td></tr>
+                </tbody>
+              </table></div>
+            </div>
+            <div class="technical-notes"><h4>Technical Notes</h4><ul>
+              <li>Example content only; validate switch positions and start logic in the AH-64D module.</li>
+              <li>Use the aircraft and engine instruments to confirm a stable configuration before taxi.</li>
+            </ul></div>
+          </div>
+
+          <div id="pernera-c130" class="pernera-panel">
+            <h3>C-130 Hercules - Checklist <span class="wip-badge" title="Work in progress: pending validation">WIP</span></h3>
+            <div class="checklist-toolbar"><button class="toggle-all-checklist" type="button" data-panel="c130">Mark/unmark all</button></div>
+            <ul class="checklist">
+              <li><button class="check-item" type="button" data-key="c130-1">Set parking brake and verify propellers clear</button></li>
+              <li><button class="check-item" type="button" data-key="c130-2">Set battery and external power as required</button></li>
+              <li><button class="check-item" type="button" data-key="c130-3">Configure fuel, hydraulic, and electrical panels for start</button></li>
+              <li><button class="check-item" type="button" data-key="c130-4">Start each engine using the approved propeller sequence</button></li>
+              <li><button class="check-item" type="button" data-key="c130-5">Confirm generators, propeller governors, and engine indications</button></li>
+              <li><button class="check-item" type="button" data-key="c130-6">Set radios, navigation, oxygen, and anti-ice systems as required</button></li>
+              <li><button class="check-item" type="button" data-key="c130-7">Complete flight control, trim, and warning panel checks</button></li>
+              <li><button class="check-item" type="button" data-key="c130-8">Release external power and configure for taxi</button></li>
+            </ul>
+            <div class="engine-management"><h4>Landing (Essential)</h4>
+              <div class="checklist-toolbar"><button class="toggle-all-checklist" type="button" data-panel="c130-landing">Mark/unmark all</button></div>
+              <ul class="checklist">
+                <li><button class="check-item" type="button" data-key="c130-landing-1">Confirm landing weight, runway, and braking plan</button></li>
+                <li><button class="check-item" type="button" data-key="c130-landing-2">Configure gear, flaps, and propellers for the planned approach</button></li>
+                <li><button class="check-item" type="button" data-key="c130-landing-3">Maintain the validated approach speed and touchdown attitude</button></li>
+              </ul>
+            </div>
+            <div class="engine-management"><h4>Engine Management</h4><div class="engine-table-wrapper"><table class="engine-table">
+              <thead><tr><th>Profile</th><th>RPM</th><th>Power</th><th>Notes</th></tr></thead>
+              <tbody><tr><th scope="row">Taxi</th><td>Example - validate</td><td>Low power</td><td>Use propeller control carefully</td></tr><tr><th scope="row">Takeoff</th><td>Example - validate</td><td>Approved takeoff setting</td><td>Monitor torque, temperature, and oil pressure</td></tr></tbody>
+            </table></div></div>
+            <div class="technical-notes"><h4>Technical Notes</h4><ul>
+              <li>Example content only; validate engine start order and propeller controls in the selected C-130 module.</li>
+              <li>Use aircraft loading and runway data before applying any takeoff setting.</li>
+            </ul></div>
+          </div>
+
+          <div id="pernera-eurofighter" class="pernera-panel">
+            <h3>Eurofighter Typhoon - Checklist <span class="wip-badge" title="Work in progress: pending validation">WIP</span></h3>
+            <div class="checklist-toolbar"><button class="toggle-all-checklist" type="button" data-panel="eurofighter">Mark/unmark all</button></div>
+            <ul class="checklist">
+              <li><button class="check-item" type="button" data-key="eurofighter-1">Set battery and external power as required</button></li>
+              <li><button class="check-item" type="button" data-key="eurofighter-2">Set both engine master controls and verify fire indications</button></li>
+              <li><button class="check-item" type="button" data-key="eurofighter-3">Start engines using the approved ground sequence</button></li>
+              <li><button class="check-item" type="button" data-key="eurofighter-4">Confirm flight control, hydraulic, and electrical indications</button></li>
+              <li><button class="check-item" type="button" data-key="eurofighter-5">Configure displays, navigation, radios, and identification systems</button></li>
+              <li><button class="check-item" type="button" data-key="eurofighter-6">Set flight control laws and trim for taxi</button></li>
+              <li><button class="check-item" type="button" data-key="eurofighter-7">Complete flight control, flight instrument, and warning checks</button></li>
+              <li><button class="check-item" type="button" data-key="eurofighter-8">Set armament and external stores safe for taxi</button></li>
+            </ul>
+            <div class="engine-management"><h4>Landing (Essential)</h4><div class="checklist-toolbar"><button class="toggle-all-checklist" type="button" data-panel="eurofighter-landing">Mark/unmark all</button></div><ul class="checklist">
+              <li><button class="check-item" type="button" data-key="eurofighter-landing-1">Confirm fuel state, runway, and landing configuration</button></li>
+              <li><button class="check-item" type="button" data-key="eurofighter-landing-2">Set gear and high-lift devices according to the validated procedure</button></li>
+              <li><button class="check-item" type="button" data-key="eurofighter-landing-3">Maintain the validated approach speed and monitor energy state</button></li>
+            </ul></div>
+            <div class="engine-management"><h4>Engine Management</h4><div class="engine-table-wrapper"><table class="engine-table">
+              <thead><tr><th>Profile</th><th>RPM</th><th>Power</th><th>Notes</th></tr></thead>
+              <tbody><tr><th scope="row">Idle</th><td>Example - validate</td><td>Idle thrust</td><td>Confirm both engines stable</td></tr><tr><th scope="row">Takeoff</th><td>Example - validate</td><td>Approved takeoff setting</td><td>Validate reheat and runway limits</td></tr></tbody>
+            </table></div></div>
+            <div class="technical-notes"><h4>Technical Notes</h4><ul>
+              <li>Example content only; module availability and switch logic require validation.</li>
+              <li>Do not treat the example engine values as aircraft limits.</li>
+            </ul></div>
+          </div>
+
+          <div id="pernera-g91" class="pernera-panel">
+            <h3>Fiat G.91 - Checklist <span class="wip-badge" title="Work in progress: pending validation">WIP</span></h3>
+            <div class="checklist-toolbar"><button class="toggle-all-checklist" type="button" data-panel="g91">Mark/unmark all</button></div>
+            <ul class="checklist">
+              <li><button class="check-item" type="button" data-key="g91-1">Set battery and generator controls for start</button></li>
+              <li><button class="check-item" type="button" data-key="g91-2">Request ground power if required by the module</button></li>
+              <li><button class="check-item" type="button" data-key="g91-3">Set fuel system and engine controls for start</button></li>
+              <li><button class="check-item" type="button" data-key="g91-4">Start the engine and monitor RPM, temperature, and oil pressure</button></li>
+              <li><button class="check-item" type="button" data-key="g91-5">Confirm generator and hydraulic indications</button></li>
+              <li><button class="check-item" type="button" data-key="g91-6">Configure radios, navigation, oxygen, and pitot heat</button></li>
+              <li><button class="check-item" type="button" data-key="g91-7">Set trim, speedbrakes, flaps, and landing gear controls</button></li>
+              <li><button class="check-item" type="button" data-key="g91-8">Complete flight control and warning panel checks</button></li>
+            </ul>
+            <div class="engine-management"><h4>Landing (Essential)</h4><div class="checklist-toolbar"><button class="toggle-all-checklist" type="button" data-panel="g91-landing">Mark/unmark all</button></div><ul class="checklist">
+              <li><button class="check-item" type="button" data-key="g91-landing-1">Confirm landing configuration and runway condition</button></li>
+              <li><button class="check-item" type="button" data-key="g91-landing-2">Set gear and flaps using the validated sequence</button></li>
+              <li><button class="check-item" type="button" data-key="g91-landing-3">Maintain the example approach speed until validated</button></li>
+            </ul></div>
+            <div class="engine-management"><h4>Engine Management</h4><div class="engine-table-wrapper"><table class="engine-table">
+              <thead><tr><th>Profile</th><th>RPM</th><th>Power</th><th>Notes</th></tr></thead>
+              <tbody><tr><th scope="row">Idle</th><td>Example - validate</td><td>Idle thrust</td><td>Monitor temperature and pressure</td></tr><tr><th scope="row">Takeoff</th><td>Example - validate</td><td>Approved takeoff setting</td><td>Validate time and temperature limits</td></tr></tbody>
+            </table></div></div>
+            <div class="technical-notes"><h4>Technical Notes</h4><ul>
+              <li>Example content only; confirm the specific G.91 variant and module before use.</li>
+              <li>Validate all engine limits, trim settings, and speeds against the aircraft documentation.</li>
+            </ul></div>
+          </div>
+
+          <div id="pernera-mig19" class="pernera-panel">
+            <h3>MiG-19P Farmer - Checklist <span class="wip-badge" title="Work in progress: pending validation">WIP</span></h3>
+            <div class="checklist-toolbar"><button class="toggle-all-checklist" type="button" data-panel="mig19">Mark/unmark all</button></div>
+            <ul class="checklist">
+              <li><button class="check-item" type="button" data-key="mig19-1">Set battery, generator, and ground power controls</button></li>
+              <li><button class="check-item" type="button" data-key="mig19-2">Configure fuel pumps, ignition, and engine controls</button></li>
+              <li><button class="check-item" type="button" data-key="mig19-3">Start the first engine and monitor indications</button></li>
+              <li><button class="check-item" type="button" data-key="mig19-4">Start the second engine and confirm stable idle</button></li>
+              <li><button class="check-item" type="button" data-key="mig19-5">Disconnect ground power when generators are online</button></li>
+              <li><button class="check-item" type="button" data-key="mig19-6">Configure radios, navigation, oxygen, and pitot heat</button></li>
+              <li><button class="check-item" type="button" data-key="mig19-7">Set trim, flaps, speedbrakes, and landing gear controls</button></li>
+              <li><button class="check-item" type="button" data-key="mig19-8">Arm systems only after completing the safety checks</button></li>
+            </ul>
+            <div class="engine-management"><h4>Landing (Essential)</h4><div class="checklist-toolbar"><button class="toggle-all-checklist" type="button" data-panel="mig19-landing">Mark/unmark all</button></div><ul class="checklist">
+              <li><button class="check-item" type="button" data-key="mig19-landing-1">Confirm fuel state and landing configuration</button></li>
+              <li><button class="check-item" type="button" data-key="mig19-landing-2">Set gear and flaps using the validated sequence</button></li>
+              <li><button class="check-item" type="button" data-key="mig19-landing-3">Maintain the example approach speed until validated</button></li>
+            </ul></div>
+            <div class="engine-management"><h4>Engine Management</h4><div class="engine-table-wrapper"><table class="engine-table">
+              <thead><tr><th>Profile</th><th>RPM</th><th>Power</th><th>Notes</th></tr></thead>
+              <tbody><tr><th scope="row">Idle</th><td>Example - validate</td><td>Minimum stable power</td><td>Monitor both engines</td></tr><tr><th scope="row">Takeoff</th><td>Example - validate</td><td>Approved takeoff setting</td><td>Respect engine temperature limits</td></tr></tbody>
+            </table></div></div>
+            <div class="technical-notes"><h4>Technical Notes</h4><ul>
+              <li>Example content only; confirm the MiG-19 variant and module implementation.</li>
+              <li>Validate engine start order, nozzle controls, and operating limits before use.</li>
+            </ul></div>
+          </div>
+
+          <div id="pernera-mig21" class="pernera-panel">
+            <h3>MiG-21bis Fishbed - Checklist <span class="wip-badge" title="Work in progress: pending validation">WIP</span></h3>
+            <div class="checklist-toolbar"><button class="toggle-all-checklist" type="button" data-panel="mig21">Mark/unmark all</button></div>
+            <ul class="checklist">
+              <li><button class="check-item" type="button" data-key="mig21-1">Set battery, inverter, and essential electrical power</button></li>
+              <li><button class="check-item" type="button" data-key="mig21-2">Configure fuel, hydraulic, and engine controls for start</button></li>
+              <li><button class="check-item" type="button" data-key="mig21-3">Start the engine using the approved starter sequence</button></li>
+              <li><button class="check-item" type="button" data-key="mig21-4">Confirm generator, hydraulic, and engine indications</button></li>
+              <li><button class="check-item" type="button" data-key="mig21-5">Configure radios, navigation, oxygen, and pitot heat</button></li>
+              <li><button class="check-item" type="button" data-key="mig21-6">Set trim, speedbrakes, flaps, and landing gear controls</button></li>
+              <li><button class="check-item" type="button" data-key="mig21-7">Complete flight control, instrument, and warning checks</button></li>
+              <li><button class="check-item" type="button" data-key="mig21-8">Set the ejection seat and armament safe for taxi</button></li>
+            </ul>
+            <div class="engine-management"><h4>Landing (Essential)</h4><div class="checklist-toolbar"><button class="toggle-all-checklist" type="button" data-panel="mig21-landing">Mark/unmark all</button></div><ul class="checklist">
+              <li><button class="check-item" type="button" data-key="mig21-landing-1">Confirm fuel state, runway, and landing configuration</button></li>
+              <li><button class="check-item" type="button" data-key="mig21-landing-2">Set gear and flaps using the validated sequence</button></li>
+              <li><button class="check-item" type="button" data-key="mig21-landing-3">Maintain the example approach speed and monitor energy</button></li>
+            </ul></div>
+            <div class="engine-management"><h4>Engine Management</h4><div class="engine-table-wrapper"><table class="engine-table">
+              <thead><tr><th>Profile</th><th>RPM</th><th>Power</th><th>Notes</th></tr></thead>
+              <tbody><tr><th scope="row">Idle</th><td>Example - validate</td><td>Idle thrust</td><td>Monitor RPM and temperature</td></tr><tr><th scope="row">Takeoff</th><td>Example - validate</td><td>Approved takeoff setting</td><td>Validate afterburner and time limits</td></tr></tbody>
+            </table></div></div>
+            <div class="technical-notes"><h4>Technical Notes</h4><ul>
+              <li>Example content only; validate the MiG-21bis module switch logic and engine limits.</li>
+              <li>Do not use the example approach or engine values as flight data until verified.</li>
+            </ul></div>
           </div>
 
           <div id="pernera-mig15" class="pernera-panel">

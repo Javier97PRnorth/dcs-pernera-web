@@ -13,14 +13,17 @@ A comprehensive digital kneeboard and reference toolkit for DCS World (Digital C
 ## Features
 
 ### Aircraft Checklists (Perneras)
-- **17 Aircraft** with detailed cold start procedures and essential operations
+- **24 Aircraft** with detailed cold start procedures and essential operations
 - Step-by-step interactive checklists with progress tracking
 - Technical notes and engine management procedures
 - Video references for complex procedures
 - Alphabetically organized for quick access
 
 **Supported Aircraft:**
+- AH-64D Apache
 - BF-109 K4 Kurfürst
+- C-130 Hercules
+- Eurofighter Typhoon
 - F-100D Super Sabre
 - F-14 Tomcat
 - F-4E Phantom II
@@ -28,10 +31,14 @@ A comprehensive digital kneeboard and reference toolkit for DCS World (Digital C
 - F-86F Sabre
 - F/A-18C Hornet
 - FW-190 A8 Anton & D9 Dora
+- Fiat G.91
 - I-16 Ishak
 - Lavochkin LA-7
+- MiG-19P Farmer
 - MiG-15bis Fagot
+- MiG-21bis Fishbed
 - MiG-29 Fulcrum
+- Mi-24P Hind
 - Mosquito FB Mk VI
 - P-47D Thunderbolt
 - Spitfire Mk IX
