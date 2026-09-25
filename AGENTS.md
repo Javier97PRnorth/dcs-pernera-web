@@ -20,6 +20,14 @@ When adding or editing a pernera, follow these rules:
 7. Prefer the existing styling and spacing conventions established in assets/css/styles.css.
 8. Maintain consistent naming: aircraft title, panel ID, and data-plane value must match the HTML structure.
 
+## Work in progress aircraft
+
+- Mark provisional aircraft content with the compact `WIP` badge using the existing `.wip-badge` class.
+- Show the badge in both the aircraft selector and the matching panel title.
+- Use the badge when procedures, limits, trim values, engine settings, or module-specific behavior still need validation.
+- Keep provisional values explicitly labeled as examples or pending validation in the panel notes and tables.
+- Remove the badge only after the aircraft content has been checked against reliable module documentation or testing.
+
 ## Required aircraft panel structure
 Each aircraft panel in flight-checklists.html should normally contain:
 
